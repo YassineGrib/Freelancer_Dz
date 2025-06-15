@@ -1,0 +1,2 @@
+C:/xampp/htdocs/freelancer_mobile/freelancer_mobile/android/app/.cxx/Debug/592q6y3v/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/xampp/htdocs/freelancer_mobile/freelancer_mobile/android/app/.cxx/Debug/592q6y3v/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+C:/Android_Yassine/freelancer_mobile/freelancer_mobile/android/app/.cxx/Debug/4t42d2x3/x86_64/CMakeFiles/edit_cache.dir
+C:/Android_Yassine/freelancer_mobile/freelancer_mobile/android/app/.cxx/Debug/4t42d2x3/x86_64/CMakeFiles/rebuild_cache.dir

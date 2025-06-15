@@ -1,0 +1,779 @@
+{
+  "@@locale": "fr",
+  "appTitle": "FreeLancer Mobile",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "welcome": "Bienvenue",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "login": "Connexion",
+  "@login": {
+    "description": "Login button text"
+  },
+  "logout": "Déconnexion",
+  "@logout": {
+    "description": "Logout button text"
+  },
+  "dashboard": "Tableau de bord",
+  "@dashboard": {
+    "description": "Dashboard screen title"
+  },
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Settings screen title"
+  },
+  "projects": "Projets",
+  "@projects": {
+    "description": "Projects tab title"
+  },
+  "clients": "Clients",
+  "@clients": {
+    "description": "Clients tab title"
+  },
+  "payments": "Paiements",
+  "@payments": {
+    "description": "Payments tab title"
+  },
+  "invoices": "Factures",
+  "@invoices": {
+    "description": "Invoices tab title"
+  },
+  "expenses": "Dépenses",
+  "@expenses": {
+    "description": "Expenses tab title"
+  },
+  "menu": "Menu",
+  "@menu": {
+    "description": "Menu tab title"
+  },
+  "quickActions": "Actions rapides",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "newProject": "Nouveau projet",
+  "@newProject": {
+    "description": "New project action"
+  },
+  "addClient": "Ajouter un client",
+  "@addClient": {
+    "description": "Add client action"
+  },
+  "recordPayment": "Enregistrer un paiement",
+  "@recordPayment": {
+    "description": "Record payment action"
+  },
+  "createInvoice": "Créer une facture",
+  "@createInvoice": {
+    "description": "Create invoice action"
+  },
+  "recentActivities": "Activités récentes",
+  "@recentActivities": {
+    "description": "Recent activities section title"
+  },
+  "upcomingDeadlines": "Échéances à venir",
+  "@upcomingDeadlines": {
+    "description": "Upcoming deadlines section title"
+  },
+  "viewAll": "Voir tout",
+  "@viewAll": {
+    "description": "View all button text"
+  },
+  "noRecentActivities": "Aucune activité récente",
+  "@noRecentActivities": {
+    "description": "Message when no recent activities"
+  },
+  "noUpcomingDeadlines": "Aucune échéance à venir",
+  "@noUpcomingDeadlines": {
+    "description": "Message when no upcoming deadlines"
+  },
+  "totalRevenue": "Chiffre d'affaires total",
+  "@totalRevenue": {
+    "description": "Total revenue label"
+  },
+  "activeProjects": "Projets actifs",
+  "@activeProjects": {
+    "description": "Active projects label"
+  },
+  "pendingPayments": "Paiements en attente",
+  "@pendingPayments": {
+    "description": "Pending payments label"
+  },
+  "thisMonth": "Ce mois-ci",
+  "@thisMonth": {
+    "description": "This month label"
+  },
+  "language": "Langue",
+  "@language": {
+    "description": "Language setting label"
+  },
+  "theme": "Thème",
+  "@theme": {
+    "description": "Theme setting label"
+  },
+  "currency": "Devise",
+  "@currency": {
+    "description": "Currency setting label"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications setting label"
+  },
+  "security": "Sécurité",
+  "@security": {
+    "description": "Security setting label"
+  },
+  "about": "À propos",
+  "@about": {
+    "description": "About setting label"
+  },
+  "cancel": "Annuler",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "save": "Enregistrer",
+  "@save": {
+    "description": "Save button text"
+  },
+  "edit": "Modifier",
+  "@edit": {
+    "description": "Edit button text"
+  },
+  "delete": "Supprimer",
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "add": "Ajouter",
+  "@add": {
+    "description": "Add button text"
+  },
+  "search": "Rechercher",
+  "@search": {
+    "description": "Search placeholder text"
+  },
+  "filter": "Filtrer",
+  "@filter": {
+    "description": "Filter button text"
+  },
+  "sort": "Trier",
+  "@sort": {
+    "description": "Sort button text"
+  },
+  "refresh": "Actualiser",
+  "@refresh": {
+    "description": "Refresh button text"
+  },
+
+  "account": "Compte",
+  "@account": {
+    "description": "Account section title"
+  },
+  "profileSettings": "Paramètres du profil",
+  "@profileSettings": {
+    "description": "Profile settings menu item"
+  },
+  "updatePersonalInfo": "Mettre à jour vos informations personnelles",
+  "@updatePersonalInfo": {
+    "description": "Profile settings subtitle"
+  },
+  "changePassword": "Changer le mot de passe",
+  "@changePassword": {
+    "description": "Change password menu item"
+  },
+  "updateAccountPassword": "Mettre à jour le mot de passe de votre compte",
+  "@updateAccountPassword": {
+    "description": "Change password subtitle"
+  },
+  "emailSettings": "Paramètres e-mail",
+  "@emailSettings": {
+    "description": "Email settings menu item"
+  },
+  "manageEmailPreferences": "Gérer les préférences e-mail",
+  "@manageEmailPreferences": {
+    "description": "Email settings subtitle"
+  },
+  "application": "Application",
+  "@application": {
+    "description": "Application section title"
+  },
+  "appearance": "Apparence",
+  "@appearance": {
+    "description": "Appearance menu item"
+  },
+  "themeDisplaySettings": "Paramètres de thème et d'affichage",
+  "@themeDisplaySettings": {
+    "description": "Appearance subtitle"
+  },
+  "dataStorage": "Données et stockage",
+  "@dataStorage": {
+    "description": "Data storage menu item"
+  },
+  "backupSyncSettings": "Paramètres de sauvegarde et synchronisation",
+  "@backupSyncSettings": {
+    "description": "Data storage subtitle"
+  },
+  "business": "Entreprise",
+  "@business": {
+    "description": "Business section title"
+  },
+  "businessProfile": "Profil d'entreprise",
+  "@businessProfile": {
+    "description": "Business profile menu item"
+  },
+  "companyInfoBranding": "Informations de l'entreprise et image de marque",
+  "@companyInfoBranding": {
+    "description": "Business profile subtitle"
+  },
+  "invoiceSettings": "Paramètres de facturation",
+  "@invoiceSettings": {
+    "description": "Invoice settings menu item"
+  },
+  "defaultInvoiceTemplates": "Modèles de factures et paramètres par défaut",
+  "@defaultInvoiceTemplates": {
+    "description": "Invoice settings subtitle"
+  },
+  "taxSettings": "Paramètres fiscaux",
+  "@taxSettings": {
+    "description": "Tax settings menu item"
+  },
+  "taxRatesCalculation": "Taux d'imposition et préférences de calcul",
+  "@taxRatesCalculation": {
+    "description": "Tax settings subtitle"
+  },
+  "currencyRates": "Devises et taux",
+  "@currencyRates": {
+    "description": "Currency rates menu item"
+  },
+  "supportInformation": "Support et informations",
+  "@supportInformation": {
+    "description": "Support section title"
+  },
+  "helpSupport": "Aide et support",
+  "@helpSupport": {
+    "description": "Help support menu item"
+  },
+  "getHelpContactSupport": "Obtenir de l'aide et contacter le support",
+  "@getHelpContactSupport": {
+    "description": "Help support subtitle"
+  },
+  "termsPrivacy": "Conditions et confidentialité",
+  "@termsPrivacy": {
+    "description": "Terms privacy menu item"
+  },
+  "termsServicePrivacyPolicy": "Conditions d'utilisation et politique de confidentialité",
+  "@termsServicePrivacyPolicy": {
+    "description": "Terms privacy subtitle"
+  },
+  "appVersionInfo": "Version de l'application et informations",
+  "@appVersionInfo": {
+    "description": "About subtitle"
+  },
+  "userName": "Nom d'utilisateur",
+  "@userName": {
+    "description": "Default user name"
+  },
+  "userEmail": "utilisateur@exemple.com",
+  "@userEmail": {
+    "description": "Default user email"
+  },
+  "freelancerAccount": "Compte freelance",
+  "@freelancerAccount": {
+    "description": "Account type label"
+  },
+  "signOut": "Se déconnecter",
+  "@signOut": {
+    "description": "Sign out button"
+  },
+  "selectLanguage": "Sélectionner la langue",
+  "@selectLanguage": {
+    "description": "Language selection dialog title"
+  },
+  "autoSync": "Synchronisation automatique",
+  "@autoSync": {
+    "description": "Auto sync setting"
+  },
+  "autoSyncDescription": "Synchroniser automatiquement les données en ligne",
+  "@autoSyncDescription": {
+    "description": "Auto sync description"
+  },
+  "databaseBackupRestore": "Sauvegarde et restauration de la base de données",
+  "@databaseBackupRestore": {
+    "description": "Database section title"
+  },
+  "backup": "Sauvegarder",
+  "@backup": {
+    "description": "Backup button"
+  },
+  "restore": "Restaurer",
+  "@restore": {
+    "description": "Restore button"
+  },
+  "settingsExportImport": "Export et import des paramètres",
+  "@settingsExportImport": {
+    "description": "Settings section title"
+  },
+  "export": "Exporter",
+  "@export": {
+    "description": "Export button"
+  },
+  "import": "Importer",
+  "@import": {
+    "description": "Import button"
+  },
+  "resetDatabase": "Réinitialiser la base de données",
+  "@resetDatabase": {
+    "description": "Reset database button"
+  },
+  "close": "Fermer",
+  "@close": {
+    "description": "Close button"
+  },
+  "defaultCurrency": "Devise par défaut",
+  "@defaultCurrency": {
+    "description": "Default currency dialog title"
+  },
+  "importSettings": "Importer les paramètres",
+  "@importSettings": {
+    "description": "Import settings dialog title"
+  },
+  "pasteSettingsJson": "Coller le JSON des paramètres ici",
+  "@pasteSettingsJson": {
+    "description": "Settings import placeholder"
+  },
+  "restoreDatabase": "Restaurer la base de données",
+  "@restoreDatabase": {
+    "description": "Restore database dialog title"
+  },
+  "restoreCancelled": "Restauration annulée",
+  "@restoreCancelled": {
+    "description": "Restore cancelled message"
+  },
+
+  "welcomeBack": "Bon retour",
+  "@welcomeBack": {
+    "description": "Login screen welcome message"
+  },
+  "signInToContinue": "Connectez-vous pour continuer",
+  "@signInToContinue": {
+    "description": "Login screen subtitle"
+  },
+  "createAccount": "Créer un compte",
+  "@createAccount": {
+    "description": "Register screen title"
+  },
+  "joinOurCommunity": "Rejoignez notre communauté",
+  "@joinOurCommunity": {
+    "description": "Register screen subtitle"
+  },
+  "fullName": "Nom complet",
+  "@fullName": {
+    "description": "Full name field label"
+  },
+  "enterFullName": "Entrez votre nom complet",
+  "@enterFullName": {
+    "description": "Full name field placeholder"
+  },
+  "email": "E-mail",
+  "@email": {
+    "description": "Email field label"
+  },
+  "enterEmail": "Entrez votre e-mail",
+  "@enterEmail": {
+    "description": "Email field placeholder"
+  },
+  "password": "Mot de passe",
+  "@password": {
+    "description": "Password field label"
+  },
+  "enterPassword": "Entrez votre mot de passe",
+  "@enterPassword": {
+    "description": "Password field placeholder"
+  },
+  "confirmPassword": "Confirmer le mot de passe",
+  "@confirmPassword": {
+    "description": "Confirm password field label"
+  },
+  "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+  "@confirmPasswordPlaceholder": {
+    "description": "Confirm password field placeholder"
+  },
+  "signUp": "S'inscrire",
+  "@signUp": {
+    "description": "Sign up button text"
+  },
+  "dontHaveAccount": "Vous n'avez pas de compte ? ",
+  "@dontHaveAccount": {
+    "description": "Login screen sign up prompt"
+  },
+  "alreadyHaveAccount": "Vous avez déjà un compte ? ",
+  "@alreadyHaveAccount": {
+    "description": "Register screen login prompt"
+  },
+  "signIn": "Se connecter",
+  "@signIn": {
+    "description": "Sign in button text"
+  },
+  "loading": "Chargement...",
+  "@loading": {
+    "description": "Loading message"
+  },
+  "error": "Erreur",
+  "@error": {
+    "description": "Error title"
+  },
+  "success": "Succès",
+  "@success": {
+    "description": "Success title"
+  },
+  "warning": "Avertissement",
+  "@warning": {
+    "description": "Warning title"
+  },
+  "info": "Information",
+  "@info": {
+    "description": "Info title"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "OK button"
+  },
+  "yes": "Oui",
+  "@yes": {
+    "description": "Yes button"
+  },
+  "no": "Non",
+  "@no": {
+    "description": "No button"
+  },
+  "confirm": "Confirmer",
+  "@confirm": {
+    "description": "Confirm button"
+  },
+  "retry": "Réessayer",
+  "@retry": {
+    "description": "Retry button"
+  },
+  "continueAction": "Continuer",
+  "@continueAction": {
+    "description": "Continue button"
+  },
+  "back": "Retour",
+  "@back": {
+    "description": "Back button"
+  },
+  "next": "Suivant",
+  "@next": {
+    "description": "Next button"
+  },
+  "done": "Terminé",
+  "@done": {
+    "description": "Done button"
+  },
+  "apply": "Appliquer",
+  "@apply": {
+    "description": "Apply button"
+  },
+  "clear": "Effacer",
+  "@clear": {
+    "description": "Clear button"
+  },
+  "reset": "Réinitialiser",
+  "@reset": {
+    "description": "Reset button"
+  },
+  "submit": "Soumettre",
+  "@submit": {
+    "description": "Submit button"
+  },
+  "send": "Envoyer",
+  "@send": {
+    "description": "Send button"
+  },
+  "update": "Mettre à jour",
+  "@update": {
+    "description": "Update button"
+  },
+  "create": "Créer",
+  "@create": {
+    "description": "Create button"
+  },
+  "remove": "Supprimer",
+  "@remove": {
+    "description": "Remove button"
+  },
+  "select": "Sélectionner",
+  "@select": {
+    "description": "Select button"
+  },
+  "choose": "Choisir",
+  "@choose": {
+    "description": "Choose button"
+  },
+  "browse": "Parcourir",
+  "@browse": {
+    "description": "Browse button"
+  },
+  "upload": "Télécharger",
+  "@upload": {
+    "description": "Upload button"
+  },
+  "download": "Télécharger",
+  "@download": {
+    "description": "Download button"
+  },
+  "share": "Partager",
+  "@share": {
+    "description": "Share button"
+  },
+  "copy": "Copier",
+  "@copy": {
+    "description": "Copy button"
+  },
+  "paste": "Coller",
+  "@paste": {
+    "description": "Paste button"
+  },
+  "cut": "Couper",
+  "@cut": {
+    "description": "Cut button"
+  },
+  "undo": "Annuler",
+  "@undo": {
+    "description": "Undo button"
+  },
+  "redo": "Rétablir",
+  "@redo": {
+    "description": "Redo button"
+  },
+
+  "noActivitiesYet": "Aucune activité pour le moment",
+  "@noActivitiesYet": {
+    "description": "Empty activities message"
+  },
+  "noActivitiesMatchFilters": "Aucune activité ne correspond à vos filtres",
+  "@noActivitiesMatchFilters": {
+    "description": "No filtered activities message"
+  },
+  "tryAdjustingFilters": "Essayez d'ajuster votre recherche ou vos filtres",
+  "@tryAdjustingFilters": {
+    "description": "Filter adjustment suggestion"
+  },
+  "activitiesWillAppear": "Les activités apparaîtront ici au fur et à mesure que vous utilisez l'application",
+  "@activitiesWillAppear": {
+    "description": "Activities explanation message"
+  },
+  "noDeadlinesFound": "Aucune échéance trouvée",
+  "@noDeadlinesFound": {
+    "description": "No deadlines message"
+  },
+  "addProjectsInvoices": "Ajoutez des projets et des factures pour suivre les échéances",
+  "@addProjectsInvoices": {
+    "description": "Deadlines explanation message"
+  },
+  "recentActivities": "Activités récentes",
+  "@recentActivities": {
+    "description": "Recent activities section title"
+  },
+  "demo": "Démo",
+  "@demo": {
+    "description": "Demo badge text"
+  },
+  "showingDemoDeadlines": "Affichage des échéances de démonstration. Ajoutez de vrais projets et factures pour suivre les échéances réelles.",
+  "@showingDemoDeadlines": {
+    "description": "Demo deadlines explanation"
+  },
+  "reports": "Rapports",
+  "@reports": {
+    "description": "Reports screen title"
+  },
+  "filters": "Filtres",
+  "@filters": {
+    "description": "Filters section title"
+  },
+  "timePeriod": "Période",
+  "@timePeriod": {
+    "description": "Time period filter label"
+  },
+  "advancedFilters": "Filtres avancés",
+  "@advancedFilters": {
+    "description": "Advanced filters section title"
+  },
+  "client": "Client",
+  "@client": {
+    "description": "Client filter label"
+  },
+  "project": "Projet",
+  "@project": {
+    "description": "Project filter label"
+  },
+  "status": "Statut",
+  "@status": {
+    "description": "Status filter label"
+  },
+  "amount": "Montant",
+  "@amount": {
+    "description": "Amount filter label"
+  },
+  "min": "Min",
+  "@min": {
+    "description": "Minimum amount placeholder"
+  },
+  "max": "Max",
+  "@max": {
+    "description": "Maximum amount placeholder"
+  },
+  "all": "Tous",
+  "@all": {
+    "description": "All filter option"
+  },
+  "completed": "Terminé",
+  "@completed": {
+    "description": "Completed status"
+  },
+  "inProgress": "En cours",
+  "@inProgress": {
+    "description": "In progress status"
+  },
+  "notStarted": "Non commencé",
+  "@notStarted": {
+    "description": "Not started status"
+  },
+  "pending": "En attente",
+  "@pending": {
+    "description": "Pending status"
+  },
+  "customDateRange": "Plage de dates personnalisée",
+  "@customDateRange": {
+    "description": "Custom date range label"
+  },
+  "selectDateRange": "Sélectionner une plage de dates",
+  "@selectDateRange": {
+    "description": "Date range picker placeholder"
+  },
+  "markAsPaid": "Marquer comme payé",
+  "@markAsPaid": {
+    "description": "Mark as paid menu option"
+  },
+  "createPayment": "Créer un paiement",
+  "@createPayment": {
+    "description": "Create payment button"
+  },
+  "paymentDetails": "Détails du paiement :",
+  "@paymentDetails": {
+    "description": "Payment details label"
+  },
+  "creatingPayment": "Création du paiement...",
+  "@creatingPayment": {
+    "description": "Creating payment loading message"
+  },
+  "paymentCreatedSuccessfully": "Paiement créé avec succès !",
+  "@paymentCreatedSuccessfully": {
+    "description": "Payment creation success message"
+  },
+  "errorCreatingPayment": "Erreur lors de la création du paiement",
+  "@errorCreatingPayment": {
+    "description": "Payment creation error message"
+  },
+  "cannotMarkPaid": "Impossible de marquer le projet comme payé : Informations du projet ou du client manquantes",
+  "@cannotMarkPaid": {
+    "description": "Cannot mark paid error message"
+  },
+  "projectFullyPaid": "Le projet est déjà entièrement payé",
+  "@projectFullyPaid": {
+    "description": "Project fully paid message"
+  },
+  "createPaymentForRemaining": "Créer un paiement pour le montant restant ?",
+  "@createPaymentForRemaining": {
+    "description": "Payment confirmation question"
+  },
+  "languageChanged": "Langue changée en",
+  "@languageChanged": {
+    "description": "Language change success message prefix"
+  },
+
+  "failedToLoadDashboard": "Échec du chargement du tableau de bord",
+  "@failedToLoadDashboard": {
+    "description": "Dashboard loading error message"
+  },
+  "errorLoadingDashboard": "Erreur lors du chargement du tableau de bord",
+  "@errorLoadingDashboard": {
+    "description": "Dashboard loading error prefix"
+  },
+  "errorRefreshingDashboard": "Erreur lors de l'actualisation du tableau de bord",
+  "@errorRefreshingDashboard": {
+    "description": "Dashboard refresh error prefix"
+  },
+  "quickActions": "Actions rapides",
+  "@quickActions": {
+    "description": "Quick actions section title"
+  },
+  "newProject": "Nouveau projet",
+  "@newProject": {
+    "description": "New project quick action"
+  },
+  "addClient": "Ajouter un client",
+  "@addClient": {
+    "description": "Add client quick action"
+  },
+  "recordPayment": "Enregistrer un paiement",
+  "@recordPayment": {
+    "description": "Record payment quick action"
+  },
+  "createInvoice": "Créer une facture",
+  "@createInvoice": {
+    "description": "Create invoice quick action"
+  },
+  "upcomingDeadlines": "Échéances à venir",
+  "@upcomingDeadlines": {
+    "description": "Upcoming deadlines section title"
+  },
+  "viewAll": "Voir tout",
+  "@viewAll": {
+    "description": "View all button text"
+  },
+  "showingDemoData": "Affichage des données de démonstration. Commencez à ajouter des projets, des paiements et des factures pour voir les vraies activités.",
+  "@showingDemoData": {
+    "description": "Demo data explanation for activities"
+  },
+  "showingDemoDeadlines": "Affichage des échéances de démonstration. Ajoutez de vrais projets et factures pour suivre les échéances réelles.",
+  "@showingDemoDeadlines": {
+    "description": "Demo data explanation for deadlines"
+  },
+  "thisWeek": "Cette semaine",
+  "@thisWeek": {
+    "description": "This week time period"
+  },
+  "lastWeek": "La semaine dernière",
+  "@lastWeek": {
+    "description": "Last week time period"
+  },
+  "last30Days": "Les 30 derniers jours",
+  "@last30Days": {
+    "description": "Last 30 days time period"
+  },
+  "last90Days": "Les 90 derniers jours",
+  "@last90Days": {
+    "description": "Last 90 days time period"
+  },
+  "thisYear": "Cette année",
+  "@thisYear": {
+    "description": "This year time period"
+  },
+  "lastYear": "L'année dernière",
+  "@lastYear": {
+    "description": "Last year time period"
+  },
+  "totalEarnings": "Gains totaux",
+  "@totalEarnings": {
+    "description": "Total earnings label"
+  },
+  "completedProjects": "Projets terminés",
+  "@completedProjects": {
+    "description": "Completed projects label"
+  },
+  "unpaidProjects": "Projets impayés",
+  "@unpaidProjects": {
+    "description": "Unpaid projects label"
+  }
+}
