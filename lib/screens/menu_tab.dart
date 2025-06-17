@@ -31,7 +31,7 @@ class _MenuTabState extends State<MenuTab> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Business Management',
+            AppLocalizations.of(context)?.businessManagement??'Business Management',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textXLarge,
               fontWeight: FontWeight.w600,
@@ -42,7 +42,7 @@ class _MenuTabState extends State<MenuTab> {
            const SizedBox(height: 8),
 
           Text(
-            'Manage all aspects of your freelance business',
+            AppLocalizations.of(context)?.manageAllBusiness??'Manage all aspects of your freelance business',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textMedium,
               color: AppColors.textSecondary,
@@ -108,7 +108,7 @@ class _MenuTabState extends State<MenuTab> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Project Management',
+                      AppLocalizations.of(context)?.projectManagement??'Project Management',
                       style: GoogleFonts.poppins(
                         fontSize: AppConstants.textLarge,
                         fontWeight: FontWeight.w600,
@@ -117,7 +117,7 @@ class _MenuTabState extends State<MenuTab> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      'Manage your projects and track progress',
+                      AppLocalizations.of(context)?.manageProjectsTrackProgress??'Manage your projects and track progress',
                       style: GoogleFonts.poppins(
                         fontSize: AppConstants.textSmall,
                         color: Colors.white.withValues(alpha: 0.9),
@@ -149,7 +149,7 @@ class _MenuTabState extends State<MenuTab> {
                     ),
                   ),
                   child: Text(
-                    'View Projects',
+                    AppLocalizations.of(context)?.viewProjects??'View Projects',
                     style: GoogleFonts.poppins(
                       fontSize: AppConstants.textMedium,
                       fontWeight: FontWeight.w600,
@@ -176,7 +176,7 @@ class _MenuTabState extends State<MenuTab> {
                     color: Colors.white,
                     size: 20,
                   ),
-                  tooltip: 'Add Project',
+                  tooltip: AppLocalizations.of(context)?.addProject??'Add Project',
                 ),
               ),
             ],
@@ -191,7 +191,7 @@ class _MenuTabState extends State<MenuTab> {
       {
         'icon': FontAwesomeIcons.users,
         'title': AppLocalizations.of(context)!.clients,
-        'subtitle': 'Manage clients',
+        'subtitle': AppLocalizations.of(context)?.manageClients??'Manage clients',
         'color': Colors.blue,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -201,7 +201,7 @@ class _MenuTabState extends State<MenuTab> {
       {
         'icon': FontAwesomeIcons.creditCard,
         'title': AppLocalizations.of(context)!.payments,
-        'subtitle': 'Track payments',
+        'subtitle': AppLocalizations.of(context)?.trackPayments??'Track payments',
         'color': Colors.green,
         'onTap': () async {
           await Navigator.of(context).push(
@@ -217,7 +217,7 @@ class _MenuTabState extends State<MenuTab> {
       {
         'icon': FontAwesomeIcons.receipt,
         'title': AppLocalizations.of(context)!.expenses,
-        'subtitle': 'Manage expenses',
+        'subtitle': AppLocalizations.of(context)?.manageExpenses??'Manage expenses',
         'color': Colors.orange,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -227,7 +227,7 @@ class _MenuTabState extends State<MenuTab> {
       {
         'icon': FontAwesomeIcons.fileInvoice,
         'title': AppLocalizations.of(context)!.invoices,
-        'subtitle': 'Create invoices',
+        'subtitle': AppLocalizations.of(context)?.createInvoices??'Create invoices',
         'color': Colors.purple,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -236,8 +236,8 @@ class _MenuTabState extends State<MenuTab> {
       },
       {
         'icon': FontAwesomeIcons.calculator,
-        'title': 'Taxes',
-        'subtitle': 'Tax management',
+        'title': AppLocalizations.of(context)?.taxes??'Taxes',
+        'subtitle': AppLocalizations.of(context)?.taxManagement??'Tax management',
         'color': Colors.red,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(
@@ -246,8 +246,8 @@ class _MenuTabState extends State<MenuTab> {
       },
       {
         'icon': FontAwesomeIcons.calendar,
-        'title': 'Calendar',
-        'subtitle': 'View events',
+        'title': AppLocalizations.of(context)?.calendar??'Calendar',
+        'subtitle': AppLocalizations.of(context)?.viewEvents??'View events',
         'color': Colors.teal,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const CalendarScreen()),
@@ -255,8 +255,8 @@ class _MenuTabState extends State<MenuTab> {
       },
       {
         'icon': FontAwesomeIcons.chartLine,
-        'title': 'Reports',
-        'subtitle': 'Business analytics',
+        'title': AppLocalizations.of(context)?.reports??'Reports',
+        'subtitle': AppLocalizations.of(context)?.businessAnalytics??'Business analytics',
         'color': Colors.indigo,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const ReportsScreen()),
@@ -264,7 +264,7 @@ class _MenuTabState extends State<MenuTab> {
       },
       {
         'icon': FontAwesomeIcons.gear,
-        'title': 'Settings',
+        'title': AppLocalizations.of(context)?.settings??'Settings',
         'subtitle': 'App preferences',
         'color': Colors.grey,
         'onTap': () => Navigator.of(context).push(

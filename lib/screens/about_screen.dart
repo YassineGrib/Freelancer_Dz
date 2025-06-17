@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:freelancer_mobile/l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:path/path.dart';
 import '../utils/colors.dart';
 import '../utils/constants.dart';
 
@@ -13,7 +15,7 @@ class AboutScreen extends StatelessWidget {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          'About',
+          AppLocalizations.of(context)!.about,
           style: GoogleFonts.poppins(
             fontSize: AppConstants.textXLarge,
             fontWeight: FontWeight.w600,

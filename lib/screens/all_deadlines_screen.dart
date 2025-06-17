@@ -5,6 +5,8 @@ import '../utils/colors.dart';
 import '../utils/constants.dart';
 import '../models/dashboard_model.dart';
 import '../services/dashboard_service.dart';
+import '../l10n/app_localizations.dart';
+
 
 class AllDeadlinesScreen extends StatefulWidget {
   const AllDeadlinesScreen({super.key});
@@ -63,7 +65,7 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          'All Deadlines',
+          AppLocalizations.of(context)?.allDeadlines??'All Deadlines',
           style: GoogleFonts.poppins(
             fontSize: AppConstants.textXLarge,
             fontWeight: FontWeight.w600,
@@ -80,7 +82,7 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
           IconButton(
             icon: const Icon(Icons.refresh, color: AppColors.textPrimary),
             onPressed: _loadDeadlines,
-            tooltip: 'Refresh',
+            tooltip: AppLocalizations.of(context)?.refresh??'Refresh',
           ),
         ],
       ),
@@ -121,7 +123,7 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
         itemBuilder: (context, index) {
           final filter = filters[index];
           final isSelected = _selectedFilter == filter;
-          final title = filter?.displayName ?? 'All';
+          final title = filter?.displayName(context) ?? AppLocalizations.of(context)?.all??'All';
 
           return Padding(
             padding: const EdgeInsets.only(right: 8),
@@ -147,14 +149,14 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.schedule,
             size: 64,
             color: AppColors.textSecondary,
           ),
           const SizedBox(height: 16),
           Text(
-            'No deadlines found',
+            AppLocalizations.of(context)?.noDeadlinesFound??'No deadlines found',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textLarge,
               fontWeight: FontWeight.w600,
@@ -164,14 +166,12 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
           const SizedBox(height: 8),
           Text(
             _selectedFilter == null
-                ? 'Add projects and invoices to track deadlines'
-                : 'No ${_selectedFilter!.displayName.toLowerCase()} deadlines found',
-            style: GoogleFonts.poppins(
-              fontSize: AppConstants.textMedium,
-              color: AppColors.textSecondary,
-            ),
+                ? AppLocalizations.of(context)!.noDeadlinesFound
+                : AppLocalizations.of(context)!
+                .noDeadlinesWithFilter(_selectedFilter!.displayName(context).toLowerCase()),
             textAlign: TextAlign.center,
-          ),
+          )
+
         ],
       ),
     );
@@ -236,7 +236,7 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Icon(
+                   const  Icon(
                       Icons.access_time,
                       size: 14,
                       color: AppColors.textSecondary,
@@ -261,7 +261,7 @@ class _AllDeadlinesScreenState extends State<AllDeadlinesScreen> {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              deadline.formattedDeadline,
+              deadline.formattedDeadline(context),
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textSmall,
                 fontWeight: FontWeight.w600,

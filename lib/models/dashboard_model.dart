@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
+
+import '../l10n/app_localizations.dart';
 
 class DashboardStats {
   final int totalClients;
@@ -157,17 +160,20 @@ class UpcomingDeadline {
   bool get isToday => daysUntil == 0;
   bool get isTomorrow => daysUntil == 1;
 
-  String get formattedDeadline {
+  String formattedDeadline(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     if (isOverdue) {
-      return 'Overdue by ${-daysUntil} day${-daysUntil != 1 ? 's' : ''}';
+      return loc.overdueBy(-daysUntil);
     } else if (isToday) {
-      return 'Due today';
+      return loc.dueToday;
     } else if (isTomorrow) {
-      return 'Due tomorrow';
+      return loc.dueTomorrow;
     } else {
-      return 'Due in $daysUntil day${daysUntil != 1 ? 's' : ''}';
+      return loc.dueIn(daysUntil);
     }
   }
+
+
 
   Color get urgencyColor {
     if (isOverdue) return Colors.red;
@@ -198,19 +204,21 @@ extension DeadlineTypeExtension on DeadlineType {
     }
   }
 
-  String get displayName {
+  String displayName(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     switch (this) {
       case DeadlineType.project:
-        return 'Project';
+        return loc.project;
       case DeadlineType.invoice:
-        return 'Invoice';
+        return loc.invoice;
       case DeadlineType.tax:
-        return 'Tax';
+        return loc.tax;
       case DeadlineType.payment:
-        return 'Payment';
+        return loc.payment;
     }
   }
 }
+
 
 class MonthlyData {
   final String month;

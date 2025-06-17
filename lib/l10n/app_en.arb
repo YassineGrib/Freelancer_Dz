@@ -571,10 +571,6 @@
   "@addProjectsInvoices": {
     "description": "Deadlines explanation message"
   },
-  "recentActivities": "Recent Activities",
-  "@recentActivities": {
-    "description": "Recent activities section title"
-  },
   "demo": "Demo",
   "@demo": {
     "description": "Demo badge text"
@@ -704,41 +700,9 @@
   "@errorRefreshingDashboard": {
     "description": "Dashboard refresh error prefix"
   },
-  "quickActions": "Quick Actions",
-  "@quickActions": {
-    "description": "Quick actions section title"
-  },
-  "newProject": "New Project",
-  "@newProject": {
-    "description": "New project quick action"
-  },
-  "addClient": "Add Client",
-  "@addClient": {
-    "description": "Add client quick action"
-  },
-  "recordPayment": "Record Payment",
-  "@recordPayment": {
-    "description": "Record payment quick action"
-  },
-  "createInvoice": "Create Invoice",
-  "@createInvoice": {
-    "description": "Create invoice quick action"
-  },
-  "upcomingDeadlines": "Upcoming Deadlines",
-  "@upcomingDeadlines": {
-    "description": "Upcoming deadlines section title"
-  },
-  "viewAll": "View All",
-  "@viewAll": {
-    "description": "View all button text"
-  },
   "showingDemoData": "Showing demo data. Start adding projects, payments, and invoices to see real activities.",
   "@showingDemoData": {
     "description": "Demo data explanation for activities"
-  },
-  "showingDemoDeadlines": "Showing demo deadlines. Add real projects and invoices to track actual deadlines.",
-  "@showingDemoDeadlines": {
-    "description": "Demo data explanation for deadlines"
   },
   "thisWeek": "This Week",
   "@thisWeek": {
@@ -775,5 +739,229 @@
   "unpaidProjects": "Unpaid Projects",
   "@unpaidProjects": {
     "description": "Unpaid projects label"
-  }
+  },
+  "monthlyPerformance": "Monthly Performance",
+  "@monthlyPerformance": {
+    "description": "Section or title showing performance data for the month"
+  },
+  "yearlyPerformance": "Yearly Performance",
+  "@yearlyPerformance": {
+    "description": "Section or title showing performance data for the year"
+  },
+  "lastUpdated": "Last updated",
+  "@lastUpdated": {
+    "description": "Label showing the last time data was updated"
+  },
+  "refreshDashboard": "Refresh Dashboard",
+  "@refreshDashboard": {
+    "description": "Button or action to refresh the dashboard data"
+  },
+  "profit": "Profit",
+  "@profit": {
+    "description": "Label showing financial profit"
+  },
+  "revenue": "Revenue",
+  "@revenue": {
+    "description": "Label showing total income before expenses"
+  },
+  "active": "Active",
+  "@active": {
+    "description": "Status label for active items or projects"
+  },
+  "netIncome": "Net Income",
+  "@netIncome": {
+    "description": "Label showing income after expenses"
+  },
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "Indicates something just happened"
+  },
+  "minutesAgo": "{minutes}m ago",
+  "@minutesAgo": {
+    "description": "Indicates how many minutes ago"
+  },
+  "hoursAgo": "{hours}h ago",
+  "@hoursAgo": {
+    "description": "Indicates how many hours ago"
+  },
+  "daysAgo": "{days}d ago",
+  "@daysAgo": {
+    "description": "Indicates how many days ago"
+  },
+  "currencyMillion": "{amount}M DA",
+  "@currencyMillion": {
+    "description": "Currency format in millions"
+  },
+  "currencyThousand": "{amount}K DA",
+  "@currencyThousand": {
+    "description": "Currency format in thousands"
+  },
+  "currencyPlain": "{amount} DA",
+  "@currencyPlain": {
+    "description": "Currency format for small values"
+  },
+  "overduePayment": "Overdue {days} days",
+  "@overduePayment": {
+    "description": "Alert label for overdue payments"
+  },
+  "dueInDays": "Due in {days} days",
+  "@dueInDays": {
+    "description": "Alert label for upcoming payments"
+  },
+  "taxManagement": "Tax Management",
+  "taxYear": "Tax Year:",
+  "taxStatistics": "Tax Statistics",
+  "paid": "Paid",
+  "overdue": "Overdue",
+  "alerts": "Alerts",
+  "calculateTaxesForYear": "Calculate your taxes for this year",
+  "calculateTaxes": "Calculate Taxes",
+
+  "taxPaymentsForYear": "Tax Payments {year}",
+  "@taxPaymentsForYear": {
+    "description": "Section title for tax payments of a specific year",
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+
+  "noTaxesCalculated": "No taxes calculated for {year}",
+  "@noTaxesCalculated": {
+    "description": "Message when no taxes calculated for a year",
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+
+  "dueDate": "Due: {day}/{month}/{year}",
+  "@dueDate": {
+    "description": "Formatted due date",
+    "placeholders": {
+      "day": {},
+      "month": {},
+      "year": {}
+    }
+  },
+  "currencyWithSymbol": "{amount} DA",
+  "@currencyWithSymbol": {
+    "description": "Currency amount followed by currency symbol",
+    "placeholders": {
+      "amount": {}
+    }
+  },
+ "dueToday": "Due today",
+  "@dueToday": {
+    "description": "Label for a payment due today"
+  },
+  "dueTomorrow": "Due tomorrow",
+  "@dueTomorrow": {
+    "description": "Label for a payment due tomorrow"
+  },
+  "overdueBy": "Overdue by {days, plural, =1{# day} other{# days}}",
+  "@overdueBy": {
+    "description": "Indicates how many days a payment is overdue",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "dueIn": "Due in {days, plural, =0{today} =1{{days} day} other{{days} days}}",
+  "@dueIn": {
+    "description": "Indicates how many days until the payment is due",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "businessManagement": "إدارة الأعمال",
+  "manageAllBusiness": "إدارة جميع جوانب عملك الحر",
+  "projectManagement": "إدارة المشاريع",
+  "manageProjectsTrackProgress": "إدارة مشاريعك وتتبع التقدم",
+  "viewProjects": "عرض المشاريع",
+  "addProject": "إضافة مشروع",
+  "manageClients": "إدارة العملاء",
+  "trackPayments": "تتبع المدفوعات",
+  "manageExpenses": "إدارة النفقات",
+  "createInvoices": "إنشاء الفواتير",
+  "taxes": "الضرائب",
+  "calendar": "التقويم",
+  "viewEvents": "عرض الأحداث",
+  "businessAnalytics": "تحليلات الأعمال",
+  "allDeadlines": "All Deadlines",
+  "@allDeadlines": {
+    "description": "Section title for displaying all deadlines"
+  },
+  "noDeadlinesWithFilter": "No {filter} deadlines found",
+  "@noDeadlinesWithFilter": {
+    "description": "Message when no deadlines found for a given filter",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+
+    "appInformation": "App Information",
+    "version": "Version",
+    "buildNumber": "Build Number",
+    "releaseDate": "Release Date",
+    "platform": "Platform",
+    "framework": "Framework",
+    "database": "Database",
+    "developer": "Developer",
+    "developerName": "Freelancer Mobile Team",
+    "developerDescription": "Specialized in mobile app development",
+    "appDescription": "Designed specifically for Algerian freelancers to manage their business efficiently with local tax compliance and Arabic language support.",
+    "keyFeatures": "Key Features",
+    "clientManagement": "Client Management",
+    "paymentTracking": "Payment Tracking",
+    "expenseManagement": "Expense Management",
+    "invoiceGeneration": "Invoice Generation",
+    "algerianTaxManagement": "Algerian Tax Management",
+    "calendarEvents": "Calendar & Events",
+    "businessReports": "Business Reports",
+    "smartNotifications": "Smart Notifications",
+    "legal": "Legal",
+    "termsOfService": "Terms of Service",
+    "termsOfServiceDescription": "Read our terms and conditions",
+    "privacyPolicy": "Privacy Policy",
+    "privacyPolicyDescription": "How we protect your data",
+    "openSourceLicenses": "Open Source Licenses",
+    "openSourceLicensesDescription": "Third-party libraries and licenses",
+    "contactSupport": "Contact & Support",
+    "emailSupport": "Email Support",
+    "website": "Website",
+    "rateUs": "Rate Us",
+    "reportBug": "Report Bug",
+    "rateUsDescription": "Rate the app on Play Store",
+    "reportBugDescription": "Help us improve the app",
+  "invoice": "Invoice",
+  "tax": "Tax",
+  "payment": "Payment"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

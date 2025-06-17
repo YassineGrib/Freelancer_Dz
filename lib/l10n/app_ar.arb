@@ -1,0 +1,927 @@
+{
+  "@@locale": "ar",
+  "appTitle": "مستقل جوال",
+  "@appTitle": {
+    "description": "عنوان التطبيق"
+  },
+  "welcome": "مرحبًا",
+  "@welcome": {
+    "description": "رسالة الترحيب"
+  },
+  "login": "تسجيل الدخول",
+  "@login": {
+    "description": "نص زر تسجيل الدخول"
+  },
+  "logout": "تسجيل الخروج",
+  "@logout": {
+    "description": "نص زر تسجيل الخروج"
+  },
+  "dashboard": "لوحة التحكم",
+  "@dashboard": {
+    "description": "عنوان شاشة لوحة التحكم"
+  },
+  "settings": "الإعدادات",
+  "@settings": {
+    "description": "عنوان شاشة الإعدادات"
+  },
+  "projects": "المشاريع",
+  "@projects": {
+    "description": "عنوان تبويب المشاريع"
+  },
+  "clients": "العملاء",
+  "@clients": {
+    "description": "عنوان تبويب العملاء"
+  },
+  "payments": "المدفوعات",
+  "@payments": {
+    "description": "عنوان تبويب المدفوعات"
+  },
+  "invoices": "الفواتير",
+  "@invoices": {
+    "description": "عنوان تبويب الفواتير"
+  },
+  "expenses": "المصروفات",
+  "@expenses": {
+    "description": "عنوان تبويب المصروفات"
+  },
+  "menu": "القائمة",
+  "@menu": {
+    "description": "عنوان تبويب القائمة"
+  },
+  "quickActions": "إجراءات سريعة",
+  "@quickActions": {
+    "description": "عنوان قسم الإجراءات السريعة"
+  },
+  "newProject": "مشروع جديد",
+  "@newProject": {
+    "description": "إجراء مشروع جديد"
+  },
+  "addClient": "إضافة عميل",
+  "@addClient": {
+    "description": "إجراء إضافة عميل"
+  },
+  "recordPayment": "تسجيل الدفع",
+  "@recordPayment": {
+    "description": "إجراء تسجيل الدفع"
+  },
+  "createInvoice": "إنشاء فاتورة",
+  "@createInvoice": {
+    "description": "إجراء إنشاء فاتورة"
+  },
+  "recentActivities": "الأنشطة الأخيرة",
+  "@recentActivities": {
+    "description": "عنوان قسم الأنشطة الأخيرة"
+  },
+  "upcomingDeadlines": "المواعيد النهائية القادمة",
+  "@upcomingDeadlines": {
+    "description": "عنوان قسم المواعيد النهائية القادمة"
+  },
+  "viewAll": "عرض الكل",
+  "@viewAll": {
+    "description": "نص زر عرض الكل"
+  },
+  "noRecentActivities": "لا توجد أنشطة حديثة",
+  "@noRecentActivities": {
+    "description": "رسالة عند عدم وجود أنشطة حديثة"
+  },
+  "noUpcomingDeadlines": "لا توجد مواعيد نهائية قادمة",
+  "@noUpcomingDeadlines": {
+    "description": "رسالة عند عدم وجود مواعيد نهائية"
+  },
+  "totalRevenue": "إجمالي الإيرادات",
+  "@totalRevenue": {
+    "description": "تسمية إجمالي الإيرادات"
+  },
+  "activeProjects": "المشاريع النشطة",
+  "@activeProjects": {
+    "description": "تسمية المشاريع النشطة"
+  },
+  "pendingPayments": "المدفوعات المعلقة",
+  "@pendingPayments": {
+    "description": "تسمية المدفوعات المعلقة"
+  },
+  "thisMonth": "هذا الشهر",
+  "@thisMonth": {
+    "description": "تسمية هذا الشهر"
+  },
+  "language": "اللغة",
+  "@language": {
+    "description": "تسمية إعداد اللغة"
+  },
+  "theme": "المظهر",
+  "@theme": {
+    "description": "تسمية إعداد المظهر"
+  },
+  "currency": "العملة",
+  "@currency": {
+    "description": "تسمية إعداد العملة"
+  },
+  "notifications": "الإشعارات",
+  "@notifications": {
+    "description": "تسمية إعداد الإشعارات"
+  },
+  "security": "الأمان",
+  "@security": {
+    "description": "تسمية إعداد الأمان"
+  },
+  "about": "حول",
+  "@about": {
+    "description": "تسمية إعداد حول"
+  },
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "نص زر إلغاء"
+  },
+  "save": "حفظ",
+  "@save": {
+    "description": "نص زر حفظ"
+  },
+  "edit": "تعديل",
+  "@edit": {
+    "description": "نص زر تعديل"
+  },
+  "delete": "حذف",
+  "@delete": {
+    "description": "نص زر حذف"
+  },
+  "add": "إضافة",
+  "@add": {
+    "description": "نص زر إضافة"
+  },
+  "search": "بحث",
+  "@search": {
+    "description": "نص العنصر النائب للبحث"
+  },
+  "filter": "تصفية",
+  "@filter": {
+    "description": "نص زر التصفية"
+  },
+  "sort": "فرز",
+  "@sort": {
+    "description": "نص زر الفرز"
+  },
+  "refresh": "تحديث",
+  "@refresh": {
+    "description": "نص زر التحديث"
+  },
+  "account": "الحساب",
+  "@account": {
+    "description": "عنوان قسم الحساب"
+  },
+  "profileSettings": "إعدادات الملف الشخصي",
+  "@profileSettings": {
+    "description": "قائمة إعدادات الملف الشخصي"
+  },
+  "updatePersonalInfo": "تحديث معلوماتك الشخصية",
+  "@updatePersonalInfo": {
+    "description": "العنوان الفرعي لإعدادات الملف الشخصي"
+  },
+  "changePassword": "تغيير كلمة المرور",
+  "@changePassword": {
+    "description": "عنصر القائمة لتغيير كلمة المرور"
+  },
+  "updateAccountPassword": "تحديث كلمة مرور حسابك",
+  "@updateAccountPassword": {
+    "description": "العنوان الفرعي لتغيير كلمة المرور"
+  },
+  "emailSettings": "إعدادات البريد الإلكتروني",
+  "@emailSettings": {
+    "description": "عنصر القائمة لإعدادات البريد الإلكتروني"
+  },
+  "manageEmailPreferences": "إدارة تفضيلات البريد",
+  "@manageEmailPreferences": {
+    "description": "العنوان الفرعي لإعدادات البريد الإلكتروني"
+  },
+  "application": "التطبيق",
+  "@application": {
+    "description": "عنوان قسم التطبيق"
+  },
+  "appearance": "المظهر",
+  "@appearance": {
+    "description": "عنصر قائمة المظهر"
+  },
+  "themeDisplaySettings": "إعدادات المظهر والعرض",
+  "@themeDisplaySettings": {
+    "description": "العنوان الفرعي للمظهر"
+  },
+  "dataStorage": "البيانات والتخزين",
+  "@dataStorage": {
+    "description": "عنصر قائمة البيانات والتخزين"
+  },
+  "backupSyncSettings": "إعدادات النسخ والنسخ الاحتياطي",
+  "@backupSyncSettings": {
+    "description": "العنوان الفرعي للبيانات"
+  },
+  "business": "الأعمال",
+  "@business": {
+    "description": "عنوان قسم الأعمال"
+  },
+  "businessProfile": "ملف الأعمال",
+  "@businessProfile": {
+    "description": "عنصر قائمة ملف الأعمال"
+  },
+  "companyInfoBranding": "معلومات الشركة والعلامة التجارية",
+  "@companyInfoBranding": {
+    "description": "العنوان الفرعي لملف الأعمال"
+  },
+  "invoiceSettings": "إعدادات الفواتير",
+  "@invoiceSettings": {
+    "description": "عنصر قائمة إعدادات الفواتير"
+  },
+  "defaultInvoiceTemplates": "قوالب وإعدادات الفواتير الافتراضية",
+  "@defaultInvoiceTemplates": {
+    "description": "العنوان الفرعي لإعدادات الفواتير"
+  },
+  "taxSettings": "إعدادات الضرائب",
+  "@taxSettings": {
+    "description": "عنصر قائمة إعدادات الضرائب"
+  },
+  "taxRatesCalculation": "معدلات الضرائب وتفضيلات الحساب",
+  "@taxRatesCalculation": {
+    "description": "العنوان الفرعي لإعدادات الضرائب"
+  },
+  "currencyRates": "العملات والأسعار",
+  "@currencyRates": {
+    "description": "عنصر قائمة أسعار العملات"
+  },
+  "supportInformation": "الدعم والمعلومات",
+  "@supportInformation": {
+    "description": "عنوان قسم الدعم"
+  },
+  "helpSupport": "المساعدة والدعم",
+  "@helpSupport": {
+    "description": "عنصر قائمة المساعدة والدعم"
+  },
+  "getHelpContactSupport": "الحصول على المساعدة واتصل بالدعم",
+  "@getHelpContactSupport": {
+    "description": "العنوان الفرعي للمساعدة"
+  },
+  "termsPrivacy": "الشروط والخصوصية",
+  "@termsPrivacy": {
+    "description": "عنصر قائمة الشروط"
+  },
+  "termsServicePrivacyPolicy": "شروط الخدمة وسياسة الخصوصية",
+  "@termsServicePrivacyPolicy": {
+    "description": "العنوان الفرعي للشروط"
+  },
+  "appVersionInfo": "إصدار التطبيق والمعلومات",
+  "@appVersionInfo": {
+    "description": "العنوان الفرعي حول"
+  },
+  "userName": "اسم المستخدم",
+  "@userName": {
+    "description": "الاسم الافتراضي"
+  },
+  "userEmail": "user@example.com",
+  "@userEmail": {
+    "description": "البريد الإلكتروني الافتراضي"
+  },
+  "freelancerAccount": "حساب مستقل",
+  "@freelancerAccount": {
+    "description": "تسمية نوع الحساب"
+  },
+  "signOut": "تسجيل الخروج",
+  "@signOut": {
+    "description": "زر تسجيل الخروج"
+  },
+  "selectLanguage": "اختر اللغة",
+  "@selectLanguage": {
+    "description": "عنوان حوار اختيار اللغة"
+  },
+  "autoSync": "المزامنة التلقائية",
+  "@autoSync": {
+    "description": "إعداد المزامنة التلقائية"
+  },
+  "autoSyncDescription": "مزامنة البيانات تلقائيًا عند الاتصال بالإنترنت",
+  "@autoSyncDescription": {
+    "description": "وصف المزامنة التلقائية"
+  },
+  "databaseBackupRestore": "نسخ احتياطي واستعادة قاعدة البيانات",
+  "@databaseBackupRestore": {
+    "description": "عنوان قسم قاعدة البيانات"
+  },
+  "backup": "نسخ احتياطي",
+  "@backup": {
+    "description": "زر النسخ الاحتياطي"
+  },
+  "restore": "استعادة",
+  "@restore": {
+    "description": "زر الاستعادة"
+  },
+  "settingsExportImport": "تصدير واستيراد الإعدادات",
+  "@settingsExportImport": {
+    "description": "عنوان قسم الإعدادات"
+  },
+  "export": "تصدير",
+  "@export": {
+    "description": "زر التصدير"
+  },
+  "import": "استيراد",
+  "@import": {
+    "description": "زر الاستيراد"
+  },
+  "resetDatabase": "إعادة تعيين قاعدة البيانات",
+  "@resetDatabase": {
+    "description": "زر إعادة تعيين قاعدة البيانات"
+  },
+  "close": "إغلاق",
+  "@close": {
+    "description": "زر الإغلاق"
+  },
+  "defaultCurrency": "العملة الافتراضية",
+  "@defaultCurrency": {
+    "description": "عنوان حوار تحديد العملة الافتراضية"
+  },
+  "importSettings": "استيراد الإعدادات",
+  "@importSettings": {
+    "description": "عنوان حوار استيراد الإعدادات"
+  },
+  "pasteSettingsJson": "الصق JSON الإعدادات هنا",
+  "@pasteSettingsJson": {
+    "description": "نص العنصر النائب لاستيراد الإعدادات"
+  },
+  "restoreDatabase": "استعادة قاعدة البيانات",
+  "@restoreDatabase": {
+    "description": "عنوان حوار استعادة قاعدة البيانات"
+  },
+  "restoreCancelled": "تم إلغاء الاستعادة",
+  "@restoreCancelled": {
+    "description": "رسالة إلغاء الاستعادة"
+  },
+
+  "welcomeBack": "مرحبًا بعودتك",
+  "@welcomeBack": {
+    "description": "رسالة ترحيب شاشة تسجيل الدخول"
+  },
+  "signInToContinue": "سجّل الدخول للمتابعة",
+  "@signInToContinue": {
+    "description": "العنوان الفرعي لشاشة تسجيل الدخول"
+  },
+  "createAccount": "إنشاء حساب",
+  "@createAccount": {
+    "description": "عنوان شاشة التسجيل"
+  },
+  "joinOurCommunity": "انضم إلى مجتمعنا",
+  "@joinOurCommunity": {
+    "description": "العنوان الفرعي لشاشة التسجيل"
+  },
+  "fullName": "الاسم الكامل",
+  "@fullName": {
+    "description": "تسمية حقل الاسم الكامل"
+  },
+  "enterFullName": "أدخل الاسم الكامل",
+  "@enterFullName": {
+    "description": "نص العنصر النائب لاسم الكامل"
+  },
+  "email": "البريد الإلكتروني",
+  "@email": {
+    "description": "تسمية حقل البريد"
+  },
+  "enterEmail": "أدخل البريد الإلكتروني",
+  "@enterEmail": {
+    "description": "نص العنصر النائب للبريد"
+  },
+  "password": "كلمة المرور",
+  "@password": {
+    "description": "تسمية حقل كلمة المرور"
+  },
+  "enterPassword": "أدخل كلمة المرور",
+  "@enterPassword": {
+    "description": "نص العنصر النائب لكلمة المرور"
+  },
+  "confirmPassword": "تأكيد كلمة المرور",
+  "@confirmPassword": {
+    "description": "تسمية حقل تأكيد كلمة المرور"
+  },
+ "confirmPasswordPlaceholder": "أكد كلمة المرور",
+ "@confirmPasswordPlaceholder": {
+   "description": "نص العنصر النائب لحقل تأكيد كلمة المرور"
+ },
+
+  "signUp": "إنشاء حساب",
+  "@signUp": {
+    "description": "نص زر التسجيل"
+  },
+  "dontHaveAccount": "لا تملك حسابًا؟ ",
+  "@dontHaveAccount": {
+    "description": "نص دعوة التسجيل في شاشة تسجيل الدخول"
+  },
+  "alreadyHaveAccount": "هل لديك حساب بالفعل؟ ",
+  "@alreadyHaveAccount": {
+    "description": "نص دعوة تسجيل الدخول في شاشة التسجيل"
+  },
+  "signIn": "تسجيل الدخول",
+  "@signIn": {
+    "description": "نص زر تسجيل الدخول"
+  },
+  "loading": "جاري التحميل...",
+  "@loading": {
+    "description": "رسالة جاري التحميل"
+  },
+  "error": "خطأ",
+  "@error": {
+    "description": "عنوان رسالة خطأ"
+  },
+  "success": "نجاح",
+  "@success": {
+    "description": "عنوان رسالة نجاح"
+  },
+  "warning": "تحذير",
+  "@warning": {
+    "description": "عنوان رسالة تحذير"
+  },
+  "info": "معلومة",
+  "@info": {
+    "description": "عنوان رسالة معلومات"
+  },
+  "ok": "حسنًا",
+  "@ok": {
+    "description": "زر موافق"
+  },
+  "yes": "نعم",
+  "@yes": {
+    "description": "زر نعم"
+  },
+  "no": "لا",
+  "@no": {
+    "description": "زر لا"
+  },
+  "confirm": "تأكيد",
+  "@confirm": {
+    "description": "زر تأكيد"
+  },
+  "retry": "إعادة المحاولة",
+  "@retry": {
+    "description": "زر إعادة المحاولة"
+  },
+  "continueAction": "متابعة",
+  "@continueAction": {
+    "description": "زر متابعة"
+  },
+  "back": "رجوع",
+  "@back": {
+    "description": "زر رجوع"
+  },
+  "next": "التالي",
+  "@next": {
+    "description": "زر التالي"
+  },
+  "done": "تم",
+  "@done": {
+    "description": "زر تم"
+  },
+  "apply": "تطبيق",
+  "@apply": {
+    "description": "زر تطبيق"
+  },
+  "clear": "مسح",
+  "@clear": {
+    "description": "زر مسح"
+  },
+  "reset": "إعادة ضبط",
+  "@reset": {
+    "description": "زر إعادة ضبط"
+  },
+  "submit": "إرسال",
+  "@submit": {
+    "description": "زر إرسال"
+  },
+  "send": "إرسال",
+  "@send": {
+    "description": "زر إرسال"
+  },
+  "update": "تحديث",
+  "@update": {
+    "description": "زر تحديث"
+  },
+  "create": "إنشاء",
+  "@create": {
+    "description": "زر إنشاء"
+  },
+  "remove": "إزالة",
+  "@remove": {
+    "description": "زر إزالة"
+  },
+  "select": "اختيار",
+  "@select": {
+    "description": "زر اختيار"
+  },
+  "choose": "اختيار",
+  "@choose": {
+    "description": "زر اختيار"
+  },
+  "browse": "تصفح",
+  "@browse": {
+    "description": "زر تصفح"
+  },
+  "upload": "تحميل",
+  "@upload": {
+    "description": "زر تحميل"
+  },
+  "download": "تنزيل",
+  "@download": {
+    "description": "زر تنزيل"
+  },
+  "share": "مشاركة",
+  "@share": {
+    "description": "زر مشاركة"
+  },
+  "copy": "نسخ",
+  "@copy": {
+    "description": "زر نسخ"
+  },
+  "paste": "لصق",
+  "@paste": {
+    "description": "زر لصق"
+  },
+  "cut": "قص",
+  "@cut": {
+    "description": "زر قص"
+  },
+  "undo": "تراجع",
+  "@undo": {
+    "description": "زر تراجع"
+  },
+  "redo": "إعادة",
+  "@redo": {
+    "description": "زر إعادة"
+  },
+
+  "noActivitiesYet": "لا توجد أنشطة حتى الآن",
+  "@noActivitiesYet": {
+    "description": "رسالة عندما لا توجد أنشطة"
+  },
+  "noActivitiesMatchFilters": "لا توجد أنشطة تطابق الفلاتر",
+  "@noActivitiesMatchFilters": {
+    "description": "رسالة عند عدم تطابق الأنشطة مع الفلاتر"
+  },
+  "tryAdjustingFilters": "حاول تعديل البحث أو الفلاتر",
+  "@tryAdjustingFilters": {
+    "description": "تلميح لتعديل الفلاتر"
+  },
+  "activitiesWillAppear": "الأنشطة ستظهر هنا أثناء استخدام التطبيق",
+  "@activitiesWillAppear": {
+    "description": "شرح ظهور الأنشطة"
+  },
+  "noDeadlinesFound": "لم تُعثر على مواعيد نهائية",
+  "@noDeadlinesFound": {
+    "description": "رسالة عند عدم وجود مواعيد"
+  },
+  "addProjectsInvoices": "أضف مشاريع وفواتير لتتبع المواعيد النهائية",
+  "@addProjectsInvoices": {
+    "description": "شرح لتتبع المواعيد"
+  },
+  "languageChanged": "تم تغيير اللغة إلى",
+  "@languageChanged": {
+    "description": "بادئة رسالة نجاح تغيير اللغة"
+  },
+  "demo": "تجريبي",
+  "@demo": {
+    "description": "نص شارة تجريبية"
+  },
+  "showingDemoDeadlines": "عرض مواعيد نهائية تجريبية. أضف مشاريع وفواتير حقيقية لتتبع المواعيد الفعلية.",
+  "@showingDemoDeadlines": {
+    "description": "شرح المواعيد التجريبية"
+  },
+  "reports": "التقارير",
+  "@reports": {
+    "description": "عنوان شاشة التقارير"
+  },
+  "filters": "فلاتر",
+  "@filters": {
+    "description": "عنوان قسم الفلاتر"
+  },
+  "timePeriod": "الفترة الزمنية",
+  "@timePeriod": {
+    "description": "تسمية فلتر الفترة الزمنية"
+  },
+  "advancedFilters": "فلاتر متقدمة",
+  "@advancedFilters": {
+    "description": "عنوان قسم الفلاتر المتقدمة"
+  },
+  "client": "العميل",
+  "@client": {
+    "description": "تسمية فلتر العميل"
+  },
+  "project": "المشروع",
+  "@project": {
+    "description": "تسمية فلتر المشروع"
+  },
+  "status": "الحالة",
+  "@status": {
+    "description": "تسمية فلتر الحالة"
+  },
+  "amount": "المبلغ",
+  "@amount": {
+    "description": "تسمية فلتر المبلغ"
+  },
+  "min": "الحد الأدنى",
+  "@min": {
+    "description": "نص العنصر النائب للحد الأدنى"
+  },
+  "max": "الحد الأقصى",
+  "@max": {
+    "description": "نص العنصر النائب للحد الأقصى"
+  },
+  "all": "الكل",
+  "@all": {
+    "description": "خيار الكل"
+  },
+  "completed": "منجز",
+  "@completed": {
+    "description": "حالة منجزة"
+  },
+  "inProgress": "قيد التنفيذ",
+  "@inProgress": {
+    "description": "حالة قيد التنفيذ"
+  },
+  "notStarted": "لم يبدأ",
+  "@notStarted": {
+    "description": "حالة لم يبدأ"
+  },
+  "pending": "قيد الانتظار",
+  "@pending": {
+    "description": "حالة قيد الانتظار"
+  },
+  "customDateRange": "نطاق تاريخ مخصص",
+  "@customDateRange": {
+    "description": "تسمية نطاق تاريخ مخصص"
+  },
+  "selectDateRange": "اختر نطاق تاريخ",
+  "@selectDateRange": {
+    "description": "نص العنصر النائب لاختيار النطاق"
+  },
+  "markAsPaid": "تحديد كمدفوع",
+  "@markAsPaid": {
+    "description": "خيار تحديد على أنه مدفوع"
+  },
+  "createPayment": "إنشاء دفعة",
+  "@createPayment": {
+    "description": "زر إنشاء دفعة"
+  },
+  "paymentDetails": "تفاصيل الدفع:",
+  "@paymentDetails": {
+    "description": "تسمية تفاصيل الدفع"
+  },
+  "creatingPayment": "جارٍ إنشاء الدفع...",
+  "@creatingPayment": {
+    "description": "رسالة إنشاء الدفع"
+  },
+  "paymentCreatedSuccessfully": "تم إنشاء الدفع بنجاح!",
+  "@paymentCreatedSuccessfully": {
+    "description": "رسالة نجاح إنشاء الدفع"
+  },
+  "errorCreatingPayment": "خطأ في إنشاء الدفع",
+  "@errorCreatingPayment": {
+    "description": "رسالة خطأ إنشاء الدفع"
+  },
+  "cannotMarkPaid": "لا يمكن تحديد المشروع على أنه مدفوع: معلومات المشروع أو العميل مفقودة",
+  "@cannotMarkPaid": {
+    "description": "رسالة خطأ عدم إمكانية التحديد على أنه مدفوع"
+  },
+  "projectFullyPaid": "المشروع مدفوع بالكامل بالفعل",
+  "@projectFullyPaid": {
+    "description": "رسالة المشروع مدفوع بالكامل"
+  },
+  "createPaymentForRemaining": "إنشاء دفعة للمبلغ المتبقي؟",
+  "@createPaymentForRemaining": {
+    "description": "سؤال تأكيد إنشاء دفعة"
+  },
+  "failedToLoadDashboard": "فشل في تحميل لوحة التحكم",
+  "@failedToLoadDashboard": {
+    "description": "رسالة خطأ تحميل لوحة التحكم"
+  },
+  "errorLoadingDashboard": "حدث خطأ أثناء تحميل لوحة التحكم",
+  "@errorLoadingDashboard": {
+    "description": "بادئة خطأ تحميل لوحة التحكم"
+  },
+  "errorRefreshingDashboard": "حدث خطأ أثناء تحديث لوحة التحكم",
+  "@errorRefreshingDashboard": {
+    "description": "بادئة خطأ تحديث لوحة التحكم"
+  },
+  "showingDemoData": "عرض بيانات تجريبية. ابدأ بإضافة المشاريع والمدفوعات والفواتير لرؤية الأنشطة الفعلية.",
+  "@showingDemoData": {
+    "description": "شرح لبيانات الأنشطة التجريبية"
+  },
+  "thisWeek": "هذا الأسبوع",
+  "@thisWeek": {
+    "description": "فترة زمنية لهذا الأسبوع"
+  },
+  "lastWeek": "الأسبوع الماضي",
+  "@lastWeek": {
+    "description": "فترة الأسبوع الماضي"
+  },
+  "last30Days": "آخر 30 يومًا",
+  "@last30Days": {
+    "description": "فترة آخر 30 يومًا"
+  },
+  "last90Days": "آخر 90 يومًا",
+  "@last90Days": {
+    "description": "فترة آخر 90 يومًا"
+  },
+  "thisYear": "هذا العام",
+  "@thisYear": {
+    "description": "فترة هذا العام"
+  },
+  "lastYear": "العام الماضي",
+  "@lastYear": {
+    "description": "فترة العام الماضي"
+  },
+  "totalEarnings": "إجمالي الأرباح",
+  "@totalEarnings": {
+    "description": "تسمية إجمالي الأرباح"
+  },
+  "completedProjects": "المشاريع المكتملة",
+  "@completedProjects": {
+    "description": "تسمية المشاريع المكتملة"
+  },
+  "unpaidProjects": "المشاريع غير المدفوعة",
+  "@unpaidProjects": {
+    "description": "تسمية المشاريع غير المدفوعة"
+  },
+  "monthlyPerformance": "الأداء الشهري",
+  "@monthlyPerformance": {
+    "description": "قسم أو عنوان يعرض أداء هذا الشهر"
+  },
+  "yearlyPerformance": "الأداء السنوي",
+  "@yearlyPerformance": {
+    "description": "قسم أو عنوان يعرض أداء السنة"
+  },
+  "lastUpdated": "آخر تحديث",
+  "@lastUpdated": {
+    "description": "تسمية توضح آخر وقت تم فيه تحديث البيانات"
+  },
+  "refreshDashboard": "تحديث لوحة التحكم",
+  "@refreshDashboard": {
+    "description": "زر أو إجراء لتحديث بيانات لوحة التحكم"
+  },
+  "profit": "الربح",
+  "@profit": {
+    "description": "تسمية توضح الربح المالي"
+  },
+  "revenue": "الإيرادات",
+  "@revenue": {
+    "description": "تسمية توضح إجمالي الدخل قبل المصروفات"
+  },
+  "active": "نشط",
+  "@active": {
+    "description": "حالة للمشاريع أو العناصر النشطة"
+  },
+  "netIncome": "صافي الدخل",
+  "@netIncome": {
+    "description": "تسمية توضح الدخل بعد المصروفات"
+  },
+  "justNow": "الآن",
+  "minutesAgo": "قبل {minutes} د",
+  "hoursAgo": "قبل {hours} س",
+  "daysAgo": "قبل {days} ي",
+  "currencyMillion": "{amount} مليون د.ج",
+  "currencyThousand": "{amount} ألف د.ج",
+  "currencyPlain": "{amount} د.ج",
+  "overduePayment": "متأخر منذ {days} يوم",
+  "dueInDays": "مستحق خلال {days} يوم",
+  "taxManagement": "إدارة الضرائب",
+  "taxYear": "السنة الضريبية:",
+  "taxStatistics": "إحصائيات الضرائب",
+  "paid": "مدفوع",
+  "overdue": "متأخر",
+  "alerts": "تنبيهات",
+  "calculateTaxesForYear": "احسب ضرائبك لهذه السنة",
+  "calculateTaxes": "احسب الضرائب",
+
+
+  "dueDate": "تاريخ الاستحقاق: {day}/{month}/{year}",
+  "@dueDate": {
+    "description": "تاريخ الاستحقاق بالتنسيق الكامل",
+    "placeholders": {
+      "day": {},
+      "month": {},
+      "year": {}
+    }
+  },
+  "taxPaymentsForYear": "مدفوعات الضرائب لعام {year}",
+  "@taxPaymentsForYear": {
+    "description": "عنوان قسم مدفوعات الضرائب لسنة معينة",
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "noTaxesCalculated": "لم يتم حساب الضرائب لعام {year}",
+  "@noTaxesCalculated": {
+    "description": "رسالة عند عدم حساب الضرائب لسنة معينة",
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+
+  "currencyWithSymbol": "{amount} دج",
+  "@currencyWithSymbol": {
+    "description": "قيمة مالية متبوعة برمز العملة",
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "dueToday": "مستحق اليوم",
+  "dueTomorrow": "مستحق غدًا",
+  "overdueBy": "متأخر بمقدار {days, plural, =1{# يوم} other{# أيام}}",
+  "dueIn": "مستحق خلال {days, plural, =0{اليوم} =1{{days} يوم} other{{days} أيام}}",
+  "@dueIn": {
+    "description": "تاريخ الاستحقاق بعد عدد من الأيام",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+
+  "businessManagement": "إدارة الأعمال",
+  "manageAllBusiness": "إدارة جميع جوانب عملك الحر",
+  "projectManagement": "إدارة المشاريع",
+  "manageProjectsTrackProgress": "إدارة مشاريعك وتتبع التقدم",
+  "viewProjects": "عرض المشاريع",
+  "addProject": "إضافة مشروع",
+  "manageClients": "إدارة العملاء",
+  "trackPayments": "تتبع المدفوعات",
+  "manageExpenses": "إدارة النفقات",
+  "createInvoices": "إنشاء الفواتير",
+  "taxes": "الضرائب",
+  "calendar": "التقويم",
+  "viewEvents": "عرض الأحداث",
+  "businessAnalytics": "تحليلات الأعمال",
+  "@appPreferences": {
+    "description": "عنوان قسم إعدادات وتفضيلات التطبيق"
+  },
+
+  "allDeadlines": "جميع المواعيد النهائية",
+  "@allDeadlines": {
+    "description": "عنوان القسم لعرض جميع المواعيد النهائية"
+  },
+  "noDeadlinesWithFilter": "لا توجد مواعيد نهائية لـ {filter}",
+  "@noDeadlinesWithFilter": {
+    "description": "رسالة عند عدم العثور على مواعيد نهائية بناءً على الفلتر",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "appInformation": "معلومات التطبيق",
+  "version": "الإصدار",
+  "buildNumber": "رقم البناء",
+  "releaseDate": "تاريخ الإصدار",
+  "platform": "المنصة",
+  "framework": "الإطار",
+  "database": "قاعدة البيانات",
+  "developer": "المطور",
+  "developerName": "فريق فريلانس موبايل",
+  "developerDescription": "متخصص في تطوير تطبيقات الهاتف المحمول",
+  "appDescription": "مصمم خصيصًا للمستقلين الجزائريين لإدارة أعمالهم بكفاءة مع التوافق الضريبي المحلي ودعم اللغة العربية.",
+  "keyFeatures": "الميزات الرئيسية",
+  "clientManagement": "إدارة العملاء",
+  "paymentTracking": "تتبع المدفوعات",
+  "expenseManagement": "إدارة المصاريف",
+  "invoiceGeneration": "إنشاء الفواتير",
+  "algerianTaxManagement": "إدارة الضرائب الجزائرية",
+  "calendarEvents": "التقويم والفعاليات",
+  "businessReports": "تقارير الأعمال",
+  "smartNotifications": "إشعارات ذكية",
+  "legal": "قانوني",
+  "termsOfService": "شروط الخدمة",
+  "termsOfServiceDescription": "اقرأ الشروط والأحكام الخاصة بنا",
+  "privacyPolicy": "سياسة الخصوصية",
+  "privacyPolicyDescription": "كيف نحمي بياناتك",
+  "openSourceLicenses": "رخص المصادر المفتوحة",
+  "openSourceLicensesDescription": "المكتبات والتراخيص الخارجية",
+  "contactSupport": "الدعم والتواصل",
+  "emailSupport": "الدعم عبر البريد الإلكتروني",
+  "website": "الموقع الإلكتروني",
+  "rateUs": "قيّمنا",
+  "reportBug": "الإبلاغ عن خلل",
+  "rateUsDescription": "قيّم التطبيق على متجر بلاي",
+  "reportBugDescription": "ساعدنا في تحسين التطبيق",
+  "invoice": "الفاتورة",
+  "tax": "الضريبة",
+  "payment": "الدفعة"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
