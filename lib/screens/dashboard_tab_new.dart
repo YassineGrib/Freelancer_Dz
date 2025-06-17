@@ -796,7 +796,7 @@ class _DashboardTabState extends State<DashboardTab> {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              deadline.formattedDeadline,
+              deadline.formattedDeadline(context),
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textSmall,
                 fontWeight: FontWeight.w600,

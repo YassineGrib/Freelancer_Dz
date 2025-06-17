@@ -571,10 +571,6 @@
   "@addProjectsInvoices": {
     "description": "Deadlines explanation message"
   },
-  "recentActivities": "Activités récentes",
-  "@recentActivities": {
-    "description": "Recent activities section title"
-  },
   "demo": "Démo",
   "@demo": {
     "description": "Demo badge text"
@@ -704,41 +700,9 @@
   "@errorRefreshingDashboard": {
     "description": "Dashboard refresh error prefix"
   },
-  "quickActions": "Actions rapides",
-  "@quickActions": {
-    "description": "Quick actions section title"
-  },
-  "newProject": "Nouveau projet",
-  "@newProject": {
-    "description": "New project quick action"
-  },
-  "addClient": "Ajouter un client",
-  "@addClient": {
-    "description": "Add client quick action"
-  },
-  "recordPayment": "Enregistrer un paiement",
-  "@recordPayment": {
-    "description": "Record payment quick action"
-  },
-  "createInvoice": "Créer une facture",
-  "@createInvoice": {
-    "description": "Create invoice quick action"
-  },
-  "upcomingDeadlines": "Échéances à venir",
-  "@upcomingDeadlines": {
-    "description": "Upcoming deadlines section title"
-  },
-  "viewAll": "Voir tout",
-  "@viewAll": {
-    "description": "View all button text"
-  },
   "showingDemoData": "Affichage des données de démonstration. Commencez à ajouter des projets, des paiements et des factures pour voir les vraies activités.",
   "@showingDemoData": {
     "description": "Demo data explanation for activities"
-  },
-  "showingDemoDeadlines": "Affichage des échéances de démonstration. Ajoutez de vrais projets et factures pour suivre les échéances réelles.",
-  "@showingDemoDeadlines": {
-    "description": "Demo data explanation for deadlines"
   },
   "thisWeek": "Cette semaine",
   "@thisWeek": {
@@ -775,5 +739,161 @@
   "unpaidProjects": "Projets impayés",
   "@unpaidProjects": {
     "description": "Unpaid projects label"
-  }
+  },
+  "monthlyPerformance": "Performance mensuelle",
+  "@monthlyPerformance": {
+    "description": "Section ou titre affichant les performances du mois"
+  },
+  "yearlyPerformance": "Performance annuelle",
+  "@yearlyPerformance": {
+    "description": "Section ou titre affichant les performances de l'année"
+  },
+  "lastUpdated": "Dernière mise à jour",
+  "@lastUpdated": {
+    "description": "Étiquette indiquant la dernière mise à jour des données"
+  },
+  "refreshDashboard": "Actualiser le tableau de bord",
+  "@refreshDashboard": {
+    "description": "Bouton ou action pour actualiser les données du tableau de bord"
+  },
+  "profit": "Profit",
+  "@profit": {
+    "description": "Étiquette indiquant le profit financier"
+  },
+  "revenue": "Revenu",
+  "@revenue": {
+    "description": "Étiquette montrant les revenus totaux avant dépenses"
+  },
+  "active": "Actif",
+  "@active": {
+    "description": "Statut pour les éléments ou projets actifs"
+  },
+  "netIncome": "Revenu net",
+  "@netIncome": {
+    "description": "Étiquette montrant le revenu après dépenses"
+  },
+  "justNow": "À l’instant",
+  "minutesAgo": "il y a {minutes} min",
+  "hoursAgo": "il y a {hours} h",
+  "daysAgo": "il y a {days} j",
+  "currencyMillion": "{amount} M DA",
+  "currencyThousand": "{amount} K DA",
+  "currencyPlain": "{amount} DA",
+  "overduePayment": "En retard de {days} jours",
+  "dueInDays": "À payer dans {days} jours",
+  "taxManagement": "Gestion des impôts",
+  "taxYear": "Année fiscale :",
+  "taxStatistics": "Statistiques fiscales",
+  "paid": "Payé",
+  "overdue": "En retard",
+  "alerts": "Alertes",
+  "taxPaymentsForYear": "Paiements d'impôts {year}",
+  "noTaxesCalculated": "Aucun impôt calculé pour {year}",
+  "calculateTaxesForYear": "Calculez vos impôts pour cette année",
+  "calculateTaxes": "Calculer les impôts",
+  "dueDate": "Échéance : {day}/{month}/{year}",
+  "currencyWithSymbol": "{amount} DA",
+  "@currencyWithSymbol": {
+    "description": "Montant monétaire suivi du symbole de devise",
+    "placeholders": {
+      "amount": {}
+    }
+  },
+  "dueToday": "Échéance aujourd’hui",
+  "dueTomorrow": "Échéance demain",
+  "overdueBy": "En retard de {days, plural, =1{# jour} other{# jours}}",
+  "dueIn": "Due in {days, plural, =0{today} =1{{days} day} other{{days} days}}",
+  "@dueIn": {
+    "description": "Label for upcoming deadline in N days",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+
+  "businessManagement": "Gestion d'entreprise",
+  "manageAllBusiness": "Gérez tous les aspects de votre activité freelance",
+  "projectManagement": "Gestion de projet",
+  "manageProjectsTrackProgress": "Gérez vos projets et suivez leur progression",
+  "viewProjects": "Voir les projets",
+  "addProject": "Ajouter un projet",
+  "manageClients": "Gérer les clients",
+  "trackPayments": "Suivre les paiements",
+  "manageExpenses": "Gérer les dépenses",
+  "createInvoices": "Créer des factures",
+"taxes": "Impôts",
+  "calendar": "Calendrier",
+  "viewEvents": "Voir les événements",
+  "businessAnalytics": "Analyse d'entreprise",
+
+    "allDeadlines": "Toutes les échéances",
+    "@allDeadlines": {
+      "description": "Titre de section pour afficher toutes les échéances"
+    },
+    "noDeadlinesWithFilter": "Aucune échéance pour {filter}",
+    "@noDeadlinesWithFilter": {
+      "description": "Message affiché quand aucune échéance n'est trouvée selon un filtre",
+      "placeholders": {
+        "filter": {
+          "type": "String"
+        }
+      }
+    },
+
+  "appInformation": "Informations sur l'application",
+  "version": "Version",
+  "buildNumber": "Numéro de build",
+  "releaseDate": "Date de publication",
+  "platform": "Plateforme",
+  "framework": "Framework",
+  "database": "Base de données",
+  "developer": "Développeur",
+  "developerName": "Équipe Freelancer Mobile",
+  "developerDescription": "Spécialisée dans le développement d'applications mobiles",
+  "appDescription": "Conçue spécialement pour les freelances algériens afin de gérer efficacement leur activité avec conformité fiscale locale et prise en charge de la langue arabe.",
+  "keyFeatures": "Fonctionnalités clés",
+  "clientManagement": "Gestion des clients",
+  "paymentTracking": "Suivi des paiements",
+  "expenseManagement": "Gestion des dépenses",
+  "invoiceGeneration": "Génération de factures",
+  "algerianTaxManagement": "Gestion fiscale algérienne",
+  "calendarEvents": "Calendrier et événements",
+  "businessReports": "Rapports d'activité",
+  "smartNotifications": "Notifications intelligentes",
+  "legal": "Mentions légales",
+  "termsOfService": "Conditions d'utilisation",
+  "termsOfServiceDescription": "Lisez nos conditions générales",
+  "privacyPolicy": "Politique de confidentialité",
+  "privacyPolicyDescription": "Comment nous protégeons vos données",
+  "openSourceLicenses": "Licences open source",
+  "openSourceLicensesDescription": "Bibliothèques tierces et licences",
+  "contactSupport": "Contact & Support",
+  "emailSupport": "Support par email",
+  "website": "Site web",
+  "rateUs": "Noter l'application",
+  "reportBug": "Signaler un bug",
+  "rateUsDescription": "Notez l’application sur le Play Store",
+  "reportBugDescription": "Aidez-nous à améliorer l'application",
+  "invoice": "Facture",
+  "tax": "Impôt",
+  "payment": "Paiement"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

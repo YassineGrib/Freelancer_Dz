@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_ar.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_fr.dart';
 
@@ -94,6 +95,7 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('ar'),
     Locale('en'),
     Locale('fr')
   ];
@@ -176,25 +178,25 @@ abstract class AppLocalizations {
   /// **'Quick Actions'**
   String get quickActions;
 
-  /// New project quick action
+  /// New project action
   ///
   /// In en, this message translates to:
   /// **'New Project'**
   String get newProject;
 
-  /// Add client quick action
+  /// Add client action
   ///
   /// In en, this message translates to:
   /// **'Add Client'**
   String get addClient;
 
-  /// Record payment quick action
+  /// Record payment action
   ///
   /// In en, this message translates to:
   /// **'Record Payment'**
   String get recordPayment;
 
-  /// Create invoice quick action
+  /// Create invoice action
   ///
   /// In en, this message translates to:
   /// **'Create Invoice'**
@@ -956,7 +958,7 @@ abstract class AppLocalizations {
   /// **'Demo'**
   String get demo;
 
-  /// Demo data explanation for deadlines
+  /// Demo deadlines explanation
   ///
   /// In en, this message translates to:
   /// **'Showing demo deadlines. Add real projects and invoices to track actual deadlines.'**
@@ -1201,6 +1203,522 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unpaid Projects'**
   String get unpaidProjects;
+
+  /// Section or title showing performance data for the month
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Performance'**
+  String get monthlyPerformance;
+
+  /// Section or title showing performance data for the year
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly Performance'**
+  String get yearlyPerformance;
+
+  /// Label showing the last time data was updated
+  ///
+  /// In en, this message translates to:
+  /// **'Last updated'**
+  String get lastUpdated;
+
+  /// Button or action to refresh the dashboard data
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh Dashboard'**
+  String get refreshDashboard;
+
+  /// Label showing financial profit
+  ///
+  /// In en, this message translates to:
+  /// **'Profit'**
+  String get profit;
+
+  /// Label showing total income before expenses
+  ///
+  /// In en, this message translates to:
+  /// **'Revenue'**
+  String get revenue;
+
+  /// Status label for active items or projects
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// Label showing income after expenses
+  ///
+  /// In en, this message translates to:
+  /// **'Net Income'**
+  String get netIncome;
+
+  /// Indicates something just happened
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get justNow;
+
+  /// Indicates how many minutes ago
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes}m ago'**
+  String minutesAgo(Object minutes);
+
+  /// Indicates how many hours ago
+  ///
+  /// In en, this message translates to:
+  /// **'{hours}h ago'**
+  String hoursAgo(Object hours);
+
+  /// Indicates how many days ago
+  ///
+  /// In en, this message translates to:
+  /// **'{days}d ago'**
+  String daysAgo(Object days);
+
+  /// Currency format in millions
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}M DA'**
+  String currencyMillion(Object amount);
+
+  /// Currency format in thousands
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}K DA'**
+  String currencyThousand(Object amount);
+
+  /// Currency format for small values
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} DA'**
+  String currencyPlain(Object amount);
+
+  /// Alert label for overdue payments
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue {days} days'**
+  String overduePayment(Object days);
+
+  /// Alert label for upcoming payments
+  ///
+  /// In en, this message translates to:
+  /// **'Due in {days} days'**
+  String dueInDays(Object days);
+
+  /// No description provided for @taxManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax Management'**
+  String get taxManagement;
+
+  /// No description provided for @taxYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax Year:'**
+  String get taxYear;
+
+  /// No description provided for @taxStatistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax Statistics'**
+  String get taxStatistics;
+
+  /// No description provided for @paid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get paid;
+
+  /// No description provided for @overdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get overdue;
+
+  /// No description provided for @alerts.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts'**
+  String get alerts;
+
+  /// No description provided for @calculateTaxesForYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate your taxes for this year'**
+  String get calculateTaxesForYear;
+
+  /// No description provided for @calculateTaxes.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate Taxes'**
+  String get calculateTaxes;
+
+  /// Section title for tax payments of a specific year
+  ///
+  /// In en, this message translates to:
+  /// **'Tax Payments {year}'**
+  String taxPaymentsForYear(int year);
+
+  /// Message when no taxes calculated for a year
+  ///
+  /// In en, this message translates to:
+  /// **'No taxes calculated for {year}'**
+  String noTaxesCalculated(int year);
+
+  /// Formatted due date
+  ///
+  /// In en, this message translates to:
+  /// **'Due: {day}/{month}/{year}'**
+  String dueDate(Object day, Object month, Object year);
+
+  /// Currency amount followed by currency symbol
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} DA'**
+  String currencyWithSymbol(Object amount);
+
+  /// Label for a payment due today
+  ///
+  /// In en, this message translates to:
+  /// **'Due today'**
+  String get dueToday;
+
+  /// Label for a payment due tomorrow
+  ///
+  /// In en, this message translates to:
+  /// **'Due tomorrow'**
+  String get dueTomorrow;
+
+  /// Indicates how many days a payment is overdue
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue by {days, plural, =1{# day} other{# days}}'**
+  String overdueBy(int days);
+
+  /// Indicates how many days until the payment is due
+  ///
+  /// In en, this message translates to:
+  /// **'Due in {days, plural, =0{today} =1{{days} day} other{{days} days}}'**
+  String dueIn(int days);
+
+  /// No description provided for @businessManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة الأعمال'**
+  String get businessManagement;
+
+  /// No description provided for @manageAllBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة جميع جوانب عملك الحر'**
+  String get manageAllBusiness;
+
+  /// No description provided for @projectManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة المشاريع'**
+  String get projectManagement;
+
+  /// No description provided for @manageProjectsTrackProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة مشاريعك وتتبع التقدم'**
+  String get manageProjectsTrackProgress;
+
+  /// No description provided for @viewProjects.
+  ///
+  /// In en, this message translates to:
+  /// **'عرض المشاريع'**
+  String get viewProjects;
+
+  /// No description provided for @addProject.
+  ///
+  /// In en, this message translates to:
+  /// **'إضافة مشروع'**
+  String get addProject;
+
+  /// No description provided for @manageClients.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة العملاء'**
+  String get manageClients;
+
+  /// No description provided for @trackPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'تتبع المدفوعات'**
+  String get trackPayments;
+
+  /// No description provided for @manageExpenses.
+  ///
+  /// In en, this message translates to:
+  /// **'إدارة النفقات'**
+  String get manageExpenses;
+
+  /// No description provided for @createInvoices.
+  ///
+  /// In en, this message translates to:
+  /// **'إنشاء الفواتير'**
+  String get createInvoices;
+
+  /// No description provided for @taxes.
+  ///
+  /// In en, this message translates to:
+  /// **'الضرائب'**
+  String get taxes;
+
+  /// No description provided for @calendar.
+  ///
+  /// In en, this message translates to:
+  /// **'التقويم'**
+  String get calendar;
+
+  /// No description provided for @viewEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'عرض الأحداث'**
+  String get viewEvents;
+
+  /// No description provided for @businessAnalytics.
+  ///
+  /// In en, this message translates to:
+  /// **'تحليلات الأعمال'**
+  String get businessAnalytics;
+
+  /// Section title for displaying all deadlines
+  ///
+  /// In en, this message translates to:
+  /// **'All Deadlines'**
+  String get allDeadlines;
+
+  /// Message when no deadlines found for a given filter
+  ///
+  /// In en, this message translates to:
+  /// **'No {filter} deadlines found'**
+  String noDeadlinesWithFilter(String filter);
+
+  /// No description provided for @appInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'App Information'**
+  String get appInformation;
+
+  /// No description provided for @version.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get version;
+
+  /// No description provided for @buildNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Build Number'**
+  String get buildNumber;
+
+  /// No description provided for @releaseDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Release Date'**
+  String get releaseDate;
+
+  /// No description provided for @platform.
+  ///
+  /// In en, this message translates to:
+  /// **'Platform'**
+  String get platform;
+
+  /// No description provided for @framework.
+  ///
+  /// In en, this message translates to:
+  /// **'Framework'**
+  String get framework;
+
+  /// No description provided for @database.
+  ///
+  /// In en, this message translates to:
+  /// **'Database'**
+  String get database;
+
+  /// No description provided for @developer.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get developer;
+
+  /// No description provided for @developerName.
+  ///
+  /// In en, this message translates to:
+  /// **'Freelancer Mobile Team'**
+  String get developerName;
+
+  /// No description provided for @developerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Specialized in mobile app development'**
+  String get developerDescription;
+
+  /// No description provided for @appDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Designed specifically for Algerian freelancers to manage their business efficiently with local tax compliance and Arabic language support.'**
+  String get appDescription;
+
+  /// No description provided for @keyFeatures.
+  ///
+  /// In en, this message translates to:
+  /// **'Key Features'**
+  String get keyFeatures;
+
+  /// No description provided for @clientManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Client Management'**
+  String get clientManagement;
+
+  /// No description provided for @paymentTracking.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Tracking'**
+  String get paymentTracking;
+
+  /// No description provided for @expenseManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense Management'**
+  String get expenseManagement;
+
+  /// No description provided for @invoiceGeneration.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice Generation'**
+  String get invoiceGeneration;
+
+  /// No description provided for @algerianTaxManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Algerian Tax Management'**
+  String get algerianTaxManagement;
+
+  /// No description provided for @calendarEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar & Events'**
+  String get calendarEvents;
+
+  /// No description provided for @businessReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Reports'**
+  String get businessReports;
+
+  /// No description provided for @smartNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Smart Notifications'**
+  String get smartNotifications;
+
+  /// No description provided for @legal.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get legal;
+
+  /// No description provided for @termsOfService.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsOfService;
+
+  /// No description provided for @termsOfServiceDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Read our terms and conditions'**
+  String get termsOfServiceDescription;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyPolicyDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'How we protect your data'**
+  String get privacyPolicyDescription;
+
+  /// No description provided for @openSourceLicenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Source Licenses'**
+  String get openSourceLicenses;
+
+  /// No description provided for @openSourceLicensesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Third-party libraries and licenses'**
+  String get openSourceLicensesDescription;
+
+  /// No description provided for @contactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact & Support'**
+  String get contactSupport;
+
+  /// No description provided for @emailSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Support'**
+  String get emailSupport;
+
+  /// No description provided for @website.
+  ///
+  /// In en, this message translates to:
+  /// **'Website'**
+  String get website;
+
+  /// No description provided for @rateUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate Us'**
+  String get rateUs;
+
+  /// No description provided for @reportBug.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Bug'**
+  String get reportBug;
+
+  /// No description provided for @rateUsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate the app on Play Store'**
+  String get rateUsDescription;
+
+  /// No description provided for @reportBugDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us improve the app'**
+  String get reportBugDescription;
+
+  /// No description provided for @invoice.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice'**
+  String get invoice;
+
+  /// No description provided for @tax.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax'**
+  String get tax;
+
+  /// No description provided for @payment.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment'**
+  String get payment;
 }
 
 class _AppLocalizationsDelegate
@@ -1214,7 +1732,7 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) =>
-      <String>['en', 'fr'].contains(locale.languageCode);
+      <String>['ar', 'en', 'fr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -1223,6 +1741,8 @@ class _AppLocalizationsDelegate
 AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'ar':
+      return AppLocalizationsAr();
     case 'en':
       return AppLocalizationsEn();
     case 'fr':

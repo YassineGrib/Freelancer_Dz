@@ -236,7 +236,7 @@ class _DashboardTabState extends State<DashboardTab> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Dashboard',
+              AppLocalizations.of(context)?.dashboard ?? 'Dashboard',
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textXLarge,
                 fontWeight: FontWeight.w600,
@@ -245,7 +245,7 @@ class _DashboardTabState extends State<DashboardTab> {
             ),
             const SizedBox(height: 4),
             Text(
-              'Last updated: ${_formatTime(_dashboardData!.lastUpdated)}',
+              '${AppLocalizations.of(context)?.lastUpdated ?? 'Last updated'}: ${_formatTime(_dashboardData!.lastUpdated)}',
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textSmall,
                 color: AppColors.textSecondary,
@@ -277,7 +277,7 @@ class _DashboardTabState extends State<DashboardTab> {
                   child: CircularProgressIndicator(strokeWidth: 0),
                 )
               : const Icon(FontAwesomeIcons.arrowsRotate),
-          tooltip: 'Refresh Dashboard',
+          tooltip: AppLocalizations.of(context)?.refreshDashboard ?? 'Refresh Dashboard',
         ),
       ],
     );
@@ -316,7 +316,7 @@ class _DashboardTabState extends State<DashboardTab> {
           borderRadius: BorderRadius.circular(6),
         ),
         child: Text(
-          text,
+          text=='This Year'? AppLocalizations.of(context)?.thisYear ??'This Year':AppLocalizations.of(context)?.thisMonth ??'This Month',
           style: GoogleFonts.poppins(
             fontSize: 12,
             fontWeight: FontWeight.w600,
@@ -377,7 +377,7 @@ class _DashboardTabState extends State<DashboardTab> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                _isYearlyView ? 'Yearly Performance' : 'Monthly Performance',
+                _isYearlyView ? AppLocalizations.of(context)?.yearlyPerformance??'Yearly Performance' : AppLocalizations.of(context)?.monthlyPerformance??'Monthly Performance' ,
                 style: GoogleFonts.poppins(
                   fontSize: AppConstants.textLarge,
                   fontWeight: FontWeight.w600,
@@ -408,7 +408,7 @@ class _DashboardTabState extends State<DashboardTab> {
                   ),
                 ),
                 child: Text(
-                  '${profitMargin.toStringAsFixed(1)}% Profit',
+                  '${profitMargin.toStringAsFixed(1)}% ${AppLocalizations.of(context)?.profit??'Profit'}',
                   style: GoogleFonts.poppins(
                     fontSize: AppConstants.textSmall,
                     fontWeight: FontWeight.w600,
@@ -433,7 +433,7 @@ class _DashboardTabState extends State<DashboardTab> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Revenue',
+                        AppLocalizations.of(context)?.revenue??'Revenue',
                           style: GoogleFonts.poppins(
                             fontSize: AppConstants.textSmall,
                             color: AppColors.textSecondary,
@@ -465,7 +465,7 @@ class _DashboardTabState extends State<DashboardTab> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Expenses',
+                          AppLocalizations.of(context)?.expenses??'Expenses',
                           style: GoogleFonts.poppins(
                             fontSize: AppConstants.textSmall,
                             color: AppColors.textSecondary,
@@ -519,7 +519,7 @@ class _DashboardTabState extends State<DashboardTab> {
                       ),
                     ),
                     Text(
-                      'Active',
+                      AppLocalizations.of(context)?.active??'Active',
                       style: GoogleFonts.poppins(
                         fontSize: 10,
                         color: AppColors.textSecondary,
@@ -555,7 +555,7 @@ class _DashboardTabState extends State<DashboardTab> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Net Income',
+                        AppLocalizations.of(context)?.netIncome??'Net Income',
                         style: GoogleFonts.poppins(
                           fontSize: AppConstants.textMedium,
                           fontWeight: FontWeight.w600,
@@ -594,14 +594,14 @@ class _DashboardTabState extends State<DashboardTab> {
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         FontAwesomeIcons.triangleExclamation,
                         size: 16,
                         color: Colors.red,
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        'Unpaid Projects',
+                        AppLocalizations.of(context)?.unpaidProjects??'Unpaid Projects',
                         style: GoogleFonts.poppins(
                           fontSize: AppConstants.textMedium,
                           fontWeight: FontWeight.w600,
@@ -750,7 +750,7 @@ class _DashboardTabState extends State<DashboardTab> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.chevron_right,
                         size: 16,
                         color: AppColors.textSecondary,
@@ -797,7 +797,7 @@ class _DashboardTabState extends State<DashboardTab> {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.chevron_right,
                         size: 16,
                         color: AppColors.textSecondary,
@@ -881,7 +881,7 @@ class _DashboardTabState extends State<DashboardTab> {
             ),
             child: Center(
               child: Text(
-                'No recent activities',
+                AppLocalizations.of(context)?.noRecentActivities ??'No recent activities',
                 style: GoogleFonts.poppins(
                   fontSize: AppConstants.textMedium,
                   color: AppColors.textSecondary,
@@ -901,7 +901,7 @@ class _DashboardTabState extends State<DashboardTab> {
               ),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.info_outline,
                     size: 16,
                     color: Colors.blue,
@@ -1054,7 +1054,7 @@ class _DashboardTabState extends State<DashboardTab> {
             ),
             child: Center(
               child: Text(
-                'No upcoming deadlines',
+                AppLocalizations.of(context)?.noUpcomingDeadlines ??'No upcoming deadlines',
                 style: GoogleFonts.poppins(
                   fontSize: AppConstants.textMedium,
                   color: AppColors.textSecondary,
@@ -1155,7 +1155,7 @@ class _DashboardTabState extends State<DashboardTab> {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              deadline.formattedDeadline,
+              deadline.formattedDeadline(context),
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textSmall,
                 fontWeight: FontWeight.w600,
@@ -1243,27 +1243,32 @@ class _DashboardTabState extends State<DashboardTab> {
 
   // Helper Methods
   String _formatTime(DateTime dateTime) {
+    final loc = AppLocalizations.of(context)!;
     final now = DateTime.now();
     final difference = now.difference(dateTime);
 
     if (difference.inMinutes < 1) {
-      return 'Just now';
+      return loc.justNow;
     } else if (difference.inHours < 1) {
-      return '${difference.inMinutes}m ago';
+      return loc.minutesAgo(difference.inMinutes);
     } else if (difference.inDays < 1) {
-      return '${difference.inHours}h ago';
+      return loc.hoursAgo(difference.inHours);
     } else {
-      return '${difference.inDays}d ago';
+      return loc.daysAgo(difference.inDays);
     }
   }
 
   String _formatCurrency(double amount) {
+    final loc = AppLocalizations.of(context)!;
+
     if (amount >= 1000000) {
-      return '${(amount / 1000000).toStringAsFixed(1)}M DA';
+      return loc.currencyMillion((amount / 1000000).toStringAsFixed(1));
     } else if (amount >= 1000) {
-      return '${(amount / 1000).toStringAsFixed(1)}K DA';
+      return loc.currencyThousand((amount / 1000).toStringAsFixed(1));
     } else {
-      return '${amount.toStringAsFixed(0)} DA';
+      return loc.currencyPlain(amount.toStringAsFixed(0));
     }
   }
+
+
 }

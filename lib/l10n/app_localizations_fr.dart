@@ -579,4 +579,310 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get unpaidProjects => 'Projets impayés';
+
+  @override
+  String get monthlyPerformance => 'Performance mensuelle';
+
+  @override
+  String get yearlyPerformance => 'Performance annuelle';
+
+  @override
+  String get lastUpdated => 'Dernière mise à jour';
+
+  @override
+  String get refreshDashboard => 'Actualiser le tableau de bord';
+
+  @override
+  String get profit => 'Profit';
+
+  @override
+  String get revenue => 'Revenu';
+
+  @override
+  String get active => 'Actif';
+
+  @override
+  String get netIncome => 'Revenu net';
+
+  @override
+  String get justNow => 'À l’instant';
+
+  @override
+  String minutesAgo(Object minutes) {
+    return 'il y a $minutes min';
+  }
+
+  @override
+  String hoursAgo(Object hours) {
+    return 'il y a $hours h';
+  }
+
+  @override
+  String daysAgo(Object days) {
+    return 'il y a $days j';
+  }
+
+  @override
+  String currencyMillion(Object amount) {
+    return '$amount M DA';
+  }
+
+  @override
+  String currencyThousand(Object amount) {
+    return '$amount K DA';
+  }
+
+  @override
+  String currencyPlain(Object amount) {
+    return '$amount DA';
+  }
+
+  @override
+  String overduePayment(Object days) {
+    return 'En retard de $days jours';
+  }
+
+  @override
+  String dueInDays(Object days) {
+    return 'À payer dans $days jours';
+  }
+
+  @override
+  String get taxManagement => 'Gestion des impôts';
+
+  @override
+  String get taxYear => 'Année fiscale :';
+
+  @override
+  String get taxStatistics => 'Statistiques fiscales';
+
+  @override
+  String get paid => 'Payé';
+
+  @override
+  String get overdue => 'En retard';
+
+  @override
+  String get alerts => 'Alertes';
+
+  @override
+  String get calculateTaxesForYear => 'Calculez vos impôts pour cette année';
+
+  @override
+  String get calculateTaxes => 'Calculer les impôts';
+
+  @override
+  String taxPaymentsForYear(int year) {
+    return 'Paiements d\'impôts $year';
+  }
+
+  @override
+  String noTaxesCalculated(int year) {
+    return 'Aucun impôt calculé pour $year';
+  }
+
+  @override
+  String dueDate(Object day, Object month, Object year) {
+    return 'Échéance : $day/$month/$year';
+  }
+
+  @override
+  String currencyWithSymbol(Object amount) {
+    return '$amount DA';
+  }
+
+  @override
+  String get dueToday => 'Échéance aujourd’hui';
+
+  @override
+  String get dueTomorrow => 'Échéance demain';
+
+  @override
+  String overdueBy(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '# jours',
+      one: '# jour',
+    );
+    return 'En retard de $_temp0';
+  }
+
+  @override
+  String dueIn(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '$days day',
+      zero: 'today',
+    );
+    return 'Due in $_temp0';
+  }
+
+  @override
+  String get businessManagement => 'Gestion d\'entreprise';
+
+  @override
+  String get manageAllBusiness =>
+      'Gérez tous les aspects de votre activité freelance';
+
+  @override
+  String get projectManagement => 'Gestion de projet';
+
+  @override
+  String get manageProjectsTrackProgress =>
+      'Gérez vos projets et suivez leur progression';
+
+  @override
+  String get viewProjects => 'Voir les projets';
+
+  @override
+  String get addProject => 'Ajouter un projet';
+
+  @override
+  String get manageClients => 'Gérer les clients';
+
+  @override
+  String get trackPayments => 'Suivre les paiements';
+
+  @override
+  String get manageExpenses => 'Gérer les dépenses';
+
+  @override
+  String get createInvoices => 'Créer des factures';
+
+  @override
+  String get taxes => 'Impôts';
+
+  @override
+  String get calendar => 'Calendrier';
+
+  @override
+  String get viewEvents => 'Voir les événements';
+
+  @override
+  String get businessAnalytics => 'Analyse d\'entreprise';
+
+  @override
+  String get allDeadlines => 'Toutes les échéances';
+
+  @override
+  String noDeadlinesWithFilter(String filter) {
+    return 'Aucune échéance pour $filter';
+  }
+
+  @override
+  String get appInformation => 'Informations sur l\'application';
+
+  @override
+  String get version => 'Version';
+
+  @override
+  String get buildNumber => 'Numéro de build';
+
+  @override
+  String get releaseDate => 'Date de publication';
+
+  @override
+  String get platform => 'Plateforme';
+
+  @override
+  String get framework => 'Framework';
+
+  @override
+  String get database => 'Base de données';
+
+  @override
+  String get developer => 'Développeur';
+
+  @override
+  String get developerName => 'Équipe Freelancer Mobile';
+
+  @override
+  String get developerDescription =>
+      'Spécialisée dans le développement d\'applications mobiles';
+
+  @override
+  String get appDescription =>
+      'Conçue spécialement pour les freelances algériens afin de gérer efficacement leur activité avec conformité fiscale locale et prise en charge de la langue arabe.';
+
+  @override
+  String get keyFeatures => 'Fonctionnalités clés';
+
+  @override
+  String get clientManagement => 'Gestion des clients';
+
+  @override
+  String get paymentTracking => 'Suivi des paiements';
+
+  @override
+  String get expenseManagement => 'Gestion des dépenses';
+
+  @override
+  String get invoiceGeneration => 'Génération de factures';
+
+  @override
+  String get algerianTaxManagement => 'Gestion fiscale algérienne';
+
+  @override
+  String get calendarEvents => 'Calendrier et événements';
+
+  @override
+  String get businessReports => 'Rapports d\'activité';
+
+  @override
+  String get smartNotifications => 'Notifications intelligentes';
+
+  @override
+  String get legal => 'Mentions légales';
+
+  @override
+  String get termsOfService => 'Conditions d\'utilisation';
+
+  @override
+  String get termsOfServiceDescription => 'Lisez nos conditions générales';
+
+  @override
+  String get privacyPolicy => 'Politique de confidentialité';
+
+  @override
+  String get privacyPolicyDescription => 'Comment nous protégeons vos données';
+
+  @override
+  String get openSourceLicenses => 'Licences open source';
+
+  @override
+  String get openSourceLicensesDescription =>
+      'Bibliothèques tierces et licences';
+
+  @override
+  String get contactSupport => 'Contact & Support';
+
+  @override
+  String get emailSupport => 'Support par email';
+
+  @override
+  String get website => 'Site web';
+
+  @override
+  String get rateUs => 'Noter l\'application';
+
+  @override
+  String get reportBug => 'Signaler un bug';
+
+  @override
+  String get rateUsDescription => 'Notez l’application sur le Play Store';
+
+  @override
+  String get reportBugDescription => 'Aidez-nous à améliorer l\'application';
+
+  @override
+  String get invoice => 'Facture';
+
+  @override
+  String get tax => 'Impôt';
+
+  @override
+  String get payment => 'Paiement';
 }

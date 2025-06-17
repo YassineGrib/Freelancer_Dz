@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../l10n/app_localizations.dart';
 import '../models/tax_model.dart';
 import '../services/tax_service.dart';
 import '../utils/colors.dart';
@@ -88,7 +89,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          'Tax Management',
+          AppLocalizations.of(context)?.taxManagement??'Tax Management',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -169,7 +170,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
           ),
           const SizedBox(width: 12),
           Text(
-            'Tax Year:',
+            '${AppLocalizations.of(context)?.taxYear??'Tax Year'}:',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textMedium,
               fontWeight: FontWeight.w600,
@@ -206,7 +207,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tax Statistics',
+          AppLocalizations.of(context)?.taxStatistics??'Tax Statistics',
           style: GoogleFonts.poppins(
             fontSize: AppConstants.textLarge,
             fontWeight: FontWeight.w600,
@@ -218,8 +219,9 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
           children: [
             Expanded(
               child: _buildStatCard(
-                'Paid',
-                '${(_statistics['total_paid_amount'] ?? 0.0).toStringAsFixed(0)} DA',
+                AppLocalizations.of(context)?.paid??'Paid',
+                AppLocalizations.of(context)!
+                    .currencyWithSymbol(_statistics['total_paid_amount'] ?? 0.0),
                 Icons.check_circle,
                 Colors.green,
               ),
@@ -227,8 +229,9 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
             const SizedBox(width: 12),
             Expanded(
               child: _buildStatCard(
-                'Pending',
-                '${(_statistics['total_pending_amount'] ?? 0.0).toStringAsFixed(0)} DA',
+                AppLocalizations.of(context)?.pending??'Pending',
+                AppLocalizations.of(context)!
+                    .currencyWithSymbol(_statistics['total_pending_amount'] ?? 0.0),
                 Icons.schedule,
                 Colors.orange,
               ),
@@ -240,7 +243,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
           children: [
             Expanded(
               child: _buildStatCard(
-                'Payments',
+                AppLocalizations.of(context)?.payments??'Payments',
                 '${_statistics['paid_payments'] ?? 0}',
                 Icons.payment,
                 Colors.blue,
@@ -249,7 +252,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
             const SizedBox(width: 12),
             Expanded(
               child: _buildStatCard(
-                'Overdue',
+                AppLocalizations.of(context)?.overdue??'Overdue',
                 '${_statistics['overdue_payments'] ?? 0}',
                 Icons.warning,
                 Colors.red,
@@ -299,7 +302,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Alerts',
+          AppLocalizations.of(context)?.alerts??'Alerts',
           style: GoogleFonts.poppins(
             fontSize: AppConstants.textLarge,
             fontWeight: FontWeight.w600,
@@ -311,20 +314,20 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
         // Overdue payments
         if (_overduePayments.isNotEmpty)
           ..._overduePayments.map((payment) => _buildAlertCard(
-                payment,
-                'Overdue ${payment.daysOverdue} days',
-                Colors.red,
-                Icons.warning,
-              )),
-
+            payment,
+            AppLocalizations.of(context)!.overduePayment(payment.daysOverdue),
+            Colors.red,
+            Icons.warning,
+          )),
         // Upcoming payments
         if (_upcomingPayments.isNotEmpty)
           ..._upcomingPayments.map((payment) => _buildAlertCard(
-                payment,
-                'Due in ${payment.daysUntilDue} days',
-                Colors.orange,
-                Icons.schedule,
-              )),
+            payment,
+            AppLocalizations.of(context)!.dueInDays(payment.daysUntilDue),
+            Colors.orange,
+            Icons.schedule,
+          )),
+
 
         const SizedBox(height: AppConstants.paddingMedium),
       ],
@@ -369,7 +372,9 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
               ),
             ),
             Text(
-              '${payment.amount.toStringAsFixed(0)} DA',
+              AppLocalizations.of(context)!
+                  .currencyWithSymbol(payment.amount.toStringAsFixed(0)),
+
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 color: color,
@@ -386,7 +391,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Tax Payments $_selectedYear',
+        AppLocalizations.of(context)!.taxPaymentsForYear(_selectedYear),
           style: GoogleFonts.poppins(
             fontSize: AppConstants.textLarge,
             fontWeight: FontWeight.w600,
@@ -420,7 +425,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'No taxes calculated for $_selectedYear',
+              AppLocalizations.of(context)!.noTaxesCalculated(_selectedYear),
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textMedium,
                 color: AppColors.textSecondary,
@@ -428,7 +433,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
             ),
             const SizedBox(height: 8),
             Text(
-              'Calculate your taxes for this year',
+              AppLocalizations.of(context)!.calculateTaxesForYear,
               style: GoogleFonts.poppins(
                 fontSize: AppConstants.textSmall,
                 color: AppColors.textLight,
@@ -436,7 +441,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
             ),
             const SizedBox(height: 16),
             CustomButton(
-              text: 'Calculate Taxes',
+              text: AppLocalizations.of(context)!.calculateTaxes,
               onPressed: _navigateToCalculator,
               icon: FontAwesomeIcons.calculator,
               width: 160,
@@ -524,7 +529,7 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'Due: ${payment.dueDate.day}/${payment.dueDate.month}/${payment.dueDate.year}',
+                          AppLocalizations.of(context)!.dueDate(payment.dueDate.day, payment.dueDate.month, payment.dueDate.year),
                           style: GoogleFonts.poppins(
                             fontSize: AppConstants.textSmall,
                             color: payment.isOverdue
@@ -543,7 +548,9 @@ class _TaxManagementScreenState extends State<TaxManagementScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '${payment.amount.toStringAsFixed(0)} DA',
+                    AppLocalizations.of(context)!
+                        .currencyWithSymbol(payment.amount.toStringAsFixed(0))
+                    ,
                     style: GoogleFonts.poppins(
                       fontSize: AppConstants.textMedium,
                       fontWeight: FontWeight.w600,
