@@ -905,22 +905,94 @@
   "reportBugDescription": "ساعدنا في تحسين التطبيق",
   "invoice": "الفاتورة",
   "tax": "الضريبة",
-  "payment": "الدفعة"
+  "payment": "الدفعة",
+
+  "appPreferences": "تفضيلات التطبيق",
 
 
 
+  "editProject": "تعديل المشروع",
+  "projectName": "اسم المشروع",
+  "enterProjectName": "أدخل اسمًا وصفيًا",
+  "description": "الوصف",
+  "enterDescription": "صف محتوى هذا المشروع...",
+  "selectClient": "اختر العميل",
+  "noClientsFound": "لم يتم العثور على عملاء",
+  "pleaseSelectClient": "الرجاء اختيار عميل",
+  "pricingDetails": "تفاصيل التسعير",
+  "fixedPrice": "سعر ثابت",
+  "hourlyRate": "سعر بالساعة",
+  "estimatedHours": "الساعات المقدرة",
+  "actualHours": "الساعات الفعلية",
+  "timelineStatus": "الجدول الزمني والحالة",
+  "projectStatus": "حالة المشروع",
+  "projectTimeline": "الجدول الزمني للمشروع",
+  "progress": "التقدم (%)",
+  "startDate": "تاريخ البدء",
+  "endDate": "تاريخ الانتهاء",
+  "previous": "السابق",
+  "createProject": "إنشاء مشروع",
+  "updateProject": "تحديث المشروع",
+  "enterFixedAmountError": "الرجاء إدخال مبلغ ثابت للمشاريع ذات السعر الثابت",
+  "fixedAmountGreaterThanZero": "يجب أن يكون المبلغ الثابت أكبر من 0",
+  "enterHourlyRateError": "الرجاء إدخال سعر بالساعة للمشاريع ذات التسعير بالساعة",
 
-
-
-
-
-
-
-
-
-
-
-
+  "hourlyRateGreaterThanZero": "يجب أن يكون السعر بالساعة أكبر من 0",
+  "freelanceManagementSlogan": "حل متكامل لإدارة العمل الحر",
+  "appInfo": "معلومات التطبيق",
+  "endDateAfterStart": "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء",
+  "progressBetween0And100": "يجب أن تكون نسبة التقدم بين 0 و 100",
+  "validProgressRequired": "الرجاء إدخال نسبة تقدم صحيحة",
+  "projectUpdated": "تم تحديث المشروع بنجاح",
+  "projectCreated": "تم إنشاء المشروع بنجاح",
+  "projectSaveError": "خطأ أثناء حفظ المشروع: {error}",
+   "basicInfo": "معلومات أساسية",
+ "pricing": "التسعير",
+  "timeline": "الجدول الزمني",
+  "projectInfo": "معلومات المشروع",
+  "projectDetailsHint": "أدخل التفاصيل الأساسية لمشروعك",
+  "projectNameHint": "أدخل اسمًا وصفيًا للمشروع",
+ "descriptionHint": "صف ما يتضمنه هذا المشروع...",
+  "tipProjectDescription": "نصيحة: استخدم اسمًا واضحًا ووصفًا دقيقًا لتتبع تقدم مشروعك.",
+  "clientSelectionHint": "اختر العميل لهذا المشروع",
+  "selectClientHint": "اختر عميلاً لهذا المشروع",
+  "clientSelected": "تم اختيار العميل",
+  "clientCurrencyInfo": "سيتم تعيين العملة إلى {currency}",
+  "addClientInfo": "يجب إضافة عميل واحد على الأقل قبل إنشاء مشروع. انتقل إلى إدارة العملاء لإضافتهم.",
+  "pricingHint": "قم بتعيين نموذج التسعير والأسعار",
+  "pricingModel": "نموذج التسعير",
+   "oneTimePayment": "دفعة واحدة",
+  "payPerHour": "الدفع لكل ساعة",
+  "fixedAmount": "المبلغ الثابت",
+  "totalProjectAmount": "أدخل المبلغ الإجمالي للمشروع",
+  "hourlyRateHint": "أدخل السعر بالساعة",
+   "estimatedHoursHint": "الساعات المقدرة",
+ "actualHoursHint": "الساعات الفعلية",
+  "timelineHint": "قم بتعيين الجدول الزمني للمشروع والحالة الحالية",
+  "progressHint": "أدخل نسبة التقدم (0-100)",
+  "startDateHint": "حدد تاريخ البدء",
+   "endDateHint": "حدد تاريخ الانتهاء",
+  "readyToCreate": "جاهز لإنشاء المشروع",
+  "reviewCreateInfo": "راجع جميع المعلومات وانقر على \"إنشاء مشروع\" لإضافته إلى محفظتك.",
+  "updating": "جارٍ التحديث...",
+  "creating": "جارٍ الإنشاء...",
+  "errorLoadingClients": "خطأ في تحميل العملاء: {error}",
+  "clientNotFoundWarning": "تحذير: لم يتم العثور على العميل الأصلي. الرجاء اختيار عميل.",
+  "projectNameRequired": "اسم المشروع مطلوب",
+  "descriptionRequired": "الوصف مطلوب",
+  "hourlyRateRequired": "سعر الساعة مطلوب",
+  "enterValidHourlyRate": "الرجاء إدخال سعر ساعة صالح",
+  "fixedAmountRequired": "المبلغ الثابت مطلوب",
+  "enterValidAmount": "الرجاء إدخال مبلغ صالح",
+  "enterValidHours": "الرجاء إدخال عدد ساعات صالح",
+  "paymentFilterFullyPaid": "مدفوع بالكامل",
+  "paymentFilterPartiallyPaid": "مدفوع جزئياً",
+  "paymentFilterUnpaid": "غير مدفوع",
+  "paymentFilterOverdue": "متأخر عن الدفع",
+  "noProjectsFound": "لم يتم العثور على مشاريع",
+  "noProjectsYet": "لا توجد مشاريع بعد",
+  "adjustSearchOrFilters": "حاول تعديل البحث أو الفلاتر",
+  "createFirstProject": "أنشئ أول مشروع للبدء"
 
 
 }

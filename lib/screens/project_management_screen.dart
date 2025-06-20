@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../l10n/app_localizations.dart';
 import '../models/project_model.dart';
 import '../models/payment_model.dart';
 import '../models/client_model.dart';
@@ -339,7 +340,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
     }
     if (_searchQuery.isNotEmpty) {
       filters.add(
-          'Search: "${_searchQuery.length > 20 ? '${_searchQuery.substring(0, 20)}...' : _searchQuery}"');
+          '${(AppLocalizations.of(context)?.search??'Search')}: "${_searchQuery.length > 20 ? '${_searchQuery.substring(0, 20)}...' : _searchQuery}"');
     }
     return filters.join(' • ');
   }
@@ -653,7 +654,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          'Project Management',
+          AppLocalizations.of(context)?.projectManagement??'Project Management',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -1121,8 +1122,8 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
             _searchQuery.isNotEmpty ||
                     _selectedFilter != null ||
                     _selectedPaymentFilter != null
-                ? 'No projects found'
-                : 'No projects yet',
+                ? AppLocalizations.of(context)?.noProjectsFound??'No projects found'
+                : AppLocalizations.of(context)?.noProjectsYet??'No projects yet',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textLarge,
               fontWeight: FontWeight.w500,
@@ -1134,8 +1135,8 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
             _searchQuery.isNotEmpty ||
                     _selectedFilter != null ||
                     _selectedPaymentFilter != null
-                ? 'Try adjusting your search or filters'
-                : 'Create your first project to get started',
+                ? AppLocalizations.of(context)?.tryAdjustingFilters??'Try adjusting your search or filters'
+                : AppLocalizations.of(context)?.createFirstProject??'Create your first project to get started',
             style: GoogleFonts.poppins(
               fontSize: AppConstants.textMedium,
               color: AppColors.textLight,
@@ -1147,7 +1148,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
               _selectedPaymentFilter == null) ...[
             const SizedBox(height: 24),
             CustomButton(
-              text: 'Add Project',
+              text: AppLocalizations.of(context)?.addProject??'Add Project',
               onPressed: _navigateToAddProject,
               icon: FontAwesomeIcons.plus,
               width: 200,
@@ -1420,7 +1421,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
         },
         itemBuilder: (context) => [
           PopupMenuItem(
-            value: 'edit',
+            value: AppLocalizations.of(context)?.edit,
             child: Row(
               children: [
                 const Icon(
@@ -1430,7 +1431,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Edit',
+                  AppLocalizations.of(context)?.edit??'Edit',
                   style: GoogleFonts.poppins(
                     color: AppColors.textPrimary,
                     fontSize: 12,
@@ -1451,7 +1452,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Mark as Paid',
+                  AppLocalizations.of(context)?.markAsPaid??'Mark as Paid',
                   style: GoogleFonts.poppins(
                     color: AppColors.success,
                     fontSize: 12,
@@ -1462,7 +1463,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
             ),
           ),
           PopupMenuItem(
-            value: 'delete',
+            value: AppLocalizations.of(context)?.delete??'delete',
             child: Row(
               children: [
                 const Icon(
@@ -1472,7 +1473,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  'Delete',
+                  AppLocalizations.of(context)?.delete??'Delete',
                   style: GoogleFonts.poppins(
                     color: AppColors.error,
                     fontSize: 12,
@@ -1594,7 +1595,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: 'Paid: ',
+                                  text: "${AppLocalizations.of(context)?.paid??'Paid'}:" ,
                                   style: GoogleFonts.poppins(
                                     fontSize: 10,
                                     color: AppColors.textSecondary,
@@ -1666,7 +1667,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                           ),
                           const SizedBox(width: 4),
                           Text(
-                            'Progress',
+                            AppLocalizations.of(context)?.progress??'Progress',
                             style: GoogleFonts.poppins(
                               fontSize: 10,
                               color: AppColors.primary,
@@ -1778,7 +1779,7 @@ class _ProjectManagementScreenState extends State<ProjectManagementScreen>
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'Progress',
+                        AppLocalizations.of(context)?.progress??'Progress',
                         style: GoogleFonts.poppins(
                           fontSize: 10,
                           color: AppColors.primary,

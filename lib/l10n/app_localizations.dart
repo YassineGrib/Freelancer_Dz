@@ -1719,6 +1719,498 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Payment'**
   String get payment;
+
+  /// Label for app settings and customization
+  ///
+  /// In en, this message translates to:
+  /// **'App preferences'**
+  String get appPreferences;
+
+  /// No description provided for @editProject.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Project'**
+  String get editProject;
+
+  /// No description provided for @projectName.
+  ///
+  /// In en, this message translates to:
+  /// **'Project Name'**
+  String get projectName;
+
+  /// No description provided for @enterProjectName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a descriptive project name'**
+  String get enterProjectName;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @enterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what this project involves...'**
+  String get enterDescription;
+
+  /// No description provided for @selectClient.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Client'**
+  String get selectClient;
+
+  /// No description provided for @noClientsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Clients Found'**
+  String get noClientsFound;
+
+  /// No description provided for @pleaseSelectClient.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a client'**
+  String get pleaseSelectClient;
+
+  /// No description provided for @pricingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing Details'**
+  String get pricingDetails;
+
+  /// No description provided for @fixedPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed Price'**
+  String get fixedPrice;
+
+  /// No description provided for @hourlyRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly Rate'**
+  String get hourlyRate;
+
+  /// No description provided for @estimatedHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Hours'**
+  String get estimatedHours;
+
+  /// No description provided for @actualHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Actual Hours'**
+  String get actualHours;
+
+  /// No description provided for @timelineStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline & Status'**
+  String get timelineStatus;
+
+  /// No description provided for @projectStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Project Status'**
+  String get projectStatus;
+
+  /// No description provided for @projectTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Project Timeline'**
+  String get projectTimeline;
+
+  /// No description provided for @progress.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress (%)'**
+  String get progress;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get startDate;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End Date'**
+  String get endDate;
+
+  /// No description provided for @previous.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get previous;
+
+  /// No description provided for @createProject.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Project'**
+  String get createProject;
+
+  /// No description provided for @updateProject.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Project'**
+  String get updateProject;
+
+  /// No description provided for @enterFixedAmountError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter fixed amount for fixed price projects'**
+  String get enterFixedAmountError;
+
+  /// No description provided for @fixedAmountGreaterThanZero.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed amount must be greater than 0'**
+  String get fixedAmountGreaterThanZero;
+
+  /// No description provided for @enterHourlyRateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter hourly rate for hourly rate projects'**
+  String get enterHourlyRateError;
+
+  /// No description provided for @hourlyRateGreaterThanZero.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly rate must be greater than 0'**
+  String get hourlyRateGreaterThanZero;
+
+  /// No description provided for @freelanceManagementSlogan.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete Freelance Management Solution'**
+  String get freelanceManagementSlogan;
+
+  /// No description provided for @appInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'App Information'**
+  String get appInfo;
+
+  /// No description provided for @endDateAfterStart.
+  ///
+  /// In en, this message translates to:
+  /// **'End date must be after start date'**
+  String get endDateAfterStart;
+
+  /// No description provided for @progressBetween0And100.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress percentage must be between 0 and 100'**
+  String get progressBetween0And100;
+
+  /// No description provided for @validProgressRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid progress percentage'**
+  String get validProgressRequired;
+
+  /// No description provided for @projectUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Project updated successfully'**
+  String get projectUpdated;
+
+  /// No description provided for @projectCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Project created successfully'**
+  String get projectCreated;
+
+  /// No description provided for @projectSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving project: {error}'**
+  String projectSaveError(Object error);
+
+  /// No description provided for @basicInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Info'**
+  String get basicInfo;
+
+  /// No description provided for @pricing.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing'**
+  String get pricing;
+
+  /// No description provided for @timeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get timeline;
+
+  /// No description provided for @projectInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Project Information'**
+  String get projectInfo;
+
+  /// No description provided for @projectDetailsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter basic details about your project'**
+  String get projectDetailsHint;
+
+  /// No description provided for @projectNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a descriptive project name'**
+  String get projectNameHint;
+
+  /// No description provided for @descriptionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what this project involves...'**
+  String get descriptionHint;
+
+  /// No description provided for @tipProjectDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: Use a clear, descriptive name and detailed description to help track your project progress.'**
+  String get tipProjectDescription;
+
+  /// No description provided for @clientSelectionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the client for this project'**
+  String get clientSelectionHint;
+
+  /// No description provided for @selectClientHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a client for this project'**
+  String get selectClientHint;
+
+  /// No description provided for @clientSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'Client Selected'**
+  String get clientSelected;
+
+  /// No description provided for @clientCurrencyInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Currency will be set to {currency}'**
+  String clientCurrencyInfo(Object currency);
+
+  /// No description provided for @addClientInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to add at least one client before creating a project. Go to Client Management to add clients.'**
+  String get addClientInfo;
+
+  /// No description provided for @pricingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Set your pricing model and rates'**
+  String get pricingHint;
+
+  /// No description provided for @pricingModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pricing Model'**
+  String get pricingModel;
+
+  /// No description provided for @oneTimePayment.
+  ///
+  /// In en, this message translates to:
+  /// **'One-time payment'**
+  String get oneTimePayment;
+
+  /// No description provided for @payPerHour.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay per hour'**
+  String get payPerHour;
+
+  /// No description provided for @fixedAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed Amount'**
+  String get fixedAmount;
+
+  /// No description provided for @totalProjectAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter total project amount'**
+  String get totalProjectAmount;
+
+  /// No description provided for @hourlyRateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your hourly rate'**
+  String get hourlyRateHint;
+
+  /// No description provided for @estimatedHoursHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Est. hours'**
+  String get estimatedHoursHint;
+
+  /// No description provided for @actualHoursHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Actual hours'**
+  String get actualHoursHint;
+
+  /// No description provided for @timelineHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Set project timeline and current status'**
+  String get timelineHint;
+
+  /// No description provided for @progressHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter progress percentage (0-100)'**
+  String get progressHint;
+
+  /// No description provided for @startDateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select start date'**
+  String get startDateHint;
+
+  /// No description provided for @endDateHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Select end date'**
+  String get endDateHint;
+
+  /// No description provided for @readyToCreate.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to Create Project'**
+  String get readyToCreate;
+
+  /// No description provided for @reviewCreateInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Review all the information and click \"Create Project\" to add this project to your portfolio.'**
+  String get reviewCreateInfo;
+
+  /// No description provided for @updating.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating...'**
+  String get updating;
+
+  /// No description provided for @creating.
+  ///
+  /// In en, this message translates to:
+  /// **'Creating...'**
+  String get creating;
+
+  /// No description provided for @errorLoadingClients.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading clients: {error}'**
+  String errorLoadingClients(Object error);
+
+  /// No description provided for @clientNotFoundWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning: Original client not found. Please select a client.'**
+  String get clientNotFoundWarning;
+
+  /// No description provided for @projectNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Project name is required'**
+  String get projectNameRequired;
+
+  /// No description provided for @descriptionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Description is required'**
+  String get descriptionRequired;
+
+  /// No description provided for @hourlyRateRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Hourly rate is required'**
+  String get hourlyRateRequired;
+
+  /// No description provided for @enterValidHourlyRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid hourly rate'**
+  String get enterValidHourlyRate;
+
+  /// No description provided for @fixedAmountRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Fixed amount is required'**
+  String get fixedAmountRequired;
+
+  /// No description provided for @enterValidAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid amount'**
+  String get enterValidAmount;
+
+  /// No description provided for @enterValidHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter valid hours'**
+  String get enterValidHours;
+
+  /// No description provided for @paymentFilterFullyPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Fully Paid'**
+  String get paymentFilterFullyPaid;
+
+  /// No description provided for @paymentFilterPartiallyPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Partially Paid'**
+  String get paymentFilterPartiallyPaid;
+
+  /// No description provided for @paymentFilterUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpaid'**
+  String get paymentFilterUnpaid;
+
+  /// No description provided for @paymentFilterOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get paymentFilterOverdue;
+
+  /// No description provided for @noProjectsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No projects found'**
+  String get noProjectsFound;
+
+  /// No description provided for @noProjectsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No projects yet'**
+  String get noProjectsYet;
+
+  /// No description provided for @adjustSearchOrFilters.
+  ///
+  /// In en, this message translates to:
+  /// **'Try adjusting your search or filters'**
+  String get adjustSearchOrFilters;
+
+  /// No description provided for @createFirstProject.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your first project to get started'**
+  String get createFirstProject;
 }
 
 class _AppLocalizationsDelegate

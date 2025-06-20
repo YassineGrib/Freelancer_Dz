@@ -943,25 +943,97 @@
     "reportBugDescription": "Help us improve the app",
   "invoice": "Invoice",
   "tax": "Tax",
-  "payment": "Payment"
+  "payment": "Payment",
+  "appPreferences": "App preferences",
+  "@appPreferences": {
+    "description": "Label for app settings and customization"
+  },
 
 
 
+  "editProject": "Edit Project",
+  "projectName": "Project Name",
+  "enterProjectName": "Enter a descriptive project name",
+  "description": "Description",
+  "enterDescription": "Describe what this project involves...",
+  "selectClient": "Select Client",
+  "noClientsFound": "No Clients Found",
+  "pleaseSelectClient": "Please select a client",
+  "pricingDetails": "Pricing Details",
+  "fixedPrice": "Fixed Price",
+  "hourlyRate": "Hourly Rate",
+  "estimatedHours": "Estimated Hours",
+  "actualHours": "Actual Hours",
+  "timelineStatus": "Timeline & Status",
+  "projectStatus": "Project Status",
+  "projectTimeline": "Project Timeline",
+  "progress": "Progress (%)",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "previous": "Previous",
+  "createProject": "Create Project",
+  "updateProject": "Update Project",
+  "enterFixedAmountError": "Please enter fixed amount for fixed price projects",
+  "fixedAmountGreaterThanZero": "Fixed amount must be greater than 0",
+  "enterHourlyRateError": "Please enter hourly rate for hourly rate projects",
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "hourlyRateGreaterThanZero": "Hourly rate must be greater than 0",
+  "freelanceManagementSlogan": "Complete Freelance Management Solution",
+  "appInfo": "App Information",
+  "endDateAfterStart": "End date must be after start date",
+  "progressBetween0And100": "Progress percentage must be between 0 and 100",
+  "validProgressRequired": "Please enter a valid progress percentage",
+  "projectUpdated": "Project updated successfully",
+  "projectCreated": "Project created successfully",
+  "projectSaveError": "Error saving project: {error}",
+  "basicInfo": "Basic Info",
+  "pricing": "Pricing",
+  "timeline": "Timeline",
+  "projectInfo": "Project Information",
+  "projectDetailsHint": "Enter basic details about your project",
+  "projectNameHint": "Enter a descriptive project name",
+  "descriptionHint": "Describe what this project involves...",
+  "tipProjectDescription": "Tip: Use a clear, descriptive name and detailed description to help track your project progress.",
+  "clientSelectionHint": "Choose the client for this project",
+  "selectClientHint": "Select a client for this project",
+  "clientSelected": "Client Selected",
+  "clientCurrencyInfo": "Currency will be set to {currency}",
+  "addClientInfo": "You need to add at least one client before creating a project. Go to Client Management to add clients.",
+  "pricingHint": "Set your pricing model and rates",
+  "pricingModel": "Pricing Model",
+  "oneTimePayment": "One-time payment",
+  "payPerHour": "Pay per hour",
+  "fixedAmount": "Fixed Amount",
+  "totalProjectAmount": "Enter total project amount",
+  "hourlyRateHint": "Enter your hourly rate",
+  "estimatedHoursHint": "Est. hours",
+  "actualHoursHint": "Actual hours",
+  "timelineHint": "Set project timeline and current status",
+  "progressHint": "Enter progress percentage (0-100)",
+ "startDateHint": "Select start date",
+ "endDateHint": "Select end date",
+  "readyToCreate": "Ready to Create Project",
+  "reviewCreateInfo": "Review all the information and click \"Create Project\" to add this project to your portfolio.",
+  "updating": "Updating...",
+  "creating": "Creating...",
+  "errorLoadingClients": "Error loading clients: {error}",
+  "clientNotFoundWarning": "Warning: Original client not found. Please select a client.",
+  "projectNameRequired": "Project name is required",
+  "descriptionRequired": "Description is required",
+  "hourlyRateRequired": "Hourly rate is required",
+  "enterValidHourlyRate": "Please enter a valid hourly rate",
+  "fixedAmountRequired": "Fixed amount is required",
+  "enterValidAmount": "Please enter a valid amount",
+  "enterValidHours": "Please enter valid hours",
+  "paymentFilterFullyPaid": "Fully Paid",
+  "paymentFilterPartiallyPaid": "Partially Paid",
+  "paymentFilterUnpaid": "Unpaid",
+  "paymentFilterOverdue": "Overdue",
+  "noProjectsFound": "No projects found",
+  "noProjectsYet": "No projects yet",
+  "adjustSearchOrFilters": "Try adjusting your search or filters",
+  "createFirstProject": "Create your first project to get started"
 
 
 }
