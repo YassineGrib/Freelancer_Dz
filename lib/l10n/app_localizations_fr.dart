@@ -885,4 +885,271 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get payment => 'Paiement';
+
+  @override
+  String get appPreferences => 'Préférences de l\'application';
+
+  @override
+  String get editProject => 'Modifier le projet';
+
+  @override
+  String get projectName => 'Nom du projet';
+
+  @override
+  String get enterProjectName => 'Entrez un nom descriptif';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get enterDescription => 'Décrivez le contenu du projet...';
+
+  @override
+  String get selectClient => 'Sélectionner un client';
+
+  @override
+  String get noClientsFound => 'Aucun client trouvé';
+
+  @override
+  String get pleaseSelectClient => 'Veuillez sélectionner un client';
+
+  @override
+  String get pricingDetails => 'Détails de tarification';
+
+  @override
+  String get fixedPrice => 'Prix fixe';
+
+  @override
+  String get hourlyRate => 'Taux horaire';
+
+  @override
+  String get estimatedHours => 'Heures estimées';
+
+  @override
+  String get actualHours => 'Heures réelles';
+
+  @override
+  String get timelineStatus => 'Calendrier et statut';
+
+  @override
+  String get projectStatus => 'Statut du projet';
+
+  @override
+  String get projectTimeline => 'Calendrier du projet';
+
+  @override
+  String get progress => 'Avancement (%)';
+
+  @override
+  String get startDate => 'Date de début';
+
+  @override
+  String get endDate => 'Date de fin';
+
+  @override
+  String get previous => 'Précédent';
+
+  @override
+  String get createProject => 'Créer un projet';
+
+  @override
+  String get updateProject => 'Mettre à jour le projet';
+
+  @override
+  String get enterFixedAmountError =>
+      'Veuillez entrer un montant fixe pour les projets à prix fixe';
+
+  @override
+  String get fixedAmountGreaterThanZero =>
+      'Le montant fixe doit être supérieur à 0';
+
+  @override
+  String get enterHourlyRateError =>
+      'Veuillez entrer un taux horaire pour les projets à taux horaire';
+
+  @override
+  String get hourlyRateGreaterThanZero =>
+      'Le taux horaire doit être supérieur à 0';
+
+  @override
+  String get freelanceManagementSlogan =>
+      'Solution complète de gestion freelance';
+
+  @override
+  String get appInfo => 'Informations de l\'application';
+
+  @override
+  String get endDateAfterStart =>
+      'La date de fin doit être après la date de début';
+
+  @override
+  String get progressBetween0And100 =>
+      'Le pourcentage d\'avancement doit être entre 0 et 100';
+
+  @override
+  String get validProgressRequired =>
+      'Veuillez entrer un pourcentage d\'avancement valide';
+
+  @override
+  String get projectUpdated => 'Projet mis à jour avec succès';
+
+  @override
+  String get projectCreated => 'Projet créé avec succès';
+
+  @override
+  String projectSaveError(Object error) {
+    return 'Erreur lors de l\'enregistrement du projet : $error';
+  }
+
+  @override
+  String get basicInfo => 'Informations de base';
+
+  @override
+  String get pricing => 'Tarification';
+
+  @override
+  String get timeline => 'Calendrier';
+
+  @override
+  String get projectInfo => 'Informations du projet';
+
+  @override
+  String get projectDetailsHint =>
+      'Saisissez les détails de base de votre projet';
+
+  @override
+  String get projectNameHint => 'Entrez un nom de projet descriptif';
+
+  @override
+  String get descriptionHint => 'Décrivez ce que ce projet implique...';
+
+  @override
+  String get tipProjectDescription =>
+      'Conseil : Utilisez un nom clair et une description détaillée pour suivre l\'avancement de votre projet.';
+
+  @override
+  String get clientSelectionHint => 'Choisissez le client pour ce projet';
+
+  @override
+  String get selectClientHint => 'Sélectionnez un client pour ce projet';
+
+  @override
+  String get clientSelected => 'Client sélectionné';
+
+  @override
+  String clientCurrencyInfo(Object currency) {
+    return 'La devise sera définie sur $currency';
+  }
+
+  @override
+  String get addClientInfo =>
+      'Vous devez ajouter au moins un client avant de créer un projet. Allez dans la gestion des clients pour en ajouter.';
+
+  @override
+  String get pricingHint =>
+      'Définissez votre modèle de tarification et vos tarifs';
+
+  @override
+  String get pricingModel => 'Modèle de tarification';
+
+  @override
+  String get oneTimePayment => 'Paiement unique';
+
+  @override
+  String get payPerHour => 'Payer à l\'heure';
+
+  @override
+  String get fixedAmount => 'Montant fixe';
+
+  @override
+  String get totalProjectAmount => 'Saisissez le montant total du projet';
+
+  @override
+  String get hourlyRateHint => 'Entrez votre taux horaire';
+
+  @override
+  String get estimatedHoursHint => 'Heures estimées';
+
+  @override
+  String get actualHoursHint => 'Heures réelles';
+
+  @override
+  String get timelineHint => 'Définissez le calendrier et le statut du projet';
+
+  @override
+  String get progressHint => 'Entrez un pourcentage de progression (0-100)';
+
+  @override
+  String get startDateHint => 'Sélectionnez la date de début';
+
+  @override
+  String get endDateHint => 'Sélectionnez la date de fin';
+
+  @override
+  String get readyToCreate => 'Prêt à créer le projet';
+
+  @override
+  String get reviewCreateInfo =>
+      'Vérifiez toutes les informations et cliquez sur \"Créer le projet\" pour l\'ajouter à votre portefeuille.';
+
+  @override
+  String get updating => 'Mise à jour...';
+
+  @override
+  String get creating => 'Création...';
+
+  @override
+  String errorLoadingClients(Object error) {
+    return 'Erreur lors du chargement des clients : $error';
+  }
+
+  @override
+  String get clientNotFoundWarning =>
+      'Avertissement : le client d\'origine est introuvable. Veuillez en sélectionner un.';
+
+  @override
+  String get projectNameRequired => 'Le nom du projet est requis';
+
+  @override
+  String get descriptionRequired => 'La description est requise';
+
+  @override
+  String get hourlyRateRequired => 'Le taux horaire est requis';
+
+  @override
+  String get enterValidHourlyRate => 'Veuillez entrer un taux horaire valide';
+
+  @override
+  String get fixedAmountRequired => 'Le montant fixe est requis';
+
+  @override
+  String get enterValidAmount => 'Veuillez entrer un montant valide';
+
+  @override
+  String get enterValidHours => 'Veuillez entrer un nombre d\'heures valide';
+
+  @override
+  String get paymentFilterFullyPaid => 'Entièrement payé';
+
+  @override
+  String get paymentFilterPartiallyPaid => 'Partiellement payé';
+
+  @override
+  String get paymentFilterUnpaid => 'Non payé';
+
+  @override
+  String get paymentFilterOverdue => 'En retard';
+
+  @override
+  String get noProjectsFound => 'Aucun projet trouvé';
+
+  @override
+  String get noProjectsYet => 'Pas encore de projets';
+
+  @override
+  String get adjustSearchOrFilters =>
+      'Essayez de modifier votre recherche ou vos filtres';
+
+  @override
+  String get createFirstProject => 'Créez votre premier projet pour commencer';
 }

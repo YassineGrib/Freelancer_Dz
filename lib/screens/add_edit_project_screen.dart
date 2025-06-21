@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../l10n/app_localizations.dart';
 import '../models/project_model.dart';
 import '../models/client_model.dart';
 import '../services/project_service.dart';
@@ -89,7 +90,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
       setState(() => _isLoadingClients = false);
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error loading clients: $e')),
+          SnackBar(content: Text(AppLocalizations.of(context)?.errorLoadingClients(e)??'Error loading clients: $e')),
         );
       }
     }
@@ -145,11 +146,11 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
       // Optionally show a snackbar to inform the user
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
+           SnackBar(
             content: Text(
-                'Warning: Original client not found. Please select a client.'),
+                AppLocalizations.of(context)?.clientNotFoundWarning??'Warning: Original client not found. Please select a client.'),
             backgroundColor: Colors.orange,
-            duration: Duration(seconds: 3),
+            duration: const Duration(seconds: 3),
           ),
         );
       }
@@ -209,14 +210,14 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
   String? _validateProjectName(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Project name is required';
+      return AppLocalizations.of(context)?.projectNameRequired??'Project name is required';
     }
     return null;
   }
 
   String? _validateDescription(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Description is required';
+      return AppLocalizations.of(context)?.descriptionRequired??'Description is required';
     }
     return null;
   }
@@ -224,11 +225,11 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
   String? _validateHourlyRate(String? value) {
     if (_selectedPricingType == PricingType.hourlyRate) {
       if (value == null || value.trim().isEmpty) {
-        return 'Hourly rate is required';
+        return AppLocalizations.of(context)?.hourlyRateRequired??'Hourly rate is required';
       }
       final rate = double.tryParse(value);
       if (rate == null || rate <= 0) {
-        return 'Please enter a valid hourly rate';
+        return AppLocalizations.of(context)?.enterValidHourlyRate??'Please enter a valid hourly rate';
       }
     }
     return null;
@@ -237,11 +238,11 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
   String? _validateFixedAmount(String? value) {
     if (_selectedPricingType == PricingType.fixedPrice) {
       if (value == null || value.trim().isEmpty) {
-        return 'Fixed amount is required';
+        return AppLocalizations.of(context)?.fixedAmountRequired??'Fixed amount is required';
       }
       final amount = double.tryParse(value);
       if (amount == null || amount <= 0) {
-        return 'Please enter a valid amount';
+        return AppLocalizations.of(context)?.enterValidAmount??'Please enter a valid amount';
       }
     }
     return null;
@@ -253,7 +254,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
         value.trim().isNotEmpty) {
       final hours = double.tryParse(value);
       if (hours == null || hours <= 0) {
-        return 'Please enter valid hours';
+        return AppLocalizations.of(context)?.enterValidHours??'Please enter valid hours';
       }
     }
     return null;
@@ -265,7 +266,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
         value.trim().isNotEmpty) {
       final hours = double.tryParse(value);
       if (hours == null || hours <= 0) {
-        return 'Please enter valid hours';
+        return AppLocalizations.of(context)?.enterValidHours??'Please enter valid hours';
       }
     }
     return null;
@@ -276,7 +277,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
     if (value != null && value.trim().isNotEmpty) {
       final progress = int.tryParse(value);
       if (progress == null || progress < 0 || progress > 100) {
-        return 'Progress must be between 0 and 100';
+        return AppLocalizations.of(context)?.progressBetween0And100??'Progress must be between 0 and 100';
       }
     }
     return null;
@@ -314,8 +315,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
       case 1: // Client Selection
         if (_selectedClient == null) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Please select a client'),
+             SnackBar(
+              content: Text(AppLocalizations.of(context)?.pleaseSelectClient??'Please select a client'),
               backgroundColor: Colors.red,
             ),
           );
@@ -348,8 +349,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
       allValid = false;
       firstInvalidStep = 1;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please select a client'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)?.pleaseSelectClient??'Please select a client'),
           backgroundColor: Colors.red,
         ),
       );
@@ -362,9 +363,9 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
           allValid = false;
           firstInvalidStep = 2;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+             SnackBar(
               content:
-                  Text('Please enter fixed amount for fixed price projects'),
+                  Text(AppLocalizations.of(context)?.enterFixedAmountError??'Please enter fixed amount for fixed price projects'),
               backgroundColor: Colors.red,
             ),
           );
@@ -374,8 +375,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
             allValid = false;
             firstInvalidStep = 2;
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Fixed amount must be greater than 0'),
+               SnackBar(
+                content: Text(AppLocalizations.of(context)?.fixedAmountGreaterThanZero??'Fixed amount must be greater than 0'),
                 backgroundColor: Colors.red,
               ),
             );
@@ -386,9 +387,9 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
           allValid = false;
           firstInvalidStep = 2;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+             SnackBar(
               content:
-                  Text('Please enter hourly rate for hourly rate projects'),
+                  Text(AppLocalizations.of(context)?.enterHourlyRateError??'Please enter hourly rate for hourly rate projects'),
               backgroundColor: Colors.red,
             ),
           );
@@ -398,8 +399,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
             allValid = false;
             firstInvalidStep = 2;
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Hourly rate must be greater than 0'),
+               SnackBar(
+                content: Text(AppLocalizations.of(context)?.hourlyRateGreaterThanZero??'Hourly rate must be greater than 0'),
                 backgroundColor: Colors.red,
               ),
             );
@@ -414,8 +415,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
         allValid = false;
         firstInvalidStep = 3;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('End date must be after start date'),
+           SnackBar(
+            content: Text(AppLocalizations.of(context)?.endDateAfterStart??'End date must be after start date'),
             backgroundColor: Colors.red,
           ),
         );
@@ -430,8 +431,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
           allValid = false;
           firstInvalidStep = 3;
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Progress percentage must be between 0 and 100'),
+             SnackBar(
+              content: Text(AppLocalizations.of(context)?.progressBetween0And100??'Progress percentage must be between 0 and 100'),
               backgroundColor: Colors.red,
             ),
           );
@@ -440,8 +441,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
         allValid = false;
         firstInvalidStep = 3;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Please enter a valid progress percentage'),
+           SnackBar(
+            content: Text(AppLocalizations.of(context)?.validProgressRequired??'Please enter a valid progress percentage'),
             backgroundColor: Colors.red,
           ),
         );
@@ -504,8 +505,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(_isEditing
-                ? 'Project updated successfully'
-                : 'Project created successfully'),
+                ? AppLocalizations.of(context)?.projectUpdated??'Project updated successfully'
+                : AppLocalizations.of(context)?.projectCreated??'Project created successfully'),
             backgroundColor: Colors.green,
           ),
         );
@@ -530,7 +531,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         title: Text(
-          _isEditing ? 'Edit Project' : 'Add Project',
+          _isEditing ? AppLocalizations.of(context)?.editProject??'Edit Project' : AppLocalizations.of(context)?.addProject??'Add Project',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w600,
             color: AppColors.textPrimary,
@@ -663,7 +664,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
             children: [
               Expanded(
                 child: Text(
-                  'Basic Info',
+                  AppLocalizations.of(context)?.basicInfo??'Basic Info',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 12,
@@ -677,7 +678,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
               ),
               Expanded(
                 child: Text(
-                  'Client',
+                  AppLocalizations.of(context)?.client??'Client',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 12,
@@ -691,7 +692,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
               ),
               Expanded(
                 child: Text(
-                  'Pricing',
+                  AppLocalizations.of(context)?.pricing??'Pricing',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 12,
@@ -705,7 +706,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
               ),
               Expanded(
                 child: Text(
-                  'Timeline',
+                  AppLocalizations.of(context)?.timeline??'Timeline',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 12,
@@ -754,7 +755,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Project Information',
+                        AppLocalizations.of(context)?.projectInfo??'Project Information',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -762,7 +763,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                         ),
                       ),
                       Text(
-                        'Enter basic details about your project',
+                        AppLocalizations.of(context)?.projectDetailsHint??'Enter basic details about your project',
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: AppColors.textSecondary,
@@ -778,8 +779,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Project Name
             CustomTextField(
-              label: 'Project Name',
-              hint: 'Enter a descriptive project name',
+              label: AppLocalizations.of(context)?.projectName??'Project Name',
+              hint: AppLocalizations.of(context)?.projectNameHint??'Enter a descriptive project name',
               prefixIcon: FontAwesomeIcons.diagramProject,
               controller: _projectNameController,
               validator: _validateProjectName,
@@ -789,8 +790,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Description
             CustomTextField(
-              label: 'Description',
-              hint: 'Describe what this project involves...',
+              label: AppLocalizations.of(context)?.description??'Description',
+              hint: AppLocalizations.of(context)?.descriptionHint??'Describe what this project involves...',
               prefixIcon: FontAwesomeIcons.fileLines,
               controller: _descriptionController,
               validator: _validateDescription,
@@ -817,7 +818,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      'Tip: Use a clear, descriptive name and detailed description to help track your project progress.',
+                      AppLocalizations.of(context)?.tipProjectDescription??'Tip: Use a clear, descriptive name and detailed description to help track your project progress.',
                       style: GoogleFonts.poppins(
                         fontSize: 13,
                         color: Colors.blue.shade700,
@@ -861,7 +862,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Select Client',
+                      AppLocalizations.of(context)?.selectClient??'Select Client',
                       style: GoogleFonts.poppins(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -869,7 +870,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                       ),
                     ),
                     Text(
-                      'Choose the client for this project',
+                      AppLocalizations.of(context)?.clientSelectionHint??'Choose the client for this project',
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         color: AppColors.textSecondary,
@@ -911,7 +912,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Client',
+                      AppLocalizations.of(context)?.client??'Client',
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
@@ -925,7 +926,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   child: DropdownButton<ClientModel>(
                     value: _selectedClient,
                     hint: Text(
-                      'Select a client for this project',
+                      AppLocalizations.of(context)?.selectClient??'Select a client for this project',
                       style: GoogleFonts.poppins(
                         color: AppColors.textSecondary,
                         fontSize: 16,
@@ -1034,7 +1035,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Client Selected',
+                          AppLocalizations.of(context)?.clientSelected??'Client Selected',
                           style: GoogleFonts.poppins(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
@@ -1042,7 +1043,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           ),
                         ),
                         Text(
-                          'Currency will be set to ${_selectedClient!.currency.code}',
+                          AppLocalizations.of(context)?.clientCurrencyInfo(_selectedClient!.currency.code)??'Currency will be set to ${_selectedClient!.currency.code}',
                           style: GoogleFonts.poppins(
                             fontSize: 12,
                             color: Colors.green.shade600,
@@ -1076,7 +1077,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'No Clients Found',
+                    AppLocalizations.of(context)?.noClientsFound??'No Clients Found',
                     style: GoogleFonts.poppins(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -1085,7 +1086,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'You need to add at least one client before creating a project. Go to Client Management to add clients.',
+                    AppLocalizations.of(context)?.addClientInfo??'You need to add at least one client before creating a project. Go to Client Management to add clients.',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
@@ -1130,7 +1131,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Pricing Details',
+                        AppLocalizations.of(context)?.pricingDetails??'Pricing Details',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -1138,7 +1139,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                         ),
                       ),
                       Text(
-                        'Set your pricing model and rates',
+                        AppLocalizations.of(context)?.pricingHint??'Set your pricing model and rates',
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: AppColors.textSecondary,
@@ -1154,7 +1155,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Pricing Type Selection
             Text(
-              'Pricing Model',
+              AppLocalizations.of(context)?.pricingModel??'Pricing Model',
               style: GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -1196,7 +1197,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'Fixed Price',
+                            AppLocalizations.of(context)?.fixedPrice??'Fixed Price',
                             style: GoogleFonts.poppins(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
@@ -1208,7 +1209,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            'One-time payment',
+                            AppLocalizations.of(context)?.oneTimePayment??'One-time payment',
                             style: GoogleFonts.poppins(
                               fontSize: 12,
                               color: AppColors.textSecondary,
@@ -1251,7 +1252,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'Hourly Rate',
+                            AppLocalizations.of(context)?.hourlyRate??'Hourly Rate',
                             style: GoogleFonts.poppins(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
@@ -1263,7 +1264,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            'Pay per hour',
+                            AppLocalizations.of(context)?.payPerHour??'Pay per hour',
                             style: GoogleFonts.poppins(
                               fontSize: 12,
                               color: AppColors.textSecondary,
@@ -1282,8 +1283,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
             // Pricing Fields
             if (_selectedPricingType == PricingType.fixedPrice) ...[
               CustomTextField(
-                label: 'Fixed Amount',
-                hint: 'Enter total project amount',
+                label:  AppLocalizations.of(context)?.fixedAmount??'Fixed Amount',
+                hint:  AppLocalizations.of(context)?.totalProjectAmount??'Enter total project amount',
                 prefixIcon: FontAwesomeIcons.dollarSign,
                 controller: _fixedAmountController,
                 validator: _validateFixedAmount,
@@ -1291,8 +1292,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
               ),
             ] else ...[
               CustomTextField(
-                label: 'Hourly Rate',
-                hint: 'Enter your hourly rate',
+                label: AppLocalizations.of(context)?.hourlyRate??'Hourly Rate',
+                hint: AppLocalizations.of(context)?.hourlyRateHint??'Enter your hourly rate',
                 prefixIcon: FontAwesomeIcons.clock,
                 controller: _hourlyRateController,
                 validator: _validateHourlyRate,
@@ -1303,8 +1304,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                 children: [
                   Expanded(
                     child: CustomTextField(
-                      label: 'Estimated Hours',
-                      hint: 'Est. hours',
+                      label: AppLocalizations.of(context)?.estimatedHours??'Estimated Hours',
+                      hint: AppLocalizations.of(context)?.estimatedHoursHint??'Est. hours',
                       prefixIcon: FontAwesomeIcons.hourglass,
                       controller: _estimatedHoursController,
                       validator: _validateEstimatedHours,
@@ -1314,8 +1315,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   const SizedBox(width: 16),
                   Expanded(
                     child: CustomTextField(
-                      label: 'Actual Hours',
-                      hint: 'Actual hours',
+                      label: AppLocalizations.of(context)?.actualHours??'Actual Hours',
+                      hint: AppLocalizations.of(context)?.actualHoursHint??'Actual hours',
                       prefixIcon: FontAwesomeIcons.hourglassEnd,
                       controller: _actualHoursController,
                       validator: _validateActualHours,
@@ -1330,7 +1331,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Currency Selection
             Text(
-              'Currency',
+              AppLocalizations.of(context)?.currency??'Currency',
               style: GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -1436,7 +1437,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Timeline & Status',
+                        AppLocalizations.of(context)?.timelineStatus??'Timeline & Status',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -1444,7 +1445,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                         ),
                       ),
                       Text(
-                        'Set project timeline and current status',
+                        AppLocalizations.of(context)?.timelineHint?? 'Set project timeline and current status',
                         style: GoogleFonts.poppins(
                           fontSize: 14,
                           color: AppColors.textSecondary,
@@ -1460,7 +1461,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Project Status
             Text(
-              'Project Status',
+              AppLocalizations.of(context)?.projectStatus??'Project Status',
               style: GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -1525,8 +1526,8 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Progress
             CustomTextField(
-              label: 'Progress (%)',
-              hint: 'Enter progress percentage (0-100)',
+              label: AppLocalizations.of(context)?.progress??'Progress (%)',
+              hint: AppLocalizations.of(context)?.progressHint??'Enter progress percentage (0-100)',
               prefixIcon: FontAwesomeIcons.chartLine,
               controller: _progressController,
               validator: _validateProgress,
@@ -1537,7 +1538,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
 
             // Timeline Section
             Text(
-              'Project Timeline',
+              AppLocalizations.of(context)?.projectTimeline??'Project Timeline',
               style: GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
@@ -1577,7 +1578,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Start Date',
+                                AppLocalizations.of(context)?.startDate??'Start Date',
                                 style: GoogleFonts.poppins(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -1590,7 +1591,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           Text(
                             _startDate != null
                                 ? '${_startDate!.day}/${_startDate!.month}/${_startDate!.year}'
-                                : 'Select start date',
+                                : AppLocalizations.of(context)?.startDateHint??'Select start date',
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -1634,7 +1635,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'End Date',
+                                AppLocalizations.of(context)?.endDate??'End Date',
                                 style: GoogleFonts.poppins(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -1647,7 +1648,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                           Text(
                             _endDate != null
                                 ? '${_endDate!.day}/${_endDate!.month}/${_endDate!.year}'
-                                : 'Select end date',
+                                : AppLocalizations.of(context)?.endDateHint??'Select end date',
                             style: GoogleFonts.poppins(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -1686,7 +1687,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                       ),
                       const SizedBox(width: 12),
                       Text(
-                        'Ready to Create Project',
+                        AppLocalizations.of(context)?.readyToCreate??'Ready to Create Project',
                         style: GoogleFonts.poppins(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -1697,7 +1698,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'Review all the information and click "Create Project" to add this project to your portfolio.',
+                    AppLocalizations.of(context)?.reviewCreateInfo??'Review all the information and click "Create Project" to add this project to your portfolio.',
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: Colors.green.shade600,
@@ -1734,7 +1735,7 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
               child: OutlinedButton.icon(
                 onPressed: _previousStep,
                 icon: const Icon(FontAwesomeIcons.chevronLeft, size: 16),
-                label: const Text('Previous'),
+                label:  Text(AppLocalizations.of(context)?.previous??'Previous'),
                 style: OutlinedButton.styleFrom(
                   foregroundColor: AppColors.textSecondary,
                   side: const BorderSide(color: AppColors.border),
@@ -1769,10 +1770,10 @@ class _AddEditProjectScreenState extends State<AddEditProjectScreen> {
                     ),
               label: Text(
                 _isLoading && _currentStep == 3
-                    ? (_isEditing ? 'Updating...' : 'Creating...')
+                    ? (_isEditing ? AppLocalizations.of(context)?.updating??'Updating...' : AppLocalizations.of(context)?.creating??'Creating...')
                     : _currentStep == 3
-                        ? (_isEditing ? 'Update Project' : 'Create Project')
-                        : 'Next',
+                        ? (_isEditing ? AppLocalizations.of(context)?.updateProject??'Update Project' : AppLocalizations.of(context)?.createProject??'Create Project')
+                        : AppLocalizations.of(context)?.next??'Next',
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,

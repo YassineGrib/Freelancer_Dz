@@ -877,23 +877,95 @@
   "reportBugDescription": "Aidez-nous à améliorer l'application",
   "invoice": "Facture",
   "tax": "Impôt",
-  "payment": "Paiement"
+  "payment": "Paiement",
+
+  "appPreferences": "Préférences de l'application",
+  "@appPreferences": {
+    "description": "Libellé pour les paramètres et la personnalisation de l'application"
+  },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  "editProject": "Modifier le projet",
+  "projectName": "Nom du projet",
+  "enterProjectName": "Entrez un nom descriptif",
+  "description": "Description",
+  "enterDescription": "Décrivez le contenu du projet...",
+  "selectClient": "Sélectionner un client",
+  "noClientsFound": "Aucun client trouvé",
+  "pleaseSelectClient": "Veuillez sélectionner un client",
+  "pricingDetails": "Détails de tarification",
+  "fixedPrice": "Prix fixe",
+  "hourlyRate": "Taux horaire",
+  "estimatedHours": "Heures estimées",
+  "actualHours": "Heures réelles",
+  "timelineStatus": "Calendrier et statut",
+  "projectStatus": "Statut du projet",
+  "projectTimeline": "Calendrier du projet",
+  "progress": "Avancement (%)",
+  "startDate": "Date de début",
+  "endDate": "Date de fin",
+  "previous": "Précédent",
+  "createProject": "Créer un projet",
+  "updateProject": "Mettre à jour le projet",
+  "enterFixedAmountError": "Veuillez entrer un montant fixe pour les projets à prix fixe",
+  "fixedAmountGreaterThanZero": "Le montant fixe doit être supérieur à 0",
+  "enterHourlyRateError": "Veuillez entrer un taux horaire pour les projets à taux horaire",
+  "hourlyRateGreaterThanZero": "Le taux horaire doit être supérieur à 0",
+  "freelanceManagementSlogan": "Solution complète de gestion freelance",
+  "appInfo": "Informations de l'application",
+  "endDateAfterStart": "La date de fin doit être après la date de début",
+  "progressBetween0And100": "Le pourcentage d'avancement doit être entre 0 et 100",
+  "validProgressRequired": "Veuillez entrer un pourcentage d'avancement valide",
+  "projectUpdated": "Projet mis à jour avec succès",
+  "projectCreated": "Projet créé avec succès",
+  "projectSaveError": "Erreur lors de l'enregistrement du projet : {error}",
+  "basicInfo": "Informations de base",
+   "pricing": "Tarification",
+  "timeline": "Calendrier",
+  "projectInfo": "Informations du projet",
+  "projectDetailsHint": "Saisissez les détails de base de votre projet",
+ "projectNameHint": "Entrez un nom de projet descriptif",
+  "descriptionHint": "Décrivez ce que ce projet implique...",
+  "tipProjectDescription": "Conseil : Utilisez un nom clair et une description détaillée pour suivre l'avancement de votre projet.",
+  "clientSelectionHint": "Choisissez le client pour ce projet",
+  "selectClientHint": "Sélectionnez un client pour ce projet",
+  "clientSelected": "Client sélectionné",
+  "clientCurrencyInfo": "La devise sera définie sur {currency}",
+  "addClientInfo": "Vous devez ajouter au moins un client avant de créer un projet. Allez dans la gestion des clients pour en ajouter.",
+  "pricingHint": "Définissez votre modèle de tarification et vos tarifs",
+  "pricingModel": "Modèle de tarification",
+  "oneTimePayment": "Paiement unique",
+  "payPerHour": "Payer à l'heure",
+  "fixedAmount": "Montant fixe",
+  "totalProjectAmount": "Saisissez le montant total du projet",
+  "hourlyRateHint": "Entrez votre taux horaire",
+  "estimatedHoursHint": "Heures estimées",
+  "actualHoursHint": "Heures réelles",
+ "timelineHint": "Définissez le calendrier et le statut du projet",
+   "progressHint": "Entrez un pourcentage de progression (0-100)",
+ "startDateHint": "Sélectionnez la date de début",
+   "endDateHint": "Sélectionnez la date de fin",
+  "readyToCreate": "Prêt à créer le projet",
+  "reviewCreateInfo": "Vérifiez toutes les informations et cliquez sur \"Créer le projet\" pour l'ajouter à votre portefeuille.",
+  "updating": "Mise à jour...",
+  "creating": "Création...",
+  "errorLoadingClients": "Erreur lors du chargement des clients : {error}",
+  "clientNotFoundWarning": "Avertissement : le client d'origine est introuvable. Veuillez en sélectionner un.",
+  "projectNameRequired": "Le nom du projet est requis",
+  "descriptionRequired": "La description est requise",
+  "hourlyRateRequired": "Le taux horaire est requis",
+  "enterValidHourlyRate": "Veuillez entrer un taux horaire valide",
+  "fixedAmountRequired": "Le montant fixe est requis",
+  "enterValidAmount": "Veuillez entrer un montant valide",
+  "enterValidHours": "Veuillez entrer un nombre d'heures valide",
+  "paymentFilterFullyPaid": "Entièrement payé",
+  "paymentFilterPartiallyPaid": "Partiellement payé",
+  "paymentFilterUnpaid": "Non payé",
+  "paymentFilterOverdue": "En retard",
+  "noProjectsFound": "Aucun projet trouvé",
+  "noProjectsYet": "Pas encore de projets",
+  "adjustSearchOrFilters": "Essayez de modifier votre recherche ou vos filtres",
+  "createFirstProject": "Créez votre premier projet pour commencer"
 
 
 }

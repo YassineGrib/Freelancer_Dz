@@ -866,4 +866,263 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get payment => 'الدفعة';
+
+  @override
+  String get appPreferences => 'تفضيلات التطبيق';
+
+  @override
+  String get editProject => 'تعديل المشروع';
+
+  @override
+  String get projectName => 'اسم المشروع';
+
+  @override
+  String get enterProjectName => 'أدخل اسمًا وصفيًا';
+
+  @override
+  String get description => 'الوصف';
+
+  @override
+  String get enterDescription => 'صف محتوى هذا المشروع...';
+
+  @override
+  String get selectClient => 'اختر العميل';
+
+  @override
+  String get noClientsFound => 'لم يتم العثور على عملاء';
+
+  @override
+  String get pleaseSelectClient => 'الرجاء اختيار عميل';
+
+  @override
+  String get pricingDetails => 'تفاصيل التسعير';
+
+  @override
+  String get fixedPrice => 'سعر ثابت';
+
+  @override
+  String get hourlyRate => 'سعر بالساعة';
+
+  @override
+  String get estimatedHours => 'الساعات المقدرة';
+
+  @override
+  String get actualHours => 'الساعات الفعلية';
+
+  @override
+  String get timelineStatus => 'الجدول الزمني والحالة';
+
+  @override
+  String get projectStatus => 'حالة المشروع';
+
+  @override
+  String get projectTimeline => 'الجدول الزمني للمشروع';
+
+  @override
+  String get progress => 'التقدم (%)';
+
+  @override
+  String get startDate => 'تاريخ البدء';
+
+  @override
+  String get endDate => 'تاريخ الانتهاء';
+
+  @override
+  String get previous => 'السابق';
+
+  @override
+  String get createProject => 'إنشاء مشروع';
+
+  @override
+  String get updateProject => 'تحديث المشروع';
+
+  @override
+  String get enterFixedAmountError =>
+      'الرجاء إدخال مبلغ ثابت للمشاريع ذات السعر الثابت';
+
+  @override
+  String get fixedAmountGreaterThanZero =>
+      'يجب أن يكون المبلغ الثابت أكبر من 0';
+
+  @override
+  String get enterHourlyRateError =>
+      'الرجاء إدخال سعر بالساعة للمشاريع ذات التسعير بالساعة';
+
+  @override
+  String get hourlyRateGreaterThanZero => 'يجب أن يكون السعر بالساعة أكبر من 0';
+
+  @override
+  String get freelanceManagementSlogan => 'حل متكامل لإدارة العمل الحر';
+
+  @override
+  String get appInfo => 'معلومات التطبيق';
+
+  @override
+  String get endDateAfterStart => 'يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء';
+
+  @override
+  String get progressBetween0And100 => 'يجب أن تكون نسبة التقدم بين 0 و 100';
+
+  @override
+  String get validProgressRequired => 'الرجاء إدخال نسبة تقدم صحيحة';
+
+  @override
+  String get projectUpdated => 'تم تحديث المشروع بنجاح';
+
+  @override
+  String get projectCreated => 'تم إنشاء المشروع بنجاح';
+
+  @override
+  String projectSaveError(Object error) {
+    return 'خطأ أثناء حفظ المشروع: $error';
+  }
+
+  @override
+  String get basicInfo => 'معلومات أساسية';
+
+  @override
+  String get pricing => 'التسعير';
+
+  @override
+  String get timeline => 'الجدول الزمني';
+
+  @override
+  String get projectInfo => 'معلومات المشروع';
+
+  @override
+  String get projectDetailsHint => 'أدخل التفاصيل الأساسية لمشروعك';
+
+  @override
+  String get projectNameHint => 'أدخل اسمًا وصفيًا للمشروع';
+
+  @override
+  String get descriptionHint => 'صف ما يتضمنه هذا المشروع...';
+
+  @override
+  String get tipProjectDescription =>
+      'نصيحة: استخدم اسمًا واضحًا ووصفًا دقيقًا لتتبع تقدم مشروعك.';
+
+  @override
+  String get clientSelectionHint => 'اختر العميل لهذا المشروع';
+
+  @override
+  String get selectClientHint => 'اختر عميلاً لهذا المشروع';
+
+  @override
+  String get clientSelected => 'تم اختيار العميل';
+
+  @override
+  String clientCurrencyInfo(Object currency) {
+    return 'سيتم تعيين العملة إلى $currency';
+  }
+
+  @override
+  String get addClientInfo =>
+      'يجب إضافة عميل واحد على الأقل قبل إنشاء مشروع. انتقل إلى إدارة العملاء لإضافتهم.';
+
+  @override
+  String get pricingHint => 'قم بتعيين نموذج التسعير والأسعار';
+
+  @override
+  String get pricingModel => 'نموذج التسعير';
+
+  @override
+  String get oneTimePayment => 'دفعة واحدة';
+
+  @override
+  String get payPerHour => 'الدفع لكل ساعة';
+
+  @override
+  String get fixedAmount => 'المبلغ الثابت';
+
+  @override
+  String get totalProjectAmount => 'أدخل المبلغ الإجمالي للمشروع';
+
+  @override
+  String get hourlyRateHint => 'أدخل السعر بالساعة';
+
+  @override
+  String get estimatedHoursHint => 'الساعات المقدرة';
+
+  @override
+  String get actualHoursHint => 'الساعات الفعلية';
+
+  @override
+  String get timelineHint => 'قم بتعيين الجدول الزمني للمشروع والحالة الحالية';
+
+  @override
+  String get progressHint => 'أدخل نسبة التقدم (0-100)';
+
+  @override
+  String get startDateHint => 'حدد تاريخ البدء';
+
+  @override
+  String get endDateHint => 'حدد تاريخ الانتهاء';
+
+  @override
+  String get readyToCreate => 'جاهز لإنشاء المشروع';
+
+  @override
+  String get reviewCreateInfo =>
+      'راجع جميع المعلومات وانقر على \"إنشاء مشروع\" لإضافته إلى محفظتك.';
+
+  @override
+  String get updating => 'جارٍ التحديث...';
+
+  @override
+  String get creating => 'جارٍ الإنشاء...';
+
+  @override
+  String errorLoadingClients(Object error) {
+    return 'خطأ في تحميل العملاء: $error';
+  }
+
+  @override
+  String get clientNotFoundWarning =>
+      'تحذير: لم يتم العثور على العميل الأصلي. الرجاء اختيار عميل.';
+
+  @override
+  String get projectNameRequired => 'اسم المشروع مطلوب';
+
+  @override
+  String get descriptionRequired => 'الوصف مطلوب';
+
+  @override
+  String get hourlyRateRequired => 'سعر الساعة مطلوب';
+
+  @override
+  String get enterValidHourlyRate => 'الرجاء إدخال سعر ساعة صالح';
+
+  @override
+  String get fixedAmountRequired => 'المبلغ الثابت مطلوب';
+
+  @override
+  String get enterValidAmount => 'الرجاء إدخال مبلغ صالح';
+
+  @override
+  String get enterValidHours => 'الرجاء إدخال عدد ساعات صالح';
+
+  @override
+  String get paymentFilterFullyPaid => 'مدفوع بالكامل';
+
+  @override
+  String get paymentFilterPartiallyPaid => 'مدفوع جزئياً';
+
+  @override
+  String get paymentFilterUnpaid => 'غير مدفوع';
+
+  @override
+  String get paymentFilterOverdue => 'متأخر عن الدفع';
+
+  @override
+  String get noProjectsFound => 'لم يتم العثور على مشاريع';
+
+  @override
+  String get noProjectsYet => 'لا توجد مشاريع بعد';
+
+  @override
+  String get adjustSearchOrFilters => 'حاول تعديل البحث أو الفلاتر';
+
+  @override
+  String get createFirstProject => 'أنشئ أول مشروع للبدء';
 }

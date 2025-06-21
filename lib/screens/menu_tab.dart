@@ -265,7 +265,7 @@ class _MenuTabState extends State<MenuTab> {
       {
         'icon': FontAwesomeIcons.gear,
         'title': AppLocalizations.of(context)?.settings??'Settings',
-        'subtitle': 'App preferences',
+        'subtitle': AppLocalizations.of(context)?.appPreferences??'App preferences',
         'color': Colors.grey,
         'onTap': () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const SettingsScreen()),
