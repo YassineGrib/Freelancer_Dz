@@ -9,7 +9,8 @@ android {
     namespace = "com.example.freelancer_mobile"
     compileSdk = flutter.compileSdkVersion
     // ndkVersion = flutter.ndkVersion  // Commented out to avoid NDK issues
-
+    ndkVersion = "26.3.11579264"  // Explicitly set the NDK version
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

@@ -1405,85 +1405,85 @@ abstract class AppLocalizations {
   /// No description provided for @businessManagement.
   ///
   /// In en, this message translates to:
-  /// **'إدارة الأعمال'**
+  /// **'Business Management'**
   String get businessManagement;
 
   /// No description provided for @manageAllBusiness.
   ///
   /// In en, this message translates to:
-  /// **'إدارة جميع جوانب عملك الحر'**
+  /// **'Manage all aspects of your freelance business'**
   String get manageAllBusiness;
 
   /// No description provided for @projectManagement.
   ///
   /// In en, this message translates to:
-  /// **'إدارة المشاريع'**
+  /// **'Project Management'**
   String get projectManagement;
 
   /// No description provided for @manageProjectsTrackProgress.
   ///
   /// In en, this message translates to:
-  /// **'إدارة مشاريعك وتتبع التقدم'**
+  /// **'Manage your projects and track progress'**
   String get manageProjectsTrackProgress;
 
   /// No description provided for @viewProjects.
   ///
   /// In en, this message translates to:
-  /// **'عرض المشاريع'**
+  /// **'View Projects'**
   String get viewProjects;
 
   /// No description provided for @addProject.
   ///
   /// In en, this message translates to:
-  /// **'إضافة مشروع'**
+  /// **'Add Project'**
   String get addProject;
 
   /// No description provided for @manageClients.
   ///
   /// In en, this message translates to:
-  /// **'إدارة العملاء'**
+  /// **'Client Management'**
   String get manageClients;
 
   /// No description provided for @trackPayments.
   ///
   /// In en, this message translates to:
-  /// **'تتبع المدفوعات'**
+  /// **'Payment Tracking'**
   String get trackPayments;
 
   /// No description provided for @manageExpenses.
   ///
   /// In en, this message translates to:
-  /// **'إدارة النفقات'**
+  /// **'Expense Management'**
   String get manageExpenses;
 
   /// No description provided for @createInvoices.
   ///
   /// In en, this message translates to:
-  /// **'إنشاء الفواتير'**
+  /// **'Invoice Creation'**
   String get createInvoices;
 
   /// No description provided for @taxes.
   ///
   /// In en, this message translates to:
-  /// **'الضرائب'**
+  /// **'Taxes'**
   String get taxes;
 
   /// No description provided for @calendar.
   ///
   /// In en, this message translates to:
-  /// **'التقويم'**
+  /// **'Calendar'**
   String get calendar;
 
   /// No description provided for @viewEvents.
   ///
   /// In en, this message translates to:
-  /// **'عرض الأحداث'**
+  /// **'View Events'**
   String get viewEvents;
 
   /// No description provided for @businessAnalytics.
   ///
   /// In en, this message translates to:
-  /// **'تحليلات الأعمال'**
+  /// **'Business Analytics'**
   String get businessAnalytics;
 
   /// Section title for displaying all deadlines
@@ -2211,6 +2211,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create your first project to get started'**
   String get createFirstProject;
+
+  /// Get started button text
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
+
+  /// Skip button text
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// Welcome screen subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your freelance business with ease'**
+  String get welcomeSubtitle;
 }
 
 class _AppLocalizationsDelegate

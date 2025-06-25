@@ -1125,4 +1125,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get createFirstProject => 'أنشئ أول مشروع للبدء';
+
+  @override
+  String get getStarted => 'ابدأ الآن';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get welcomeSubtitle => 'أدر أعمالك الحرة بسهولة';
 }

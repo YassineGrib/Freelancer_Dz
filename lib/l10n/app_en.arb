@@ -879,20 +879,20 @@
       }
     }
   },
-  "businessManagement": "إدارة الأعمال",
-  "manageAllBusiness": "إدارة جميع جوانب عملك الحر",
-  "projectManagement": "إدارة المشاريع",
-  "manageProjectsTrackProgress": "إدارة مشاريعك وتتبع التقدم",
-  "viewProjects": "عرض المشاريع",
-  "addProject": "إضافة مشروع",
-  "manageClients": "إدارة العملاء",
-  "trackPayments": "تتبع المدفوعات",
-  "manageExpenses": "إدارة النفقات",
-  "createInvoices": "إنشاء الفواتير",
-  "taxes": "الضرائب",
-  "calendar": "التقويم",
-  "viewEvents": "عرض الأحداث",
-  "businessAnalytics": "تحليلات الأعمال",
+  "businessManagement": "Business Management",
+  "manageAllBusiness": "Manage all aspects of your freelance business",
+  "projectManagement": "Project Management",
+  "manageProjectsTrackProgress": "Manage your projects and track progress",
+  "viewProjects": "View Projects",
+  "addProject": "Add Project",
+  "manageClients": "Client Management",
+  "trackPayments": "Payment Tracking",
+  "manageExpenses": "Expense Management",
+  "createInvoices": "Invoice Creation",
+  "taxes": "Taxes",
+  "calendar": "Calendar",
+  "viewEvents": "View Events",
+  "businessAnalytics": "Business Analytics",
   "allDeadlines": "All Deadlines",
   "@allDeadlines": {
     "description": "Section title for displaying all deadlines"
@@ -1033,7 +1033,19 @@
   "noProjectsFound": "No projects found",
   "noProjectsYet": "No projects yet",
   "adjustSearchOrFilters": "Try adjusting your search or filters",
-  "createFirstProject": "Create your first project to get started"
+  "createFirstProject": "Create your first project to get started",
 
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get started button text"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button text"
+  },
+  "welcomeSubtitle": "Manage your freelance business with ease",
+  "@welcomeSubtitle": {
+    "description": "Welcome screen subtitle"
+  }
 
 }

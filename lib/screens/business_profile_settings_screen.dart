@@ -43,6 +43,10 @@ class _BusinessProfileSettingsScreenState
   final _bankAccountController = TextEditingController();
   final _bankIbanController = TextEditingController();
   final _bankSwiftController = TextEditingController();
+  final _ccpNumberController = TextEditingController();
+  final _ccpKeyController = TextEditingController();
+  final _ccpFullNameController = TextEditingController();
+  final _ribNumberController = TextEditingController();
 
   BusinessProfileModel? _currentProfile;
   BusinessType _selectedBusinessType = BusinessType.individual;
@@ -79,6 +83,10 @@ class _BusinessProfileSettingsScreenState
     _bankAccountController.dispose();
     _bankIbanController.dispose();
     _bankSwiftController.dispose();
+    _ccpNumberController.dispose();
+    _ccpKeyController.dispose();
+    _ccpFullNameController.dispose();
+    _ribNumberController.dispose();
     super.dispose();
   }
 
@@ -103,6 +111,10 @@ class _BusinessProfileSettingsScreenState
         _bankAccountController.text = profile.bankAccountNumber ?? '';
         _bankIbanController.text = profile.bankIban ?? '';
         _bankSwiftController.text = profile.bankSwiftCode ?? '';
+        _ccpNumberController.text = profile.ccpNumber ?? '';
+        _ccpKeyController.text = profile.ccpKey ?? '';
+        _ccpFullNameController.text = profile.ccpFullName ?? '';
+        _ribNumberController.text = profile.ribNumber ?? '';
         _selectedBusinessType = profile.businessType;
         _selectedCountry = profile.country;
         _logoPath = profile.companyLogo;
@@ -170,6 +182,18 @@ class _BusinessProfileSettingsScreenState
         bankSwiftCode: _bankSwiftController.text.trim().isEmpty
             ? null
             : _bankSwiftController.text.trim(),
+        ccpNumber: _ccpNumberController.text.trim().isEmpty
+            ? null
+            : _ccpNumberController.text.trim(),
+        ccpKey: _ccpKeyController.text.trim().isEmpty
+            ? null
+            : _ccpKeyController.text.trim(),
+        ccpFullName: _ccpFullNameController.text.trim().isEmpty
+            ? null
+            : _ccpFullNameController.text.trim(),
+        ribNumber: _ribNumberController.text.trim().isEmpty
+            ? null
+            : _ribNumberController.text.trim(),
         socialMedia: _currentProfile?.socialMedia ?? {},
         createdAt: _currentProfile?.createdAt ?? DateTime.now(),
         updatedAt: DateTime.now(),
@@ -931,6 +955,51 @@ class _BusinessProfileSettingsScreenState
             label: 'SWIFT/BIC Code',
             hint: 'Enter your SWIFT/BIC code',
             prefixIcon: FontAwesomeIcons.code,
+          ),
+          const SizedBox(height: 24),
+          Text(
+            'CCP Information',
+            style: GoogleFonts.poppins(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Optional - Algerian postal account information',
+            style: GoogleFonts.poppins(
+              fontSize: 12,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const SizedBox(height: 16),
+          CustomTextField(
+            controller: _ccpNumberController,
+            label: 'CCP Number',
+            hint: 'Enter your CCP number',
+            prefixIcon: FontAwesomeIcons.envelopesBulk,
+          ),
+          const SizedBox(height: 16),
+          CustomTextField(
+            controller: _ccpKeyController,
+            label: 'CCP Key (Clé)',
+            hint: 'Enter your CCP key',
+            prefixIcon: FontAwesomeIcons.key,
+          ),
+          const SizedBox(height: 16),
+          CustomTextField(
+            controller: _ccpFullNameController,
+            label: 'Full Name on CCP',
+            hint: 'Enter the full name on CCP account',
+            prefixIcon: FontAwesomeIcons.user,
+          ),
+          const SizedBox(height: 16),
+          CustomTextField(
+            controller: _ribNumberController,
+            label: 'RIB Number',
+            hint: 'Enter your RIB number',
+            prefixIcon: FontAwesomeIcons.receipt,
           ),
         ],
       ),

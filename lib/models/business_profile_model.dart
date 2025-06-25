@@ -21,6 +21,10 @@ class BusinessProfileModel {
   final String? bankAccountNumber;
   final String? bankIban;
   final String? bankSwiftCode;
+  final String? ccpNumber;
+  final String? ccpKey;
+  final String? ccpFullName;
+  final String? ribNumber;
   final Map<String, String> socialMedia;
   final DateTime createdAt;
   final DateTime updatedAt;
@@ -46,6 +50,10 @@ class BusinessProfileModel {
     this.bankAccountNumber,
     this.bankIban,
     this.bankSwiftCode,
+    this.ccpNumber,
+    this.ccpKey,
+    this.ccpFullName,
+    this.ribNumber,
     this.socialMedia = const {},
     required this.createdAt,
     required this.updatedAt,
@@ -72,6 +80,10 @@ class BusinessProfileModel {
     String? bankAccountNumber,
     String? bankIban,
     String? bankSwiftCode,
+    String? ccpNumber,
+    String? ccpKey,
+    String? ccpFullName,
+    String? ribNumber,
     Map<String, String>? socialMedia,
     DateTime? createdAt,
     DateTime? updatedAt,
@@ -97,6 +109,10 @@ class BusinessProfileModel {
       bankAccountNumber: bankAccountNumber ?? this.bankAccountNumber,
       bankIban: bankIban ?? this.bankIban,
       bankSwiftCode: bankSwiftCode ?? this.bankSwiftCode,
+      ccpNumber: ccpNumber ?? this.ccpNumber,
+      ccpKey: ccpKey ?? this.ccpKey,
+      ccpFullName: ccpFullName ?? this.ccpFullName,
+      ribNumber: ribNumber ?? this.ribNumber,
       socialMedia: socialMedia ?? this.socialMedia,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
@@ -125,6 +141,10 @@ class BusinessProfileModel {
       'bank_account_number': bankAccountNumber,
       'bank_iban': bankIban,
       'bank_swift_code': bankSwiftCode,
+      'ccp_number': ccpNumber,
+      'ccp_key': ccpKey,
+      'ccp_full_name': ccpFullName,
+      'rib_number': ribNumber,
       'social_media': socialMedia,
       'created_at': createdAt.toIso8601String(),
       'updated_at': updatedAt.toIso8601String(),
@@ -156,6 +176,10 @@ class BusinessProfileModel {
       bankAccountNumber: json['bank_account_number'],
       bankIban: json['bank_iban'],
       bankSwiftCode: json['bank_swift_code'],
+      ccpNumber: json['ccp_number'],
+      ccpKey: json['ccp_key'],
+      ccpFullName: json['ccp_full_name'],
+      ribNumber: json['rib_number'],
       socialMedia: Map<String, String>.from(json['social_media'] ?? {}),
       createdAt: DateTime.parse(json['created_at'] ?? DateTime.now().toIso8601String()),
       updatedAt: DateTime.parse(json['updated_at'] ?? DateTime.now().toIso8601String()),

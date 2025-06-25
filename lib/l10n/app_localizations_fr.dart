@@ -1152,4 +1152,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get createFirstProject => 'Créez votre premier projet pour commencer';
+
+  @override
+  String get getStarted => 'Commencer';
+
+  @override
+  String get skip => 'Passer';
+
+  @override
+  String get welcomeSubtitle =>
+      'Gérez votre activité freelance en toute simplicité';
 }

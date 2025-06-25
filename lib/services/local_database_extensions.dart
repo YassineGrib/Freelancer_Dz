@@ -205,6 +205,17 @@ extension LocalDatabaseExtensions on LocalDatabaseService {
     );
   }
 
+  Future<Map<String, dynamic>?> getTaxPaymentById(String taxPaymentId) async {
+    final db = await database;
+    final result = await db.query(
+      'tax_payments',
+      where: 'id = ?',
+      whereArgs: [taxPaymentId],
+      limit: 1,
+    );
+    return result.isNotEmpty ? result.first : null;
+  }
+
   // Tax calculation methods
   Future<List<Map<String, dynamic>>> getTaxCalculations(String userId) async {
     final db = await database;

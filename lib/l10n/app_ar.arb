@@ -992,8 +992,20 @@
   "noProjectsFound": "لم يتم العثور على مشاريع",
   "noProjectsYet": "لا توجد مشاريع بعد",
   "adjustSearchOrFilters": "حاول تعديل البحث أو الفلاتر",
-  "createFirstProject": "أنشئ أول مشروع للبدء"
+  "createFirstProject": "أنشئ أول مشروع للبدء",
 
+  "getStarted": "ابدأ الآن",
+  "@getStarted": {
+    "description": "نص زر البدء"
+  },
+  "skip": "تخطي",
+  "@skip": {
+    "description": "نص زر التخطي"
+  },
+  "welcomeSubtitle": "أدر أعمالك الحرة بسهولة",
+  "@welcomeSubtitle": {
+    "description": "العنوان الفرعي لشاشة الترحيب"
+  }
 
 }
 

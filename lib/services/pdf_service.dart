@@ -184,14 +184,6 @@ class PDFService {
                   color: PdfColors.blue800,
                 ),
               ),
-              pw.Text(
-                'فاتورة',
-                style: pw.TextStyle(
-                  font: arabicFont,
-                  fontSize: 16,
-                  color: PdfColors.grey600,
-                ),
-              ),
 
               pw.SizedBox(height: 20),
 
@@ -262,14 +254,6 @@ class PDFService {
                   color: PdfColors.blue800,
                 ),
               ),
-              pw.Text(
-                'فاتورة',
-                style: pw.TextStyle(
-                  font: arabicFont,
-                  fontSize: 16,
-                  color: PdfColors.grey600,
-                ),
-              ),
             ],
           ),
         ],
@@ -279,7 +263,6 @@ class PDFService {
 
   // Build invoice information section
   pw.Widget _buildInvoiceInfo(InvoiceModel invoice, pw.Font arabicFont, pw.Font regularFont) {
-    final currency = _settingsService.getCurrencySymbol();
 
     return pw.Row(
       mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
@@ -296,10 +279,7 @@ class PDFService {
         pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.end,
           children: [
-            _buildInfoRow('Status:', invoice.status.displayName, regularFont),
-            _buildInfoRow('Currency:', currency, regularFont),
-            if (invoice.projectId != null)
-              _buildInfoRow('Project:', 'Project #${invoice.projectId}', regularFont),
+            // Removed Status, Currency, and Project ID fields
           ],
         ),
       ],
@@ -654,6 +634,9 @@ class PDFService {
           pw.SizedBox(height: 16),
         ],
 
+        // Bank Payment Information section
+        _buildBankPaymentInfo(businessProfile, regularFont),
+
         // Footer divider
         pw.Divider(color: PdfColors.grey300, thickness: 1),
         pw.SizedBox(height: 12),
@@ -676,15 +659,7 @@ class PDFService {
                     color: PdfColors.blue800,
                   ),
                 ),
-                pw.SizedBox(height: 4),
-                pw.Text(
-                  'شكراً لك على ثقتك',
-                  style: pw.TextStyle(
-                    font: arabicFont,
-                    fontSize: 12,
-                    color: PdfColors.grey600,
-                  ),
-                ),
+
 
                 // Website if available
                 if (businessProfile.website != null && businessProfile.website!.isNotEmpty)
@@ -759,6 +734,129 @@ class PDFService {
                 font: font,
                 fontSize: 10,
                 color: PdfColors.grey700,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // Build bank payment information section
+  pw.Widget _buildBankPaymentInfo(BusinessProfileModel businessProfile, pw.Font regularFont) {
+    // Check if any bank or CCP information is available
+    final hasBankInfo = (businessProfile.bankName != null && businessProfile.bankName!.isNotEmpty) ||
+                       (businessProfile.bankAccountNumber != null && businessProfile.bankAccountNumber!.isNotEmpty) ||
+                       (businessProfile.bankIban != null && businessProfile.bankIban!.isNotEmpty);
+
+    final hasCcpInfo = (businessProfile.ccpNumber != null && businessProfile.ccpNumber!.isNotEmpty) ||
+                      (businessProfile.ribNumber != null && businessProfile.ribNumber!.isNotEmpty);
+
+    if (!hasBankInfo && !hasCcpInfo) {
+      return pw.SizedBox.shrink();
+    }
+
+    return pw.Column(
+      children: [
+        pw.Container(
+          width: double.infinity,
+          padding: const pw.EdgeInsets.all(16),
+          decoration: pw.BoxDecoration(
+            color: PdfColors.blue50,
+            borderRadius: pw.BorderRadius.circular(8),
+            border: pw.Border.all(color: PdfColors.blue200),
+          ),
+          child: pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              pw.Text(
+                'Payment Information',
+                style: pw.TextStyle(
+                  font: regularFont,
+                  fontSize: 14,
+                  fontWeight: pw.FontWeight.bold,
+                  color: PdfColors.blue800,
+                ),
+              ),
+              pw.SizedBox(height: 12),
+
+              // Bank Information
+              if (hasBankInfo) ...[
+                pw.Text(
+                  'Bank Transfer:',
+                  style: pw.TextStyle(
+                    font: regularFont,
+                    fontSize: 12,
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.grey800,
+                  ),
+                ),
+                pw.SizedBox(height: 6),
+                if (businessProfile.bankName != null && businessProfile.bankName!.isNotEmpty)
+                  _buildPaymentInfoRow('Bank Name:', businessProfile.bankName!, regularFont),
+                if (businessProfile.bankAccountNumber != null && businessProfile.bankAccountNumber!.isNotEmpty)
+                  _buildPaymentInfoRow('Account Number:', businessProfile.bankAccountNumber!, regularFont),
+                if (businessProfile.bankIban != null && businessProfile.bankIban!.isNotEmpty)
+                  _buildPaymentInfoRow('IBAN:', businessProfile.bankIban!, regularFont),
+                if (businessProfile.bankSwiftCode != null && businessProfile.bankSwiftCode!.isNotEmpty)
+                  _buildPaymentInfoRow('SWIFT/BIC:', businessProfile.bankSwiftCode!, regularFont),
+                if (hasCcpInfo) pw.SizedBox(height: 12),
+              ],
+
+              // CCP Information
+              if (hasCcpInfo) ...[
+                pw.Text(
+                  'CCP (Postal Account):',
+                  style: pw.TextStyle(
+                    font: regularFont,
+                    fontSize: 12,
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.grey800,
+                  ),
+                ),
+                pw.SizedBox(height: 6),
+                if (businessProfile.ccpNumber != null && businessProfile.ccpNumber!.isNotEmpty)
+                  _buildPaymentInfoRow('CCP Number:', businessProfile.ccpNumber!, regularFont),
+                if (businessProfile.ccpKey != null && businessProfile.ccpKey!.isNotEmpty)
+                  _buildPaymentInfoRow('CCP Key:', businessProfile.ccpKey!, regularFont),
+                if (businessProfile.ccpFullName != null && businessProfile.ccpFullName!.isNotEmpty)
+                  _buildPaymentInfoRow('Account Holder:', businessProfile.ccpFullName!, regularFont),
+                if (businessProfile.ribNumber != null && businessProfile.ribNumber!.isNotEmpty)
+                  _buildPaymentInfoRow('RIB:', businessProfile.ribNumber!, regularFont),
+              ],
+            ],
+          ),
+        ),
+        pw.SizedBox(height: 16),
+      ],
+    );
+  }
+
+  // Helper method to build payment info rows
+  pw.Widget _buildPaymentInfoRow(String label, String value, pw.Font font) {
+    return pw.Padding(
+      padding: const pw.EdgeInsets.only(bottom: 4),
+      child: pw.Row(
+        children: [
+          pw.SizedBox(
+            width: 100,
+            child: pw.Text(
+              label,
+              style: pw.TextStyle(
+                font: font,
+                fontSize: 10,
+                color: PdfColors.grey600,
+              ),
+            ),
+          ),
+          pw.Expanded(
+            child: pw.Text(
+              value,
+              style: pw.TextStyle(
+                font: font,
+                fontSize: 10,
+                fontWeight: pw.FontWeight.bold,
+                color: PdfColors.grey800,
               ),
             ),
           ),

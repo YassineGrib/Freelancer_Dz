@@ -708,46 +708,48 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get businessManagement => 'إدارة الأعمال';
+  String get businessManagement => 'Business Management';
 
   @override
-  String get manageAllBusiness => 'إدارة جميع جوانب عملك الحر';
+  String get manageAllBusiness =>
+      'Manage all aspects of your freelance business';
 
   @override
-  String get projectManagement => 'إدارة المشاريع';
+  String get projectManagement => 'Project Management';
 
   @override
-  String get manageProjectsTrackProgress => 'إدارة مشاريعك وتتبع التقدم';
+  String get manageProjectsTrackProgress =>
+      'Manage your projects and track progress';
 
   @override
-  String get viewProjects => 'عرض المشاريع';
+  String get viewProjects => 'View Projects';
 
   @override
-  String get addProject => 'إضافة مشروع';
+  String get addProject => 'Add Project';
 
   @override
-  String get manageClients => 'إدارة العملاء';
+  String get manageClients => 'Client Management';
 
   @override
-  String get trackPayments => 'تتبع المدفوعات';
+  String get trackPayments => 'Payment Tracking';
 
   @override
-  String get manageExpenses => 'إدارة النفقات';
+  String get manageExpenses => 'Expense Management';
 
   @override
-  String get createInvoices => 'إنشاء الفواتير';
+  String get createInvoices => 'Invoice Creation';
 
   @override
-  String get taxes => 'الضرائب';
+  String get taxes => 'Taxes';
 
   @override
-  String get calendar => 'التقويم';
+  String get calendar => 'Calendar';
 
   @override
-  String get viewEvents => 'عرض الأحداث';
+  String get viewEvents => 'View Events';
 
   @override
-  String get businessAnalytics => 'تحليلات الأعمال';
+  String get businessAnalytics => 'Business Analytics';
 
   @override
   String get allDeadlines => 'All Deadlines';
@@ -1131,4 +1133,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createFirstProject => 'Create your first project to get started';
+
+  @override
+  String get getStarted => 'Get Started';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get welcomeSubtitle => 'Manage your freelance business with ease';
 }

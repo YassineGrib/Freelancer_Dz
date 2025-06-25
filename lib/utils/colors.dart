@@ -4,6 +4,7 @@ class AppColors {
   // Primary colors - Simple black theme
   static const Color primary = Color(0xFF000000);
   static const Color primaryLight = Color(0xFF333333);
+  static const Color primaryDark = Color(0xFF000000);
 
   // Background colors - Clean and minimal
   static const Color background = Color(0xFFFFFFFF);

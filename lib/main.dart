@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/splash_screen.dart';
+import 'screens/welcome_screen.dart';
 import 'services/localization_service.dart';
 import 'services/locale_notifier.dart';
 import 'services/auth_service.dart';
@@ -61,19 +61,22 @@ class _FreeLancerAppState extends State<FreeLancerApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: AppConstants.appName,
-      debugShowCheckedModeBanner: false,
+    return ListenableBuilder(
+      listenable: _localeNotifier,
+      builder: (context, child) {
+        return MaterialApp(
+          title: AppConstants.appName,
+          debugShowCheckedModeBanner: false,
 
-      // Localization support
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: LocalizationService.instance.getSupportedLocales(),
-      locale: _localeNotifier.getLocale(),
+          // Localization support
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: LocalizationService.instance.getSupportedLocales(),
+          locale: _localeNotifier.getLocale(),
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -102,10 +105,12 @@ class _FreeLancerAppState extends State<FreeLancerApp> {
           ),
         ),
       ),
-      home: LocalizationProvider(
-        setLocale: _setLocale,
-        child: const SplashScreen(),
-      ),
+          home: LocalizationProvider(
+            setLocale: _setLocale,
+            child: const WelcomeScreen(),
+          ),
+        );
+      },
     );
   }
 }

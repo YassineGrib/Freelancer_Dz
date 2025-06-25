@@ -454,14 +454,17 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
                     const SizedBox(height: 2),
                     Row(
                       children: [
-                        Text(
-                          expense.category.displayName,
-                          style: GoogleFonts.poppins(
-                            fontSize: AppConstants.textSmall,
-                            color: AppColors.textLight,
+                        Expanded(
+                          child: Text(
+                            expense.category.displayName,
+                            style: GoogleFonts.poppins(
+                              fontSize: AppConstants.textSmall,
+                              color: AppColors.textLight,
+                            ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: 4),
                         Text(
                           '${expense.expenseDate.day}/${expense.expenseDate.month}/${expense.expenseDate.year}',
                           style: GoogleFonts.poppins(
@@ -476,9 +479,11 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
               ),
 
               // Amount and Actions
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+              SizedBox(
+                width: 120, // Fixed width to prevent overflow
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
                   Text(
                     '${expense.amount.toStringAsFixed(2)} ${expense.currency.code}',
                     style: GoogleFonts.poppins(
@@ -551,6 +556,7 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
                     ],
                   ),
                 ],
+                ),
               ),
             ],
           ),
@@ -559,8 +565,5 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
     );
   }
 
-  // Helper method for expense initial
-  String _getExpenseInitial(ExpenseModel expense) {
-    return expense.title.isNotEmpty ? expense.title[0].toUpperCase() : 'E';
-  }
+
 }

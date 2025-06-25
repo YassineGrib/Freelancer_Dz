@@ -9,7 +9,7 @@ import 'local_database_extensions.dart';
 class LocalDatabaseService {
   static Database? _database;
   static const String _databaseName = 'freelancer_mobile.db';
-  static const int _databaseVersion = 9;
+  static const int _databaseVersion = 10;
   static const _uuid = Uuid();
 
   // Table names
@@ -178,7 +178,7 @@ class LocalDatabaseService {
         description TEXT,
         amount REAL NOT NULL CHECK (amount > 0),
         currency TEXT NOT NULL CHECK (currency IN ('da', 'usd', 'eur', 'gbp')),
-        category TEXT NOT NULL CHECK (category IN ('office', 'travel', 'equipment', 'software', 'marketing', 'utilities', 'meals', 'transportation', 'communication', 'education', 'legal', 'other')),
+        category TEXT NOT NULL CHECK (category IN ('office', 'travel', 'equipment', 'software', 'marketing', 'utilities', 'meals', 'transportation', 'communication', 'education', 'legal', 'tax', 'other')),
         payment_method TEXT NOT NULL CHECK (payment_method IN ('cash', 'bankTransfer', 'creditCard', 'debitCard', 'paypal', 'ccp', 'other')),
         expense_date TEXT NOT NULL,
         receipt_url TEXT,
@@ -420,6 +420,62 @@ class LocalDatabaseService {
             'CREATE INDEX idx_calendar_events_start_date ON $_calendarEventsTable (start_date)');
         await db.execute(
             'CREATE INDEX idx_calendar_events_status ON $_calendarEventsTable (status)');
+      }
+    }
+
+    if (oldVersion < 10) {
+      // Update expenses table to include 'tax' category
+      try {
+        // Since SQLite doesn't support modifying CHECK constraints directly,
+        // we need to recreate the table
+        await db.execute('ALTER TABLE $_expensesTable RENAME TO ${_expensesTable}_old');
+
+        // Create new table with updated CHECK constraint
+        await db.execute('''
+          CREATE TABLE $_expensesTable (
+            id TEXT PRIMARY KEY,
+            user_id TEXT NOT NULL,
+            project_id TEXT,
+            client_id TEXT,
+            title TEXT NOT NULL,
+            description TEXT,
+            amount REAL NOT NULL CHECK (amount > 0),
+            currency TEXT NOT NULL CHECK (currency IN ('da', 'usd', 'eur', 'gbp')),
+            category TEXT NOT NULL CHECK (category IN ('office', 'travel', 'equipment', 'software', 'marketing', 'utilities', 'meals', 'transportation', 'communication', 'education', 'legal', 'tax', 'other')),
+            payment_method TEXT NOT NULL CHECK (payment_method IN ('cash', 'bankTransfer', 'creditCard', 'debitCard', 'paypal', 'ccp', 'other')),
+            expense_date TEXT NOT NULL,
+            receipt_url TEXT,
+            vendor TEXT,
+            notes TEXT,
+            is_reimbursable INTEGER DEFAULT 0,
+            is_recurring INTEGER DEFAULT 0,
+            recurring_end_date TEXT,
+            created_at TEXT NOT NULL,
+            updated_at TEXT,
+            FOREIGN KEY (user_id) REFERENCES $_usersTable (id) ON DELETE CASCADE,
+            FOREIGN KEY (project_id) REFERENCES $_projectsTable (id) ON DELETE SET NULL,
+            FOREIGN KEY (client_id) REFERENCES $_clientsTable (id) ON DELETE SET NULL
+          )
+        ''');
+
+        // Copy data from old table
+        await db.execute('''
+          INSERT INTO $_expensesTable
+          SELECT * FROM ${_expensesTable}_old
+        ''');
+
+        // Drop old table
+        await db.execute('DROP TABLE ${_expensesTable}_old');
+
+        // Recreate indexes
+        await db.execute('CREATE INDEX idx_expenses_user_id ON $_expensesTable (user_id)');
+        await db.execute('CREATE INDEX idx_expenses_project_id ON $_expensesTable (project_id)');
+        await db.execute('CREATE INDEX idx_expenses_client_id ON $_expensesTable (client_id)');
+        await db.execute('CREATE INDEX idx_expenses_category ON $_expensesTable (category)');
+        await db.execute('CREATE INDEX idx_expenses_expense_date ON $_expensesTable (expense_date)');
+      } catch (e) {
+        print('Error updating expenses table: $e');
+        // If there's an error, just continue - the table will be recreated in version 8 migration
       }
     }
 

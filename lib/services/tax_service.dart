@@ -1,4 +1,6 @@
 import '../models/tax_model.dart';
+import '../models/expense_model.dart';
+import '../services/expense_service.dart';
 import 'local_database_service.dart';
 import 'local_database_extensions.dart';
 import 'auth_service.dart';
@@ -43,6 +45,23 @@ class TaxService {
       return taxPayments;
     } catch (e) {
       throw Exception("Failed to fetch tax payments by year: $e");
+    }
+  }
+
+  static Future<TaxPaymentModel?> getTaxPaymentById(String paymentId) async {
+    try {
+      if (_userId == null) {
+        throw Exception("User not authenticated");
+      }
+
+      final taxPaymentData = await _db.getTaxPaymentById(paymentId);
+      if (taxPaymentData == null) {
+        return null;
+      }
+
+      return TaxPaymentModel.fromJson(taxPaymentData);
+    } catch (e) {
+      throw Exception("Failed to fetch tax payment: $e");
     }
   }
 
@@ -208,6 +227,12 @@ class TaxService {
       String paymentId, String paymentMethod,
       {String? notes}) async {
     try {
+      // Get the tax payment details before updating
+      final taxPayment = await getTaxPaymentById(paymentId);
+      if (taxPayment == null) {
+        throw Exception("Tax payment not found");
+      }
+
       final paymentData = {
         "status": "paid",
         "paid_date": DateTime.now().toIso8601String(),
@@ -216,6 +241,9 @@ class TaxService {
       };
 
       await _db.updateTaxPayment(paymentId, paymentData);
+
+      // Automatically create an expense entry for this tax payment
+      await _createTaxExpense(taxPayment, paymentMethod, notes);
     } catch (e) {
       throw Exception("Failed to mark tax payment as paid: $e");
     }
@@ -269,4 +297,48 @@ class TaxService {
       throw Exception("Failed to get tax statistics: $e");
     }
   }
+
+  /// Creates an expense entry for a tax payment
+  static Future<void> _createTaxExpense(TaxPaymentModel taxPayment, String paymentMethod, String? notes) async {
+    try {
+      // Create expense entry
+      final expense = ExpenseModel(
+        title: '${taxPayment.type.displayName} - ${taxPayment.year}',
+        description: 'Tax payment for ${taxPayment.type.fullName} (${taxPayment.year})',
+        amount: taxPayment.amount,
+        currency: Currency.da,
+        category: ExpenseCategory.tax,
+        paymentMethod: _mapPaymentMethod(paymentMethod),
+        expenseDate: DateTime.now(),
+        vendor: 'Government Tax Authority',
+        notes: notes ?? 'Automatically created from tax payment',
+        isReimbursable: false,
+        isRecurring: false,
+        createdAt: DateTime.now(),
+      );
+
+      await ExpenseService.addExpense(expense);
+    } catch (e) {
+      // Log the error but don't fail the tax payment marking
+      // Note: Tax payment will still be marked as paid even if expense creation fails
+    }
+  }
+
+  /// Maps tax payment method to expense payment method
+  static PaymentMethod _mapPaymentMethod(String paymentMethod) {
+    switch (paymentMethod) {
+      case 'bank_transfer':
+        return PaymentMethod.bankTransfer;
+      case 'cash':
+        return PaymentMethod.cash;
+      case 'check':
+        return PaymentMethod.other; // Map check to other since it doesn't exist
+      case 'ccp':
+        return PaymentMethod.ccp;
+      default:
+        return PaymentMethod.cash;
+    }
+  }
+
+
 }

@@ -965,7 +965,19 @@
   "noProjectsFound": "Aucun projet trouvé",
   "noProjectsYet": "Pas encore de projets",
   "adjustSearchOrFilters": "Essayez de modifier votre recherche ou vos filtres",
-  "createFirstProject": "Créez votre premier projet pour commencer"
+  "createFirstProject": "Créez votre premier projet pour commencer",
 
+  "getStarted": "Commencer",
+  "@getStarted": {
+    "description": "Texte du bouton commencer"
+  },
+  "skip": "Passer",
+  "@skip": {
+    "description": "Texte du bouton passer"
+  },
+  "welcomeSubtitle": "Gérez votre activité freelance en toute simplicité",
+  "@welcomeSubtitle": {
+    "description": "Sous-titre de l'écran de bienvenue"
+  }
 
 }

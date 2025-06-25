@@ -12,6 +12,7 @@ enum ExpenseCategory {
   communication,
   education,
   legal,
+  tax,
   other,
 }
 
@@ -40,6 +41,8 @@ extension ExpenseCategoryExtension on ExpenseCategory {
         return 'Education & Training';
       case ExpenseCategory.legal:
         return 'Legal & Professional';
+      case ExpenseCategory.tax:
+        return 'Tax & Government Fees';
       case ExpenseCategory.other:
         return 'Other';
     }
@@ -69,6 +72,8 @@ extension ExpenseCategoryExtension on ExpenseCategory {
         return 'التعليم والتدريب';
       case ExpenseCategory.legal:
         return 'القانونية والمهنية';
+      case ExpenseCategory.tax:
+        return 'الضرائب والرسوم الحكومية';
       case ExpenseCategory.other:
         return 'أخرى';
     }
@@ -98,6 +103,8 @@ extension ExpenseCategoryExtension on ExpenseCategory {
         return Icons.school;
       case ExpenseCategory.legal:
         return Icons.gavel;
+      case ExpenseCategory.tax:
+        return Icons.account_balance;
       case ExpenseCategory.other:
         return Icons.more_horiz;
     }
@@ -127,6 +134,8 @@ extension ExpenseCategoryExtension on ExpenseCategory {
         return Colors.cyan;
       case ExpenseCategory.legal:
         return Colors.brown;
+      case ExpenseCategory.tax:
+        return Colors.deepOrange;
       case ExpenseCategory.other:
         return Colors.grey;
     }

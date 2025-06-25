@@ -92,6 +92,9 @@ dependencies:
   # Supabase for backend services
   supabase_flutter: ^2.8.0
 
+  # Video player for welcome screen
+  video_player: ^2.8.6
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -126,6 +129,8 @@ flutter:
   assets:
     - lib/l10n/
     - assets/images/
+    - assets/videos/
+    - assets/welcom.mp4
 
   # To add assets to your application, add an assets section, like this:
   # assets:
