@@ -180,11 +180,14 @@ class BusinessProfileService {
     if (profile.city.isNotEmpty) completedFields++;
     if (profile.country.isNotEmpty) completedFields++;
     if (profile.companyLogo != null) completedFields++;
-    if (profile.website != null && profile.website!.isNotEmpty)
+    if (profile.website != null && profile.website!.isNotEmpty) {
       completedFields++;
+    }
     if (profile.taxId != null && profile.taxId!.isNotEmpty) completedFields++;
     if (profile.bankAccountNumber != null &&
-        profile.bankAccountNumber!.isNotEmpty) completedFields++;
+        profile.bankAccountNumber!.isNotEmpty) {
+      completedFields++;
+    }
 
     return completedFields / totalFields;
   }

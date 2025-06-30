@@ -359,6 +359,8 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
           color: AppColors.textPrimary,
         ),
       ),
+      tilePadding: EdgeInsets.zero,
+      childrenPadding: EdgeInsets.zero,
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
@@ -372,8 +374,6 @@ class _HelpSupportScreenState extends State<HelpSupportScreen> {
           ),
         ),
       ],
-      tilePadding: EdgeInsets.zero,
-      childrenPadding: EdgeInsets.zero,
     );
   }
 

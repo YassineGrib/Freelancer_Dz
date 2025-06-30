@@ -152,14 +152,13 @@ class _InvoiceDetailScreenState extends State<InvoiceDetailScreen> {
                   FontAwesomeIcons.calendar,
                 ),
               ),
-              if (widget.invoice.dueDate != null)
-                Expanded(
-                  child: _buildInfoItem(
-                    'Due Date',
-                    _settingsService.formatDate(widget.invoice.dueDate!),
-                    FontAwesomeIcons.clock,
-                  ),
+              Expanded(
+                child: _buildInfoItem(
+                  'Due Date',
+                  _settingsService.formatDate(widget.invoice.dueDate!),
+                  FontAwesomeIcons.clock,
                 ),
+              ),
             ],
           ),
         ],

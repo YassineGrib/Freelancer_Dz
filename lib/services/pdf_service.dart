@@ -44,9 +44,7 @@ class PDFService {
           return [
             _buildEnhancedHeader(invoice, businessProfile, arabicFont, regularFont),
             pw.SizedBox(height: 20),
-            _buildInvoiceInfo(invoice, arabicFont, regularFont),
-            pw.SizedBox(height: 20),
-            _buildClientInfo(invoice, arabicFont, regularFont),
+            _buildInvoiceAndClientRow(invoice, arabicFont, regularFont),
             pw.SizedBox(height: 20),
             _buildItemsTable(invoice, arabicFont, regularFont),
             pw.SizedBox(height: 20),
@@ -261,6 +259,24 @@ class PDFService {
     );
   }
 
+  // Build invoice and client info side by side (Bill To on right)
+  pw.Widget _buildInvoiceAndClientRow(InvoiceModel invoice, pw.Font arabicFont, pw.Font regularFont) {
+    return pw.Row(
+      crossAxisAlignment: pw.CrossAxisAlignment.start,
+      children: [
+        pw.Expanded(
+          flex: 1,
+          child: _buildClientInfo(invoice, arabicFont, regularFont),
+        ),
+        pw.SizedBox(width: 32),
+        pw.Expanded(
+          flex: 1,
+          child: _buildInvoiceInfo(invoice, arabicFont, regularFont),
+        ),
+      ],
+    );
+  }
+
   // Build invoice information section
   pw.Widget _buildInvoiceInfo(InvoiceModel invoice, pw.Font arabicFont, pw.Font regularFont) {
 
@@ -272,8 +288,7 @@ class PDFService {
           children: [
             _buildInfoRow('Invoice Number:', invoice.invoiceNumber, regularFont),
             _buildInfoRow('Issue Date:', _formatDate(invoice.issueDate), regularFont),
-            if (invoice.dueDate != null)
-              _buildInfoRow('Due Date:', _formatDate(invoice.dueDate!), regularFont),
+            _buildInfoRow('Due Date:', _formatDate(invoice.dueDate!), regularFont),
           ],
         ),
         pw.Column(
@@ -309,28 +324,81 @@ class PDFService {
             ),
           ),
           pw.SizedBox(height: 8),
-          pw.Text(
-            invoice.clientName ?? 'Unknown Client',
-            style: pw.TextStyle(
-              font: regularFont,
-              fontSize: 14,
-              fontWeight: pw.FontWeight.bold,
-            ),
+          // Name with label
+          pw.Row(
+            children: [
+              pw.Text(
+                'Name: ',
+                style: pw.TextStyle(
+                  font: regularFont,
+                  fontSize: 12,
+                  fontWeight: pw.FontWeight.bold,
+                  color: PdfColors.blue800,
+                ),
+              ),
+              pw.Text(
+                invoice.clientName ?? 'Unknown Client',
+                style: pw.TextStyle(
+                  font: regularFont,
+                  fontSize: 12,
+                  fontWeight: pw.FontWeight.bold,
+                ),
+              ),
+            ],
           ),
           if (invoice.clientEmail != null && invoice.clientEmail!.isNotEmpty)
-            pw.Text(
-              invoice.clientEmail!,
-              style: pw.TextStyle(font: regularFont, fontSize: 12),
+            pw.Row(
+              children: [
+                pw.Text(
+                  'Email: ',
+                  style: pw.TextStyle(
+                    font: regularFont,
+                    fontSize: 12,
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.blue800,
+                  ),
+                ),
+                pw.Text(
+                  invoice.clientEmail!,
+                  style: pw.TextStyle(font: regularFont, fontSize: 12),
+                ),
+              ],
             ),
           if (invoice.clientPhone != null && invoice.clientPhone!.isNotEmpty)
-            pw.Text(
-              invoice.clientPhone!,
-              style: pw.TextStyle(font: regularFont, fontSize: 12),
+            pw.Row(
+              children: [
+                pw.Text(
+                  'Mobile: ',
+                  style: pw.TextStyle(
+                    font: regularFont,
+                    fontSize: 12,
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.blue800,
+                  ),
+                ),
+                pw.Text(
+                  invoice.clientPhone!,
+                  style: pw.TextStyle(font: regularFont, fontSize: 12),
+                ),
+              ],
             ),
           if (invoice.clientAddress != null && invoice.clientAddress!.isNotEmpty)
-            pw.Text(
-              invoice.clientAddress!,
-              style: pw.TextStyle(font: regularFont, fontSize: 12),
+            pw.Row(
+              children: [
+                pw.Text(
+                  'Address: ',
+                  style: pw.TextStyle(
+                    font: regularFont,
+                    fontSize: 12,
+                    fontWeight: pw.FontWeight.bold,
+                    color: PdfColors.blue800,
+                  ),
+                ),
+                pw.Text(
+                  invoice.clientAddress!,
+                  style: pw.TextStyle(font: regularFont, fontSize: 12),
+                ),
+              ],
             ),
         ],
       ),

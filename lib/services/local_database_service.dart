@@ -4,7 +4,6 @@ import 'package:path/path.dart';
 import 'package:uuid/uuid.dart';
 import 'package:crypto/crypto.dart';
 import 'dart:convert';
-import 'local_database_extensions.dart';
 
 class LocalDatabaseService {
   static Database? _database;

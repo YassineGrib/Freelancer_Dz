@@ -258,9 +258,7 @@ class CalendarEventModel {
           : '', // Convert list to comma-separated string
       'related_id': relatedId,
       'google_event_id': googleEventId,
-      'metadata': metadata != null
-          ? metadata.toString()
-          : null, // Convert map to string
+      'metadata': metadata?.toString(), // Convert map to string
       'created_at': createdAt.toIso8601String(),
       'updated_at': updatedAt?.toIso8601String(),
     };

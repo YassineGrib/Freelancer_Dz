@@ -68,11 +68,11 @@ class ConnectivityService extends ChangeNotifier {
       // Just went offline
       _lastOfflineTime = DateTime.now();
       _hasBeenOffline = true;
-      debugPrint('📱 Device went OFFLINE at ${_lastOfflineTime}');
+      debugPrint('📱 Device went OFFLINE at $_lastOfflineTime');
     } else if (!wasOnline && _isOnline) {
       // Just came back online
       _lastOnlineTime = DateTime.now();
-      debugPrint('📱 Device came back ONLINE at ${_lastOnlineTime}');
+      debugPrint('📱 Device came back ONLINE at $_lastOnlineTime');
     }
 
     // Notify listeners if status changed

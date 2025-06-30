@@ -123,7 +123,7 @@ class _BusinessProfileOnboardingScreenState
               const SizedBox(height: 40),
 
               // Welcome header
-              Center(
+              const Center(
                 child: Icon(
                   FontAwesomeIcons.building,
                   size: 80,
@@ -170,7 +170,7 @@ class _BusinessProfileOnboardingScreenState
                   children: [
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           FontAwesomeIcons.exclamationTriangle,
                           color: AppColors.primary,
                           size: 20,
@@ -245,7 +245,7 @@ class _BusinessProfileOnboardingScreenState
               padding: const EdgeInsets.only(bottom: 8),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     FontAwesomeIcons.check,
                     color: AppColors.primary,
                     size: 14,

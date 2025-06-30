@@ -628,7 +628,7 @@ class _DashboardTabState extends State<DashboardTab> {
         else
           ...activities
               .map((activity) => _buildActivityCard(activity))
-              .toList(),
+              ,
       ],
     );
   }
@@ -736,7 +736,7 @@ class _DashboardTabState extends State<DashboardTab> {
             ),
           )
         else
-          ...deadlines.map((deadline) => _buildDeadlineCard(deadline)).toList(),
+          ...deadlines.map((deadline) => _buildDeadlineCard(deadline)),
       ],
     );
   }

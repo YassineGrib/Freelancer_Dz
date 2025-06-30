@@ -215,7 +215,7 @@ class _TaxCalculatorScreenState extends State<TaxCalculatorScreen> {
 
                 Row(
                   children: [
-                    Expanded(child: Divider(color: AppColors.border)),
+                    const Expanded(child: Divider(color: AppColors.border)),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Text(
@@ -226,7 +226,7 @@ class _TaxCalculatorScreenState extends State<TaxCalculatorScreen> {
                         ),
                       ),
                     ),
-                    Expanded(child: Divider(color: AppColors.border)),
+                    const Expanded(child: Divider(color: AppColors.border)),
                   ],
                 ),
 

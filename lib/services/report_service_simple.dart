@@ -68,7 +68,7 @@ class ReportService {
           'total_pending': totalPending,
           'total_revenue': totalPaid + totalPending,
           'last_payment': clientPayments.isNotEmpty
-              ? clientPayments.last.paymentDate?.toString().split(' ')[0] ?? 'N/A'
+              ? clientPayments.last.paymentDate.toString().split(' ')[0] ?? 'N/A'
               : 'N/A',
         });
       }
@@ -164,7 +164,7 @@ class ReportService {
           'currency': payment.currency.code,
           'status': payment.paymentStatus.displayName,
           'method': payment.paymentMethod.displayName,
-          'payment_date': payment.paymentDate?.toString().split(' ')[0] ?? 'N/A',
+          'payment_date': payment.paymentDate.toString().split(' ')[0] ?? 'N/A',
           'due_date': payment.dueDate?.toString().split(' ')[0] ?? 'N/A',
           'description': payment.description ?? 'N/A',
           'created_at': payment.createdAt.toString().split(' ')[0],
@@ -296,8 +296,8 @@ class ReportService {
     final monthlyTotals = <String, double>{};
 
     for (final payment in payments) {
-      if (payment.paymentStatus == PaymentStatus.completed && payment.paymentDate != null) {
-        final monthKey = '${payment.paymentDate!.year}-${payment.paymentDate!.month.toString().padLeft(2, '0')}';
+      if (payment.paymentStatus == PaymentStatus.completed) {
+        final monthKey = '${payment.paymentDate.year}-${payment.paymentDate.month.toString().padLeft(2, '0')}';
         monthlyTotals[monthKey] = (monthlyTotals[monthKey] ?? 0.0) + payment.paymentAmount;
       }
     }

@@ -264,7 +264,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               color: AppColors.primary.withOpacity(0.1),
               borderRadius: BorderRadius.circular(30),
             ),
-            child: Icon(
+            child: const Icon(
               FontAwesomeIcons.user,
               size: 24,
               color: AppColors.primary,
@@ -425,7 +425,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Widget _buildSignOutButton() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         onPressed: _isLoading ? null : _handleSignOut,

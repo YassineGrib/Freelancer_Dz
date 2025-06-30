@@ -1318,7 +1318,7 @@ class _ReportDetailsScreenState extends State<ReportDetailsScreen> {
     Navigator.of(context).pop(); // Close dialog
     // TODO: Implement filtering similar data
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('Filter similar data functionality coming soon'),
         backgroundColor: Colors.orange,
       ),
@@ -1329,7 +1329,7 @@ class _ReportDetailsScreenState extends State<ReportDetailsScreen> {
     Navigator.of(context).pop(); // Close dialog
     // TODO: Implement sharing row data
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('Share row data functionality coming soon'),
         backgroundColor: Colors.green,
       ),

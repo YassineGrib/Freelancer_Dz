@@ -581,7 +581,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
             ),
             style: OutlinedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 8),
-              side: BorderSide(color: AppColors.border),
+              side: const BorderSide(color: AppColors.border),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(6),
               ),
@@ -643,7 +643,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
             ),
             child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.calendar_today,
                   color: AppColors.primary,
                   size: 16,
@@ -663,7 +663,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                     ),
                   ),
                 ),
-                Icon(
+                const Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.textSecondary,
                   size: 12,

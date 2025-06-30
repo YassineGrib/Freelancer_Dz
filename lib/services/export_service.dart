@@ -297,7 +297,7 @@ class ExportService {
         pw.SizedBox(height: 8),
         pw.Text(
           reportData.subtitle,
-          style: pw.TextStyle(
+          style: const pw.TextStyle(
             fontSize: 16,
             color: PdfColors.grey700,
           ),
@@ -305,14 +305,14 @@ class ExportService {
         pw.SizedBox(height: 8),
         pw.Text(
           'Date Range: ${reportData.formattedDateRange}',
-          style: pw.TextStyle(
+          style: const pw.TextStyle(
             fontSize: 12,
             color: PdfColors.grey600,
           ),
         ),
         pw.Text(
           'Generated: ${_formatDateTime(reportData.generatedAt)}',
-          style: pw.TextStyle(
+          style: const pw.TextStyle(
             fontSize: 12,
             color: PdfColors.grey600,
           ),
@@ -348,7 +348,7 @@ class ExportService {
                 children: [
                   pw.Text(
                     _formatTitle(entry.key),
-                    style: pw.TextStyle(
+                    style: const pw.TextStyle(
                       fontSize: 10,
                       color: PdfColors.grey600,
                     ),
@@ -419,7 +419,7 @@ class ExportService {
                   );
                 }).toList(),
               );
-            }).toList(),
+            }),
           ],
         ),
         if (reportData.data.length > 50)

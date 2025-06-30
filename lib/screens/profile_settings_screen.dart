@@ -141,7 +141,7 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
               borderRadius: BorderRadius.circular(50),
               border: Border.all(color: AppColors.border, width: 2),
             ),
-            child: Icon(
+            child: const Icon(
               FontAwesomeIcons.user,
               size: 40,
               color: AppColors.primary,
@@ -355,15 +355,15 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.border),
+          borderSide: const BorderSide(color: AppColors.border),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.border),
+          borderSide: const BorderSide(color: AppColors.border),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.primary),
+          borderSide: const BorderSide(color: AppColors.primary),
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -383,7 +383,7 @@ class _ProfileSettingsScreenState extends State<ProfileSettingsScreen> {
             onPressed: _cancelEdit,
             style: OutlinedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
-              side: BorderSide(color: AppColors.textSecondary),
+              side: const BorderSide(color: AppColors.textSecondary),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),

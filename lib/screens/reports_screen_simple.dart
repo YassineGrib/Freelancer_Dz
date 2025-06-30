@@ -153,7 +153,7 @@ class ReportDetailScreen extends StatefulWidget {
 }
 
 class _ReportDetailScreenState extends State<ReportDetailScreen> {
-  ReportFilterModel _filter = ReportFilterModel(
+  ReportFilterModel _filter = const ReportFilterModel(
     type: ReportType.client,
     period: ReportPeriod.thisMonth,
   );
@@ -529,7 +529,7 @@ class ReportViewScreen extends StatelessWidget {
               ],
             ),
           );
-        }).toList(),
+        }),
       ],
     );
   }
@@ -546,7 +546,7 @@ class ReportViewScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Icon(
+            const Icon(
               Icons.data_usage,
               size: 64,
               color: AppColors.textSecondary,
@@ -645,11 +645,11 @@ class ReportViewScreen extends StatelessWidget {
                       ],
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           );
-        }).toList(),
+        }),
         if (report.data.length > 10)
           Container(
             width: double.infinity,
