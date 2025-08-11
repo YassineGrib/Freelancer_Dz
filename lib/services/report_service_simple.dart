@@ -238,7 +238,7 @@ class ReportService {
       // Group by category
       final categoryTotals = <String, double>{};
       for (final expense in filteredExpenses) {
-        final category = expense.category.displayName;
+        final category = expense_model.getExpenseCategoryDisplay(expense.category).displayName;
         categoryTotals[category] = (categoryTotals[category] ?? 0.0) + expense.amount;
       }
 
@@ -246,7 +246,7 @@ class ReportService {
       final expenseData = filteredExpenses.map((expense) => {
         'expense_id': expense.id ?? 'N/A',
         'description': expense.description,
-        'category': expense.category.displayName,
+        'category': expense_model.getExpenseCategoryDisplay(expense.category).displayName,
         'amount': expense.amount,
         'currency': expense.currency.code,
         'date': expense.createdAt.toString().split(' ')[0],

@@ -8,7 +8,7 @@ import 'dart:convert';
 class LocalDatabaseService {
   static Database? _database;
   static const String _databaseName = 'freelancer_mobile.db';
-  static const int _databaseVersion = 10;
+  static const int _databaseVersion = 11;
   static const _uuid = Uuid();
 
   // Table names
@@ -21,6 +21,7 @@ class LocalDatabaseService {
   static const String _taxPaymentsTable = 'tax_payments';
   static const String _taxCalculationsTable = 'tax_calculations';
   static const String _calendarEventsTable = 'calendar_events';
+  static const String _expenseCategoriesTable = 'expense_categories';
 
   // Singleton pattern
   static LocalDatabaseService? _instance;
@@ -177,7 +178,7 @@ class LocalDatabaseService {
         description TEXT,
         amount REAL NOT NULL CHECK (amount > 0),
         currency TEXT NOT NULL CHECK (currency IN ('da', 'usd', 'eur', 'gbp')),
-        category TEXT NOT NULL CHECK (category IN ('office', 'travel', 'equipment', 'software', 'marketing', 'utilities', 'meals', 'transportation', 'communication', 'education', 'legal', 'tax', 'other')),
+        category TEXT NOT NULL,
         payment_method TEXT NOT NULL CHECK (payment_method IN ('cash', 'bankTransfer', 'creditCard', 'debitCard', 'paypal', 'ccp', 'other')),
         expense_date TEXT NOT NULL,
         receipt_url TEXT,
@@ -191,6 +192,21 @@ class LocalDatabaseService {
         FOREIGN KEY (user_id) REFERENCES $_usersTable (id) ON DELETE CASCADE,
         FOREIGN KEY (project_id) REFERENCES $_projectsTable (id) ON DELETE SET NULL,
         FOREIGN KEY (client_id) REFERENCES $_clientsTable (id) ON DELETE SET NULL
+      )
+    ''');
+
+    // Create expense categories table
+    await db.execute('''
+      CREATE TABLE $_expenseCategoriesTable (
+        id TEXT PRIMARY KEY,
+        user_id TEXT NOT NULL,
+        name TEXT NOT NULL,
+        icon_codepoint INTEGER,
+        color_hex TEXT,
+        created_at TEXT NOT NULL,
+        updated_at TEXT,
+        UNIQUE(user_id, name),
+        FOREIGN KEY (user_id) REFERENCES $_usersTable (id) ON DELETE CASCADE
       )
     ''');
 
@@ -440,7 +456,7 @@ class LocalDatabaseService {
             description TEXT,
             amount REAL NOT NULL CHECK (amount > 0),
             currency TEXT NOT NULL CHECK (currency IN ('da', 'usd', 'eur', 'gbp')),
-            category TEXT NOT NULL CHECK (category IN ('office', 'travel', 'equipment', 'software', 'marketing', 'utilities', 'meals', 'transportation', 'communication', 'education', 'legal', 'tax', 'other')),
+            category TEXT NOT NULL,
             payment_method TEXT NOT NULL CHECK (payment_method IN ('cash', 'bankTransfer', 'creditCard', 'debitCard', 'paypal', 'ccp', 'other')),
             expense_date TEXT NOT NULL,
             receipt_url TEXT,
@@ -476,6 +492,67 @@ class LocalDatabaseService {
         print('Error updating expenses table: $e');
         // If there's an error, just continue - the table will be recreated in version 8 migration
       }
+    }
+
+    if (oldVersion < 11) {
+      // Remove CHECK constraint from expenses.category and add expense_categories table
+      await db.execute('ALTER TABLE $_expensesTable RENAME TO ${_expensesTable}_old');
+
+      await db.execute('''
+        CREATE TABLE $_expensesTable (
+          id TEXT PRIMARY KEY,
+          user_id TEXT NOT NULL,
+          project_id TEXT,
+          client_id TEXT,
+          title TEXT NOT NULL,
+          description TEXT,
+          amount REAL NOT NULL CHECK (amount > 0),
+          currency TEXT NOT NULL CHECK (currency IN ('da', 'usd', 'eur', 'gbp')),
+          category TEXT NOT NULL,
+          payment_method TEXT NOT NULL CHECK (payment_method IN ('cash', 'bankTransfer', 'creditCard', 'debitCard', 'paypal', 'ccp', 'other')),
+          expense_date TEXT NOT NULL,
+          receipt_url TEXT,
+          vendor TEXT,
+          notes TEXT,
+          is_reimbursable INTEGER DEFAULT 0,
+          is_recurring INTEGER DEFAULT 0,
+          recurring_end_date TEXT,
+          created_at TEXT NOT NULL,
+          updated_at TEXT,
+          FOREIGN KEY (user_id) REFERENCES $_usersTable (id) ON DELETE CASCADE,
+          FOREIGN KEY (project_id) REFERENCES $_projectsTable (id) ON DELETE SET NULL,
+          FOREIGN KEY (client_id) REFERENCES $_clientsTable (id) ON DELETE SET NULL
+        )
+      ''');
+
+      await db.execute('''
+        INSERT INTO $_expensesTable
+        SELECT * FROM ${_expensesTable}_old
+      ''');
+
+      await db.execute('DROP TABLE ${_expensesTable}_old');
+
+      // Ensure indexes
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_expenses_user_id ON $_expensesTable (user_id)');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_expenses_project_id ON $_expensesTable (project_id)');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_expenses_client_id ON $_expensesTable (client_id)');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_expenses_category ON $_expensesTable (category)');
+      await db.execute('CREATE INDEX IF NOT EXISTS idx_expenses_expense_date ON $_expensesTable (expense_date)');
+
+      // Create expense categories table if not exists
+      await db.execute('''
+        CREATE TABLE IF NOT EXISTS $_expenseCategoriesTable (
+          id TEXT PRIMARY KEY,
+          user_id TEXT NOT NULL,
+          name TEXT NOT NULL,
+          icon_codepoint INTEGER,
+          color_hex TEXT,
+          created_at TEXT NOT NULL,
+          updated_at TEXT,
+          UNIQUE(user_id, name),
+          FOREIGN KEY (user_id) REFERENCES $_usersTable (id) ON DELETE CASCADE
+        )
+      ''');
     }
 
     if (oldVersion < 8) {
@@ -895,6 +972,51 @@ class LocalDatabaseService {
       where: 'user_id = ? AND client_id = ?',
       whereArgs: [userId, clientId],
       orderBy: 'created_at DESC',
+    );
+  }
+
+  // Category helpers
+  Future<List<Map<String, dynamic>>> getExpenseCategories(String userId) async {
+    final db = await database;
+    return await db.query(
+      _expenseCategoriesTable,
+      where: 'user_id = ?',
+      whereArgs: [userId],
+      orderBy: 'created_at DESC',
+    );
+  }
+
+  Future<String> createExpenseCategory(String userId, Map<String, dynamic> data) async {
+    final db = await database;
+    final id = generateId();
+    final now = getCurrentTimestamp();
+    final toInsert = Map<String, dynamic>.from(data);
+    toInsert['id'] = id;
+    toInsert['user_id'] = userId;
+    toInsert['created_at'] = now;
+
+    await db.insert(_expenseCategoriesTable, toInsert, conflictAlgorithm: ConflictAlgorithm.abort);
+    return id;
+  }
+
+  Future<void> deleteExpenseCategory(String categoryId) async {
+    final db = await database;
+    await db.delete(
+      _expenseCategoriesTable,
+      where: 'id = ?',
+      whereArgs: [categoryId],
+    );
+  }
+
+  Future<void> updateExpenseCategory(String categoryId, Map<String, dynamic> data) async {
+    final db = await database;
+    final toUpdate = Map<String, dynamic>.from(data);
+    toUpdate['updated_at'] = getCurrentTimestamp();
+    await db.update(
+      _expenseCategoriesTable,
+      toUpdate,
+      where: 'id = ?',
+      whereArgs: [categoryId],
     );
   }
 }

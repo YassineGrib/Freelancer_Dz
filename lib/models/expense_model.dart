@@ -248,7 +248,7 @@ class ExpenseModel {
   final String? description;
   final double amount;
   final Currency currency;
-  final ExpenseCategory category;
+  final String category;
   final PaymentMethod paymentMethod;
   final DateTime expenseDate;
   final String? receiptUrl;
@@ -268,7 +268,7 @@ class ExpenseModel {
     this.description,
     required this.amount,
     this.currency = Currency.da,
-    this.category = ExpenseCategory.other,
+    this.category = 'other',
     this.paymentMethod = PaymentMethod.cash,
     DateTime? expenseDate,
     this.receiptUrl,
@@ -290,7 +290,7 @@ class ExpenseModel {
       'description': description,
       'amount': amount,
       'currency': currency.name,
-      'category': category.name,
+      'category': category,
       'payment_method': paymentMethod.name,
       'expense_date': expenseDate.toIso8601String(),
       'receipt_url': receiptUrl,
@@ -325,10 +325,7 @@ class ExpenseModel {
         (c) => c.name == json['currency'],
         orElse: () => Currency.da,
       ),
-      category: ExpenseCategory.values.firstWhere(
-        (c) => c.name == json['category'],
-        orElse: () => ExpenseCategory.other,
-      ),
+      category: (json['category'] as String?) ?? 'other',
       paymentMethod: PaymentMethod.values.firstWhere(
         (p) => p.name == json['payment_method'],
         orElse: () => PaymentMethod.cash,
@@ -357,7 +354,7 @@ class ExpenseModel {
     String? description,
     double? amount,
     Currency? currency,
-    ExpenseCategory? category,
+    String? category,
     PaymentMethod? paymentMethod,
     DateTime? expenseDate,
     String? receiptUrl,
@@ -390,4 +387,32 @@ class ExpenseModel {
       updatedAt: updatedAt ?? this.updatedAt,
     );
   }
+}
+
+class ExpenseCategoryDisplay {
+  final String displayName;
+  final IconData icon;
+  final Color color;
+  const ExpenseCategoryDisplay({
+    required this.displayName,
+    required this.icon,
+    required this.color,
+  });
+}
+
+ExpenseCategoryDisplay getExpenseCategoryDisplay(String categoryName) {
+  final builtIn = ExpenseCategory.values.where((c) => c.name == categoryName);
+  if (builtIn.isNotEmpty) {
+    final c = builtIn.first;
+    return ExpenseCategoryDisplay(
+      displayName: c.displayName,
+      icon: c.icon,
+      color: c.color,
+    );
+  }
+  return ExpenseCategoryDisplay(
+    displayName: categoryName,
+    icon: Icons.label,
+    color: Colors.grey,
+  );
 }

@@ -10,6 +10,7 @@ import '../services/client_service.dart';
 import '../utils/colors.dart';
 import '../utils/constants.dart';
 import '../widgets/custom_button.dart';
+import '../services/category_service.dart';
 
 import 'add_edit_expense_screen.dart';
 
@@ -29,7 +30,8 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
   List<client_model.ClientModel> _clients = [];
   bool _isLoading = true;
   String _searchQuery = '';
-  ExpenseCategory? _selectedCategoryFilter;
+  String? _selectedCategoryFilter;
+  List<({String name, String display, IconData icon, Color color})> _availableCategories = [];
   String? _selectedProjectFilter;
   String? _selectedClientFilter;
 
@@ -52,6 +54,20 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
       final expenses = await ExpenseService.getAllExpenses();
       final projects = await ProjectService.getAllProjects();
       final clients = await ClientService.getClients();
+      final custom = await CategoryService.getCategories();
+      final builtIns = ExpenseCategory.values.map((c) => (
+            name: c.name,
+            display: c.displayName,
+            icon: c.icon,
+            color: c.color,
+          ));
+      final customs = custom.map((it) => (
+            name: it.name,
+            display: it.name,
+            icon: it.icon ?? Icons.label,
+            color: it.color ?? Colors.grey,
+          ));
+      _availableCategories = [...builtIns, ...customs].toList();
 
       setState(() {
         _expenses = expenses;
@@ -106,8 +122,8 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
     _filterExpenses();
   }
 
-  void _onCategoryFilterChanged(ExpenseCategory? category) {
-    setState(() => _selectedCategoryFilter = category);
+  void _onCategoryFilterChanged(String? categoryName) {
+    setState(() => _selectedCategoryFilter = categoryName);
     _filterExpenses();
   }
 
@@ -258,12 +274,12 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
                       _buildFilterChip('All', _selectedCategoryFilter == null,
                           () => _onCategoryFilterChanged(null)),
                       const SizedBox(width: 8),
-                      ...ExpenseCategory.values.map((category) => Padding(
+                      ..._availableCategories.map((c) => Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: _buildFilterChip(
-                              category.displayName,
-                              _selectedCategoryFilter == category,
-                              () => _onCategoryFilterChanged(category),
+                              c.display,
+                              _selectedCategoryFilter == c.name,
+                              () => _onCategoryFilterChanged(c.name),
                             ),
                           )),
                     ],
@@ -394,6 +410,7 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
         createdAt: DateTime.now(),
       ),
     );
+    final cat = getExpenseCategoryDisplay(expense.category);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -411,16 +428,16 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
             children: [
               // Category Icon
               Container(
-                width: 50,
-                height: 50,
+                width: 36,
+                height: 36,
                 decoration: BoxDecoration(
-                  color: expense.category.color,
-                  borderRadius: BorderRadius.circular(4),
+                  color: cat.color.withOpacity(0.15),
+                  shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  expense.category.icon,
-                  color: AppColors.textWhite,
-                  size: 24,
+                  cat.icon,
+                  color: cat.color,
+                  size: 18,
                 ),
               ),
 
@@ -456,10 +473,10 @@ class _ExpenseManagementScreenState extends State<ExpenseManagementScreen> {
                       children: [
                         Expanded(
                           child: Text(
-                            expense.category.displayName,
+                            cat.displayName,
                             style: GoogleFonts.poppins(
                               fontSize: AppConstants.textSmall,
-                              color: AppColors.textLight,
+                              color: AppColors.textSecondary,
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),

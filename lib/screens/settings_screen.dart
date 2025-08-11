@@ -21,6 +21,7 @@ import 'email_settings_screen.dart';
 import 'tax_settings_screen.dart';
 import 'help_support_screen.dart';
 import 'data_settings_screen.dart';
+import 'category_settings_screen.dart';
 
 import '../l10n/app_localizations.dart';
 // import 'fiscal_year_management_screen.dart'; // Removed for now
@@ -180,6 +181,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
               subtitle: AppLocalizations.of(context)?.taxRatesCalculation ??
                   'Tax rates and calculation preferences',
               onTap: () => _navigateToTaxSettings(),
+            ),
+            _buildDivider(),
+            _buildSettingsItem(
+              icon: FontAwesomeIcons.tags,
+              title: 'Expense Categories',
+              subtitle: 'Add or remove categories',
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const CategorySettingsScreen(),
+                ),
+              ),
             ),
             // Fiscal Year Management temporarily disabled
             // _buildDivider(),

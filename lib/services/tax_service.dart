@@ -307,7 +307,7 @@ class TaxService {
         description: 'Tax payment for ${taxPayment.type.fullName} (${taxPayment.year})',
         amount: taxPayment.amount,
         currency: Currency.da,
-        category: ExpenseCategory.tax,
+        category: 'tax',
         paymentMethod: _mapPaymentMethod(paymentMethod),
         expenseDate: DateTime.now(),
         vendor: 'Government Tax Authority',

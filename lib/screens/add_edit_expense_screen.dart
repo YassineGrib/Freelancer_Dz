@@ -7,6 +7,7 @@ import '../models/client_model.dart' as client_model;
 import '../services/expense_service.dart';
 import '../services/project_service.dart';
 import '../services/client_service.dart';
+import '../services/category_service.dart';
 import '../utils/colors.dart';
 import '../utils/constants.dart';
 import '../widgets/custom_text_field.dart';
@@ -36,7 +37,8 @@ class _AddEditExpenseScreenState extends State<AddEditExpenseScreen> {
 
   ProjectModel? _selectedProject;
   client_model.ClientModel? _selectedClient;
-  ExpenseCategory _selectedCategory = ExpenseCategory.other;
+  String _selectedCategoryName = ExpenseCategory.other.name;
+  List<({String name, String display, IconData? icon, Color? color, bool builtIn})> _availableCategories = [];
   PaymentMethod _selectedPaymentMethod = PaymentMethod.cash;
   Currency _selectedCurrency = Currency.da;
   DateTime _selectedExpenseDate = DateTime.now();
@@ -69,6 +71,23 @@ class _AddEditExpenseScreenState extends State<AddEditExpenseScreen> {
     try {
       final projects = await ProjectService.getAllProjects();
       final clients = await ClientService.getClients();
+      // Load categories: built-in + custom
+      final custom = await CategoryService.getCategories();
+      final builtIns = ExpenseCategory.values.map((c) => (
+            name: c.name,
+            display: c.displayName,
+            icon: c.icon,
+            color: c.color,
+            builtIn: true,
+          ));
+      final customs = custom.map((it) => (
+            name: it.name,
+            display: it.name,
+            icon: it.icon,
+            color: it.color,
+            builtIn: false,
+          ));
+      _availableCategories = [...builtIns, ...customs].toList();
 
       setState(() {
         _projects = projects;
@@ -95,7 +114,7 @@ class _AddEditExpenseScreenState extends State<AddEditExpenseScreen> {
     _vendorController.text = expense.vendor ?? '';
     _notesController.text = expense.notes ?? '';
 
-    _selectedCategory = expense.category;
+    _selectedCategoryName = expense.category;
     _selectedPaymentMethod = expense.paymentMethod;
     _selectedCurrency = expense.currency;
     _selectedExpenseDate = expense.expenseDate;
@@ -247,7 +266,7 @@ class _AddEditExpenseScreenState extends State<AddEditExpenseScreen> {
             : _descriptionController.text.trim(),
         amount: double.parse(_amountController.text),
         currency: _selectedCurrency,
-        category: _selectedCategory,
+        category: _selectedCategoryName,
         paymentMethod: _selectedPaymentMethod,
         expenseDate: _selectedExpenseDate,
         vendor: _vendorController.text.trim().isEmpty
@@ -636,33 +655,39 @@ class _AddEditExpenseScreenState extends State<AddEditExpenseScreen> {
   }
 
   Widget _buildCategoryDropdown() {
-    return DropdownButtonFormField<ExpenseCategory>(
-      value: _selectedCategory,
+    return DropdownButtonFormField<String>(
+      value: _selectedCategoryName,
       decoration: InputDecoration(
         hintText: 'Select category',
-        prefixIcon: Icon(_selectedCategory.icon),
+        prefixIcon: Icon(_availableCategories.firstWhere(
+                (c) => c.name == _selectedCategoryName,
+                orElse: () => (
+                      name: ExpenseCategory.other.name,
+                      display: ExpenseCategory.other.displayName,
+                      icon: ExpenseCategory.other.icon,
+                      color: ExpenseCategory.other.color,
+                      builtIn: true,
+                    ))
+            .icon),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
         ),
       ),
-      items: ExpenseCategory.values.map((category) {
-        return DropdownMenuItem<ExpenseCategory>(
-          value: category,
-          child: Row(
-            children: [
-              Icon(category.icon, size: 20, color: category.color),
-              const SizedBox(width: 8),
-              Text(
-                category.displayName,
-                style: GoogleFonts.poppins(),
-              ),
-            ],
-          ),
-        );
-      }).toList(),
-      onChanged: (category) {
-        if (category != null) {
-          setState(() => _selectedCategory = category);
+      items: _availableCategories
+          .map((c) => DropdownMenuItem<String>(
+                value: c.name,
+                child: Row(
+                  children: [
+                    Icon(c.icon ?? Icons.label, size: 20, color: c.color ?? AppColors.textPrimary),
+                    const SizedBox(width: 8),
+                    Text(c.display, style: GoogleFonts.poppins()),
+                  ],
+                ),
+              ))
+          .toList(),
+      onChanged: (value) {
+        if (value != null) {
+          setState(() => _selectedCategoryName = value);
         }
       },
     );
